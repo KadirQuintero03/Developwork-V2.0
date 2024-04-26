@@ -10,23 +10,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Estilos para los mensajes de error
-p {
-  font-size: 16px;
-  color: #ff0000;
-  position: absolute;
-} */
-
-/* .msgCamp {
-  right: 19%;
-  top: 23%;
-}
-
-.msgEmail {
-  right: 23%;
-  top: 46%;
-} */
-
 .form-title {
   font-size: 60px;
   font-weight: 600;

@@ -1,11 +1,25 @@
-<div class="body-notifi">
-  <div class="container-notifi">
-    <h2>Notificaciones en tiempo real</h2>
+<main class="w-full h-[100vh] flex justify-center items-center">
+  <div class="p-3 bg-white rounded-sm">
+    <h2 class="text-4xl">Notificaciones en tiempo real</h2>
     <ul>
-      <li *ngFor="let notificacion of notificaciones">
+      <li
+        class="mt-1 mb-1 text-xl w-full grid-cols-2"
+        *ngFor="let notificacion of notificaciones"
+      >
         {{ notificacion.mensaje }}
-        <button (click)="eliminar(notificacion)"></button>
+        <button class="h-5 w-[30px]" (click)="eliminar(notificacion)"></button>
       </li>
     </ul>
   </div>
-</div>
+</main>
+
+<style>
+  button {
+    background-color: transparent;
+    background-image: url(../../assets/icon/Trash.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: bottom;
+  }
+</style>

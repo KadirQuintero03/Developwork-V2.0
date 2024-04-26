@@ -7,6 +7,7 @@ import { persona } from '@/app/Interface/persona';
   templateUrl: './camb-contra.component.html',
   //styleUrls: ['./camb-contra.component.css'],
 })
+
 export class CambContraComponent {
   contrasena: String = '';
   newCon: String = '';
@@ -19,6 +20,7 @@ export class CambContraComponent {
       this._user = response;
     });
   }
+
   viewpass() {
     // Concatena el nombre del campo con la cadena 'ChangeType'
 
