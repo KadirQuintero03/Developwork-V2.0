@@ -1,0 +1,107 @@
+#container-main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  padding: 2.5em;
+  background-color: rgb(251, 252, 241, 0.6);
+  grid-template-rows: 1fr 1fr 10fr 1fr;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: center;
+}
+
+.cab-img {
+  position: absolute;
+  top: 4.063em;
+  text-align: center;
+  margin-top: -3.125em;
+  width: 12%;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 1.125em;
+  margin: 0px 0.625em 0px 0.625em;
+}
+
+input,
+select {
+  border: 1px solid #000;
+  border-radius: 0.625em;
+  padding: 0.313em;
+  font-size: 16px;
+  margin: 0px 0.625em 0.625em 0.625em;
+}
+
+input {
+  width: 13.75em;
+}
+
+select {
+  width: 10em;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+#container-teams {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 0px 0.625em 0px 0.625em;
+  border-radius: 0.625em;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625em;
+  margin: 0.625em 0px 0.625em 0px;
+}
+
+th,
+td {
+  font-size: 1.125em;
+  padding: 0px 0.7em 0.7em 0.7em;
+  border-bottom: 1px solid black;
+}
+
+td {
+  padding: 0.7em 0.7em 0.7em 0.7em;
+}
+
+.seleccionado {
+  border: 4px solid green;
+  background-color: green;
+}
+
+#container-crud {
+  height: 100%;
+  width: 100%;
+  padding: 0.625em;
+  margin-top: 0.625em;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-crud {
+  font-size: 18px;
+  color: #fff;
+  width: 9.375em;
+  padding: 0.5em;
+  border: none;
+  border-radius: 1.25em;
+  background-color: #1e512c;
+  margin: 0px 50px 0px 50px;
+}

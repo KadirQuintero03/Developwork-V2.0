@@ -1,0 +1,58 @@
+<main class="w-full h-[100vh] flex justify-center items-center">
+  <div class="rounded-xl bg-[#FBFCF1] bg-opacity-[0.5]">
+    <header class="position-relative top-10 -mt-11 w-[30%]">
+      <img src="../../assets/img/Header.png" alt="logo" />
+    </header>
+
+    <form
+      class="flex items-center flex-column p-3 gap-3 rounded-xl bg-[#FBFCF1]"
+    >
+      <h1 class="text-4xl"><Strong>Change password</Strong></h1>
+
+      <div class="flex gap-3">
+        <fieldset class="flex items-end flex-column gap-3 w-1/2">
+          <label class="text-lg text-black">Old password</label>
+          <label class="text-start text-lg text-black">New password</label>
+          <label class="text-lg text-black">Confirm password</label>
+        </fieldset>
+
+        <fieldset class="flex flex-column gap-2">
+          <input
+          class="w-60 p-1 text-base rounded-xl b g-white border"
+          type="password"
+          name="contrasena"
+          [(ngModel)]="contrasena"
+        />
+          <input
+            class="w-60 p-1 text-base rounded-xl bg-white border"
+            type="password"
+            name="newCon"
+            [type]="ChangeType ? 'password' : 'text'"
+            [(ngModel)]="newCon"
+          />
+          <input
+            class="w-60 p-1 text-base rounded-xl bg-white border"
+            type="password"
+            [type]="ChangeType ? 'password' : 'text'"
+          />
+        </fieldset>
+      </div>
+
+      <label class="flex items-center cursor-pointer"
+        >Show password
+        <input
+          class="w-8 h-4 cursor-pointer"
+          type="checkbox"
+          (click)="viewpass()"
+        />
+      </label>
+
+      <button
+        class="text-white text-lg mt-0 p-1 w-[25%] bg-[#1e512c] rounded-xl mb-1"
+        (click)="chPassword()"
+      >
+        Change
+      </button>
+    </form>
+  </div>
+</main>

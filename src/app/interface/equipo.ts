@@ -1,5 +1,3 @@
-import { estado } from './estado';
-import { rol } from './rol';
 export class equipo {
   id_equipo: string = ''; //Maximo 8 caracteres
   nombre: string = ''; //Maximo 15 caracteres

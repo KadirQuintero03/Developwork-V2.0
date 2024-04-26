@@ -1,7 +1,4 @@
-import { estado } from './estado';
-import { equipo } from './equipo';
-import { persona } from './persona';
-import { prioridad } from './prioridad';
+import { persona } from '../interface/persona';
 export class ordenes_matenimiento {
   idOrder: string = '';
   //comentarios: string = '';

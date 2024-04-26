@@ -1,8 +1,3 @@
-import { equipo } from "./equipo";
-import { estado } from "./estado";
-
-import { rol } from "./rol";
-
 export class persona{
     id_user:string=''; //Maximo 11 caracteres
     nombre1:string=''; //Maximo 15 caracteres en BD

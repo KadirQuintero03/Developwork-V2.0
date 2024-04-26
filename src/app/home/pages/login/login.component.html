@@ -1,0 +1,46 @@
+<div class="container" id="container-main">
+  <div class="container" id="div-img">
+    <img src="../../assets/img/Header.png" alt="logo" />
+  </div>
+  <div class="container" id="div-login">
+    <H1 class="form-title"> Log In </H1>
+    <form id="form-body">
+      <label class="label-email">Email</label>
+      <input
+        class="email"
+        type="email"
+        name="email"
+        [(ngModel)]="usuario.correo"
+        required
+        placeholder="Enter your email"
+      />
+      <!-- <p class="msgEmail" *ngIf="msgValidarEmail">Invalid email</p> -->
+
+      <label class="label-password">Password</label>
+      <input
+        class="password"
+        name="password"
+        [(ngModel)]="usuario.contra"
+        [type]="ChangeType ? 'password' : 'text'"
+        required
+        placeholder="Enter your password"
+      />
+
+      <div>
+        <label class="label-showpass">
+          <input (click)="viewpass()" type="checkbox" />
+          Show Password
+        </label>
+      </div>
+      <!-- <p class="msgCamp" *ngIf="msgValidarCamp">
+        No pueden haber campos vacios
+      </p> -->
+      <input
+        (click)="IniciarSesion()"
+        class="btn_enter"
+        type="submit"
+        value="Login"
+      />
+    </form>
+  </div>
+</div>

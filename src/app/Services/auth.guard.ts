@@ -7,7 +7,7 @@ import {
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PersonaService } from '@/app/Services/personas/persona.service';
+import { PersonaService } from '@/app/services/personas/persona.service';
 import { LocalStorageService } from './loalStorage/local-storage.service';
 
 @Injectable({

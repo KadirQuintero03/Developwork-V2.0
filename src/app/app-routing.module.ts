@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { usersComponent } from './Usuario/users.component';
-//import { MPersonasComponent } from './personas/m-personas/m-personas.component';
-import { NavComponent } from './Shared/nav/nav.component';
 import { AppComponent } from './app.component';
-import { TeamsComponent } from './Equipos/teams/teams.component';
-import { NotificationComponent } from './Notificaciones/notification.component';
-import { registerComponent } from './RegUsuario/register.component';
-import { CambContraComponent } from './camb-contra/camb-contra.component';
-import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
-import { InformationComponent } from './Informacion/information.component';
-import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
-import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
-import { ListarComponent } from './listar/listar.component';
+import { RouterModule, Routes } from '@angular/router';
+import { usersComponent } from '../app/home/users.component';
+import { LoginComponent } from '../app/home/pages/login/login.component';
+import { NavComponent } from '../app/shared/nav/nav.component';
+import { TeamsComponent } from '../app/home/pages/teams/teams/teams.component';
+import { NotificationComponent } from '../app/home/pages/notifications/notification.component';
+import { registerComponent } from '../app/home/pages/registerUser/register.component';
+import { CambContraComponent } from '../app/home/pages/changePass/camb-contra.component';
+import { ModpersonaComponent } from './home/pages/persons/modpersona/modpersona.component';
+import { InformationComponent } from './home/pages/infoUser/information.component';
+import { ModequipoComponent } from './home/pages/teams/modequipo/modequipo.component';
+import { OrdenesMComponent } from './home/pages/ordenes/ordenes-m/ordenes-m.component';
+import { ListarComponent } from './home/pages/list/listar.component';
 
 //import { AuthGuard } from './Services/auth.guard';
 const routes: Routes = [
@@ -31,10 +30,6 @@ const routes: Routes = [
             path: '',
             component: OrdenesMComponent,
           },
-          /*{
-            path: 'personas',
-            component: ModpersonaComponent,
-          },*/
           {
             path: 'register',
             component: registerComponent,
