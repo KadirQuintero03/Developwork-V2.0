@@ -5,7 +5,7 @@ import { persona } from '@/app/Interface/persona';
 @Component({
   selector: 'app-camb-contra',
   templateUrl: './camb-contra.component.html',
-  styleUrls: ['./camb-contra.component.css'],
+  //styleUrls: ['./camb-contra.component.css'],
 })
 export class CambContraComponent {
   contrasena: String = '';

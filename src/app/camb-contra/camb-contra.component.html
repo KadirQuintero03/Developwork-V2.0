@@ -1,35 +1,58 @@
-<div id="body">
-  <div id="container-main">
-    <header id="cabecera">
-      <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
+<main class="w-full h-[100vh] flex justify-center items-center">
+  <div class="rounded-xl bg-[#FBFCF1] bg-opacity-[0.5]">
+    <header class="position-relative top-10 -mt-11 w-[30%]">
+      <img src="../../assets/img/Header.png" alt="logo" />
     </header>
-    <form action="">
-      <h1>Cambiar contraseña</h1>
-      <fieldset>
-        <label for=""> Antigua contraseña</label>
-        <input type="password" name="contrasena" [(ngModel)]="contrasena" />
-      </fieldset>
-      <fieldset>
-        <label for=""> Nueva contraseña</label>
-        <input
+
+    <form
+      class="flex items-center flex-column p-3 gap-3 rounded-xl bg-[#FBFCF1]"
+    >
+      <h1 class="text-4xl"><Strong>Change password</Strong></h1>
+
+      <div class="flex gap-3">
+        <fieldset class="flex items-end flex-column gap-3 w-1/2">
+          <label class="text-lg text-black">Old password</label>
+          <label class="text-start text-lg text-black">New password</label>
+          <label class="text-lg text-black">Confirm password</label>
+        </fieldset>
+
+        <fieldset class="flex flex-column gap-2">
+          <input
+          class="w-60 p-1 text-base rounded-xl b g-white border"
           type="password"
-          name="newCon"
-          [type]="ChangeType ? 'password' : 'text'"
-          [(ngModel)]="newCon"
+          name="contrasena"
+          [(ngModel)]="contrasena"
         />
-      </fieldset>
-      <fieldset>
-        <label for=""> Confirmar contraseña</label>
-        <input type="password" [type]="ChangeType ? 'password' : 'text'" />
-      </fieldset>
-      <div class="div-check">
-        <label for=""> Mostrar contraseña</label>
-        <input class="check" type="checkbox" (click)="viewpass()" />
+          <input
+            class="w-60 p-1 text-base rounded-xl bg-white border"
+            type="password"
+            name="newCon"
+            [type]="ChangeType ? 'password' : 'text'"
+            [(ngModel)]="newCon"
+          />
+          <input
+            class="w-60 p-1 text-base rounded-xl bg-white border"
+            type="password"
+            [type]="ChangeType ? 'password' : 'text'"
+          />
+        </fieldset>
       </div>
-      <p *ngIf="response != ''" style="color: green; font-size: 1.5em">
-        {{ response }}
-      </p>
-      <button (click)="chPassword()">Cambiar</button>
+
+      <label class="flex items-center cursor-pointer"
+        >Show password
+        <input
+          class="w-8 h-4 cursor-pointer"
+          type="checkbox"
+          (click)="viewpass()"
+        />
+      </label>
+
+      <button
+        class="text-white text-lg mt-0 p-1 w-[25%] bg-[#1e512c] rounded-xl mb-1"
+        (click)="chPassword()"
+      >
+        Change
+      </button>
     </form>
   </div>
-</div>
+</main>
