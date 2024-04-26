@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from '@/app/interface/persona';
-import { PersonaService } from '@/app/services/personas/persona.service';
 import { Router } from '@angular/router';
+import { persona } from '../../../interface/persona';
+import { PersonaService } from '../../../services/personas/persona.service';
 
 @Component({
   selector: 'app-listar',

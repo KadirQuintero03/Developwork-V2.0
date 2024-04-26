@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TeamservService } from '@/app/services/teams/teamserv.service';
-import { EstadoserviceService } from '@/app/services/Estados/estadoservice.service';
-import { SordenesService } from '@/app/Services/ordenes/sordenes.service';
-import { equipo } from '@/app/interface/equipo';
-import { estado } from '@/app/interface/estado';
-import { ordenes_matenimiento } from '@/app/Interface/ordenes_mantenimiento';
-import { persona } from '@/app/interface/persona';
-import { prioridad } from '@/app/interface/prioridad';
-import { PersonaService } from '@/app/services/personas/persona.service';
-import { PrioridadesService } from '@/app/services/prioridades.service';
+import { TeamservService } from '../../../../services/teams/teamserv.service';
+import { EstadoserviceService } from '../../../../services/Estados/estadoservice.service';
+import { SordenesService } from '../../../../services/ordenes/sordenes.service';
+import { equipo } from '../../../../interface/equipo';
+import { estado } from '../../../../interface/estado';
+import { ordenes_matenimiento } from '../../../../interface/ordenes_mantenimiento';
+import { persona } from '../../../../interface/persona';
+import { prioridad } from '../../../../interface/prioridad';
+import { PersonaService } from '../../../../services/personas/persona.service';
+import { PrioridadesService } from '../../../../services/prioridades.service';
 
 @Component({
   selector: 'app-forden',

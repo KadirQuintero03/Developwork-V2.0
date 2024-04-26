@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { equipo } from '@/app/interface/equipo';
-import { TeamservService } from '@/app/services/teams/teamserv.service';
-import { estado } from '@/app/interface/estado';
-import { EstadoserviceService } from '@/app/services/Estados/estadoservice.service';
-import { rol } from '@/app/interface/rol';
-import { RolserviceService } from '@/app/services/Roles/rolservice.service';
+import { equipo } from '../../../../interface/equipo';
+import { TeamservService } from '../../../../services/teams/teamserv.service';
+import { estado } from '../../../../interface/estado';
+import { EstadoserviceService } from '../../../../services/Estados/estadoservice.service';
+import { rol } from '../../../../interface/rol';
+import { RolserviceService } from '../../../../services/Roles/rolservice.service';
 
 @Component({
   selector: 'app-modequipo',

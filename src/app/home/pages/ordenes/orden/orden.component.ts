@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ordenes_matenimiento } from '@/app/Interface/ordenes_mantenimiento';
+import { ordenes_matenimiento } from '../../../../interface/ordenes_mantenimiento';
 
 @Component({
   selector: 'app-orden',

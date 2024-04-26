@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { equipo } from '@/app/interface/equipo';
-import { rol } from '@/app/interface/rol';
-import { estado } from '@/app/interface/estado';
-import { persona } from '@/app/interface/persona';
-import { TeamservService } from '@/app/services/teams/teamserv.service';
-import { RolserviceService } from '@/app/services/Roles/rolservice.service';
-import { EstadoserviceService } from '@/app/services/Estados/estadoservice.service';
-import { PersonaService } from '@/app/services/personas/persona.service';
+import { equipo } from '../../../../interface/equipo';
+import { TeamservService } from '../../../../services/teams/teamserv.service';
+import { rol } from '../../../../interface/rol';
+import { RolserviceService } from '../../../../services/Roles/rolservice.service';
+import { estado } from '../../../../interface/estado';
+import { EstadoserviceService } from '../../../../services/Estados/estadoservice.service';
+import { persona } from '../../../../interface/persona';
+import { PersonaService } from '../../../../services/personas/persona.service';
 
 @Component({
   selector: 'app-modpersona',

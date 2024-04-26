@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SocketService } from '@/app/services/socket/socket.service';
-import { PersonaService } from '@/app/services/personas/persona.service';
-import { persona } from '@/app/interface/persona';
-import { notificacion } from '@/app/Interface/notificacion';
+import { SocketService } from '../../../services/socket/socket.service';
+import { PersonaService } from '../../../services/personas/persona.service';
+import { persona } from '../../../interface/persona';
+import { notificacion } from '../../../interface/notificacion';
 
 @Component({
   selector: 'app-notification',

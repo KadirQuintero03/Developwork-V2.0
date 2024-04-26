@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { equipo } from '@/app/Interface/equipo';
+import { equipo } from '../../interface/equipo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from '../loalStorage/local-storage.service';
