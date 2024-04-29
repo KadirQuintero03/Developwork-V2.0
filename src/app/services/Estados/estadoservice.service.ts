@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { estado } from '../../interface/estado';
-import { LocalStorageService } from '../../services/loalStorage/local-storage.service';
+import { LocalStorageService } from '../loalStorage/local-storage.service';
 
 @Injectable({
   providedIn: 'root'

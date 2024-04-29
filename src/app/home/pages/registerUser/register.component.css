@@ -43,15 +43,15 @@ h1 {
 }
 
 .input-text {
-  background-image: url(../../assets/icon/User.svg);
+  background-image: url(../../../../assets/icon/User.svg);
 }
 
 .input-email {
-  background-image: url(../../assets/icon/Email.svg);
+  background-image: url(../../../../assets/icon/Email.svg);
 }
 
 .input-pass {
-  background-image: url(../../assets/icon/PassShow.svg);
+  background-image: url(../../../../assets/icon/PassShow.svg);
 }
 
 .field-select{

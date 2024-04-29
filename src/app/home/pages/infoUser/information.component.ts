@@ -8,6 +8,7 @@ import { persona } from '../../../interface/persona';
   templateUrl: './information.component.html',
   //styleUrls: ['./information.component.css'],
 })
+
 export class InformationComponent {
   personalog: persona = new persona();
   constructor(private router: Router, private personaService: PersonaService) {

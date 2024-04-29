@@ -18,7 +18,7 @@ export class ModequipoComponent {
   verestado: estado[] = [];
   verroles: rol[] = [];
   verequipo: equipo[] = [];
-
+  
   constructor(
     private router: Router,
     private serviceequipo: TeamservService,

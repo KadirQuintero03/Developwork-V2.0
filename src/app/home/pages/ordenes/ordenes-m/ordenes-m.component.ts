@@ -13,6 +13,7 @@ export class OrdenesMComponent implements OnInit {
   ngOnInit(): void {
     this.refresh();
   }
+  
   modorden: ordenes_matenimiento = new ordenes_matenimiento();
   userLog: persona = new persona();
   constructor(

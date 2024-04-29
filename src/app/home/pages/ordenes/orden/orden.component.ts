@@ -10,8 +10,8 @@ export class OrdenComponent implements OnInit {
   @Input() orden :ordenes_matenimiento= new ordenes_matenimiento();
   constructor(){
   }
+  
   ngOnInit(): void {
       console.log(this.orden);
   }
-
 }
