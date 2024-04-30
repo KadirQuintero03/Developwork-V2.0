@@ -29,26 +29,32 @@ export class ModpersonaComponent {
     private rolService: RolserviceService
   ) { }
 
-  modificar() {
-    this.servicePersona.modPersona(this.persona).subscribe();
-    this.servicePersona.setPersona(new persona());
-    this.router.navigate(['/user/personas']);
-  }
   ngOnInit(): void {
     if (this.servicePersona.getPersona().id_user == '') {
       this.router.navigate(['/user/personas']);
     } else {
       this.persona = this.servicePersona.getPersona();
-      this.serviceteam.getData().subscribe((Response: equipo[]) => {
-        this.verequipo = Response;
+
+      this.serviceteam.getData().subscribe((Response: any) => {
+        this.verequipo = Response.data;
       });
 
-      this.serviceestado.getData().subscribe((Response: estado[]) => {
-        this.verestado = Response;
-      });
-      this.rolService.getData().subscribe((Response: rol[]) => {
-        this.verroles = Response;
+      // this.serviceestado.getData().subscribe((Response: any) => {
+      //   this.verestado = Response.data.roles;
+      //   console.log('roles: ', this.verroles)
+      // });
+
+      this.rolService.getData().subscribe((Response: any) => {
+        this.verroles = Response.data.roles;
       });
     }
+  }
+
+  modificar() {
+    console.log('Id de la persona: ', this.persona.id_usuario)
+    console.log('Id equipo: ', this.persona.id_equipo)
+    this.servicePersona.modPersona(this.persona).subscribe();
+    this.servicePersona.setPersona(new persona());
+    this.router.navigate(['/user/personas']);
   }
 }

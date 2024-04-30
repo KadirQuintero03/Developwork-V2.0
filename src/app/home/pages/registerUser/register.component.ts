@@ -28,16 +28,20 @@ export class registerComponent {
   ) {}
 
   ngOnInit(): void {
-    // this.serviceteam.getData().subscribe((Response: equipo[]) => {
-    //   this.verequipo = Response;
-    // });
+    this.serviceteam.getData().subscribe((Response: any) => {
+      this.verequipo = Response.data;
+      // console.log('Equipos: ', this.verequipo)
+    });
+
     // this.serviceestado.getData().subscribe((Response: estado[]) => {
     //   this.verestado = Response;
     // });
+
     this.rolService.getData().subscribe((Response: any) => {
-      this.verroles = Response.data.roles
-      console.log("Roles: ", this.verroles)
+      this.verroles = Response.data.roles;
+      // console.log('Roles: ', this.verroles);
     });
+    
     // let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
     // console.log("Array normal: ", arrayNormal)
   }

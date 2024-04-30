@@ -35,8 +35,8 @@ export class TeamservService {
     return this.equipoMod;
   }
 
-  private URL: string = 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/teams/createTeams';
-  private URL2: string = 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/teams'
+  private URL: string = 'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/teams/createTeams';
+  private URL2: string = 'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/teams'
 
   constructor(
     private http: HttpClient,

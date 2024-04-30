@@ -5,8 +5,8 @@
     </header> -->
     <form id="formulario" (ngSubmit)="addPersona()" method="post">
       <h1>Registrar</h1>
-        <fieldset class="field-select">
-          <!-- <label for=""> Estado </label>
+      <fieldset class="field-select">
+        <!-- <label for=""> Estado </label>
           <select
             name="id_estado"
             id="id_estado"
@@ -17,72 +17,74 @@
             </option>
           </select> -->
 
-          <!-- <label for=""> Equipo </label>
-          <select
-            name="id_equipo"
-            id="id_equipo"
-            [(ngModel)]="persona.equipo.id_equipo">
-            <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
-              {{ equipo.nombre_equipo }}
-            </option>
-          </select> -->
+        <label for=""> Equipo </label>
+        <select name="id_equipo" id="id_equipo" [(ngModel)]="persona.equipo">
+          <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+            {{ equipo.nombre }}
+          </option>
+        </select>
 
-          <label for=""> Rol </label>
-          <select name="id_rol" id="id_rol" [(ngModel)]="persona.rol">
-              <option *ngFor="let rol of verroles" [ngValue]="rol.id_rol">
-                  {{ rol.nombre }}
-              </option>
-          </select>
-        </fieldset>
+        <label for=""> Rol </label>
+        <select name="id_rol" id="id_rol" [(ngModel)]="persona.rol">
+          <option *ngFor="let rol of verroles" [value]="rol.id_rol">
+            {{ rol.nombre }}
+          </option>
+        </select>
+      </fieldset>
 
-          <fieldset class="field-input">
-            <label>N° Identificacion </label>
-              <input
-                [(ngModel)]="persona.id_user"
-                name="id_usuario"
-                class="form-input input-text"
-                type="text"
-                required/>
+      <fieldset class="field-input">
+        <label>N° Identificacion </label>
+        <input
+          [(ngModel)]="persona.id_user"
+          name="id_usuario"
+          class="form-input input-text"
+          type="text"
+          required
+        />
 
-              <label>Primer nombre</label>
-              <input
-                [(ngModel)]="persona.nombre1"
-                name="nombre"
-                class="form-input input-text"
-                type="text"
-                required/>
+        <label>Primer nombre</label>
+        <input
+          [(ngModel)]="persona.nombre1"
+          name="nombre"
+          class="form-input input-text"
+          type="text"
+          required
+        />
 
-            <label>Segundo nombre</label>
-            <input
-              [(ngModel)]="persona.nombre2"
-              name="nombre2"
-              class="form-input input-text"
-              type="text"/>
+        <label>Segundo nombre</label>
+        <input
+          [(ngModel)]="persona.nombre2"
+          name="nombre2"
+          class="form-input input-text"
+          type="text"
+        />
 
+        <label>Primer apellido</label>
+        <input
+          [(ngModel)]="persona.apellido1"
+          name="apellido"
+          class="form-input input-text"
+          type="text"
+          required
+        />
 
-            <label>Primer apellido</label>
-            <input
-              [(ngModel)]="persona.apellido1"
-              name="apellido"
-              class="form-input input-text"
-              type="text"
-              required/>
+        <label>Segundo apellido</label>
+        <input
+          [(ngModel)]="persona.apellido2"
+          name="apellido2"
+          class="form-input input-text"
+          type="text"
+        />
 
-            <label>Segundo apellido</label>
-            <input
-              [(ngModel)]="persona.apellido2"
-              name="apellido2"
-              class="form-input input-text"
-              type="text"/>
-
-            <label>Correo</label>
-            <input
-              [(ngModel)]="persona.correo"
-              name="correo"
-              class="form-input input-email"
-              type="email"
-              required/>
-          </fieldset>
+        <label>Correo</label>
+        <input
+          [(ngModel)]="persona.correo"
+          name="correo"
+          class="form-input input-email"
+          type="email"
+          required
+        />
+      </fieldset>
       <input class="form-btn-registrar" type="submit" value="Registrar" />
     </form>
   </div>

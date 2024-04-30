@@ -13,6 +13,18 @@ export class PersonaService {
   private static personaLog: persona = new persona();
   private token: string = '';
 
+  private URL: string =
+    'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/user/login';
+
+  private URL2: string =
+    'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/user/createUser';
+
+  private URL3: string =
+    'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/user/getUsers';
+
+  private URLMod: string =
+    'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/user/updateTeams';
+
   validToken(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -47,12 +59,6 @@ export class PersonaService {
     return this.personaMod;
   }
 
-  private URL: string =
-    'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/user/login';
-
-  private URL2: string =
-    'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/user/createUser';
-
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
@@ -67,8 +73,7 @@ export class PersonaService {
       Authorization: 'Bearer ' + this.token,
     });
 
-    return this.http.post(this.URL, { headers })
-    .pipe(
+    return this.http.post(this.URL, { headers }).pipe(
       catchError((error) => {
         console.error('Error en la solicitud:', error);
         throw error;
@@ -91,7 +96,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(`${this.URL}`, { headers });
+    return this.http.get(`${this.URL3}`, { headers });
   }
 
   postData(data: persona): Observable<any> {
@@ -102,15 +107,17 @@ export class PersonaService {
     return this.http.post(this.URL2, data, { headers });
   }
 
+  //Modificar usuario
   modPersona(persona: persona): Observable<any> {
     this.token = this.serviceLocalStorage.getItem('jwt');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.put(this.URL, persona, { headers });
+    return this.http.put(this.URLMod, persona, { headers });
   }
 
+  //Cambiar contraseña del usuario
   chPass(user: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

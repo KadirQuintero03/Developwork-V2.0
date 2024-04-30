@@ -8,7 +8,7 @@ import { LocalStorageService } from '../loalStorage/local-storage.service';
 export class RolserviceService {
   private token: string = '';
 
-  private URL: string = 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/user/getAtri';
+  private URL: string = 'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/user/getAtri';
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService

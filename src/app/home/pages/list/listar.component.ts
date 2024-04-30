@@ -13,23 +13,27 @@ export class ListarComponent implements OnInit{
   lstpersonas: persona[] = [];
 
   constructor(private servicepersona: PersonaService,
-    private router: Router){    this.servicepersona.getData().subscribe((Response: persona[]) => {
-      this.lstpersonas = Response;
+    private router: Router){
+      this.servicepersona.getData().subscribe((Response: any) => {
+      this.lstpersonas = Response.data;
+      // console.log(this.lstpersonas)
     });
+
     if (this.personaSelect.id_user == '') {
-      this.servicepersona.getData().subscribe((Response: persona[]) => {
-        this.lstpersonas = Response;
+      this.servicepersona.getData().subscribe((Response: any) => {
+        this.lstpersonas = Response.data;
       });
     }}
 
     ngOnInit(): void {
-      this.servicepersona.getData().subscribe((Response: persona[]) => {
-        this.lstpersonas = Response;
+      this.servicepersona.getData().subscribe((Response: any) => {
+        this.lstpersonas = Response.data;
+        // console.log(this.lstpersonas)
       });
     }
 
   modPersona() {
-    console.log(this.personaSelect);
+    console.log("Persona seleccionada: ", this.personaSelect);
     this.servicepersona.setPersona(this.personaSelect);
     this.router.navigate(['user/modPersona']);
   }
