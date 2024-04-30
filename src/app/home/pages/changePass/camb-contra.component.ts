@@ -5,7 +5,6 @@ import { persona } from '../../../interface/persona';
 @Component({
   selector: 'app-camb-contra',
   templateUrl: './camb-contra.component.html',
-  //styleUrls: ['./camb-contra.component.css'],
 })
 
 export class CambContraComponent {
@@ -22,9 +21,6 @@ export class CambContraComponent {
   }
 
   viewpass() {
-    // Concatena el nombre del campo con la cadena 'ChangeType'
-
-    // Accede a la propiedad correspondiente y la cambia
     this.ChangeType = !this.ChangeType;
   }
 
