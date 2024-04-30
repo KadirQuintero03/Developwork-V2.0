@@ -63,12 +63,14 @@ export class PersonaService {
 
   //Loggearse en la aplicacion
   login(user: persona): Observable<any> {
-    // const headers = new HttpHeaders({
-    //   'Content-Type': 'application/json',
-    //   Authorization: 'Bearer ' + this.token,
-    // });
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
 
-    return this.http.post<any>(this.apiUrlLogin, user).pipe(
+    console.log('correo: ', user.correo)
+    console.log('contra: ', user.contra)
+    return this.http.get(`${this.apiUrlGetUsers}`, { headers }).pipe(
       catchError((error) => {
         console.error('Error en la solicitud:', error);
         throw error;

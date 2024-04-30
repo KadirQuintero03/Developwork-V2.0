@@ -33,6 +33,8 @@ export class LoginComponent {
   }
 
   IniciarSesion(): void {
+    console.log('correo: ', this.usuario.correo)
+    console.log('contra: ', this.usuario.contra)
     // const { correo, contrasena } = this.usuario;
 
     // if (
