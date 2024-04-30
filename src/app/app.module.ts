@@ -54,14 +54,7 @@ const config: SocketIoConfig = {
     NgClass,
     ReactiveFormsModule,
     ReactiveFormsModule,
-    SocketIoModule.forRoot(config), // Corregido aquí
-    // JwtModule.forRoot({
-    //   config: {
-    //     tokenGetter: () => localStorage.getItem('token'),
-    //     allowedDomains: ['example.com'], // Dominios permitidos para los cuales se enviará el token automáticamente
-    //     disallowedRoutes: ['http://example.com/api/auth/'], // Rutas excluidas para enviar el token
-    //   },
-    // }),
+    SocketIoModule.forRoot(config),
   ],
   providers: [
     TeamservService,
