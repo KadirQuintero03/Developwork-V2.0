@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { SocketService } from './services/socket/socket.service';
 import { NgClass } from '@angular/common';
+import { JwtModule } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './home/pages/login/login.component';
 import { usersComponent } from './home/users.component';
@@ -54,6 +55,13 @@ const config: SocketIoConfig = {
     ReactiveFormsModule,
     ReactiveFormsModule,
     SocketIoModule.forRoot(config), // Corregido aquí
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: () => localStorage.getItem('token'),
+    //     allowedDomains: ['example.com'], // Dominios permitidos para los cuales se enviará el token automáticamente
+    //     disallowedRoutes: ['http://example.com/api/auth/'], // Rutas excluidas para enviar el token
+    //   },
+    // }),
   ],
   providers: [
     TeamservService,

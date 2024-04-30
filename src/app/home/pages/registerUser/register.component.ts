@@ -41,7 +41,7 @@ export class registerComponent {
       this.verroles = Response.data.roles;
       // console.log('Roles: ', this.verroles);
     });
-    
+
     // let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
     // console.log("Array normal: ", arrayNormal)
   }
@@ -122,6 +122,7 @@ export class registerComponent {
     }
 
     this.persona.contra = this.randomPassword(8);
+    console.log('contraseña: ', this.persona.contra)
     this.persona.estado = '1';
 
     this.personaSerive.postData(this.persona).subscribe(

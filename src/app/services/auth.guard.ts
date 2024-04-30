@@ -13,13 +13,12 @@ import { LocalStorageService } from './loalStorage/local-storage.service';
 @Injectable({
   providedIn: 'root',
 })
-
 export class AuthGuard implements CanActivate {
   constructor(
     private serviceLocalStorage: LocalStorageService,
     private router: Router,
     private personaService: PersonaService
-  ) { }
+  ) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
