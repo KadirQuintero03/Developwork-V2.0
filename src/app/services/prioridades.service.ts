@@ -2,15 +2,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from './loalStorage/local-storage.service';
+import { environment } from '../interface/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrioridadesService {
-
   private token: string = '';
+  private prioridades = environment.OrderPrio
 
-  private URL: string = 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/ordenes/prio';
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
@@ -22,7 +22,7 @@ export class PrioridadesService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(`${this.URL}`, { headers });
+    return this.http.get(`${this.prioridades}`, { headers });
   }
 
 }

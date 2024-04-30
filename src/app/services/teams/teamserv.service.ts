@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
-import { equipo } from '../../interface/equipo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { equipo } from '../../interface/equipo';
 import { LocalStorageService } from '../loalStorage/local-storage.service';
+import { environment } from '../../interface/enviroment';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class TeamservService {
   private static ltsEquipos: equipo[] = [];
   private equipoMod: equipo = new equipo();
   private token: string = '';
+  private CreateTeams = environment.CreateTeams;
+  private GetTeams = environment.GetTeams;
 
   /*getEquipos(): equipo[] {
     this.getData().subscribe(
@@ -35,9 +39,6 @@ export class TeamservService {
     return this.equipoMod;
   }
 
-  private URL: string = 'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/teams/createTeams';
-  private URL2: string = 'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/teams'
-
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
@@ -50,7 +51,7 @@ export class TeamservService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.post(`${this.URL}`, equipo, { headers });
+    return this.http.post(`${this.CreateTeams}`, equipo, { headers });
   }
 
   postData(data: equipo): Observable<any> {
@@ -58,7 +59,7 @@ export class TeamservService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.post(this.URL, data, { headers });
+    return this.http.post(this.CreateTeams, data, { headers });
   }
 
   modEquipo(equipo: equipo): Observable<any> {
@@ -68,7 +69,7 @@ export class TeamservService {
       Authorization: 'Bearer ' + this.token,
     });
     console.log(headers);
-    return this.http.put(this.URL, equipo, { headers, responseType: 'text' });
+    return this.http.put(this.CreateTeams, equipo, { headers, responseType: 'text' });
   }
 
   getData(): Observable<any> {
@@ -76,6 +77,6 @@ export class TeamservService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(`${this.URL2}`, { headers });
+    return this.http.get(`${this.GetTeams}`, { headers });
   }
 }

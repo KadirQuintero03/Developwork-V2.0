@@ -2,24 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from '../loalStorage/local-storage.service';
+import { environment } from '../../interface/enviroment';
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class RolserviceService {
   private token: string = '';
+  private GetRolEstado = environment.GetRolEstado
 
-  private URL: string = 'https://2fc68cmh-3002.use2.devtunnels.ms/api/v1/user/getAtri';
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
   ) {
     this.token = this.serviceLocalStorage.getItem('jwt');
   }
+
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(`${this.URL}`, { headers });
+    return this.http.get(`${this.GetRolEstado}`, { headers });
   }
 }

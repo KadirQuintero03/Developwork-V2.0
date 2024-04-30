@@ -10,14 +10,14 @@ import { environment } from '../../interface/enviroment';
 })
 export class PersonaService {
   private static lstPersonas: persona[] = [];
-  private personaMod: persona = new persona();
   private static personaLog: persona = new persona();
+  private personaMod: persona = new persona();
   private token: string = '';
 
-  private apiUrlLogin = environment.apiUrlLogin;
-  private apiUrlCreateUser = environment.apiUrlCreateUser;
-  private apiUrlGetUsers = environment.apiUrlGetUsers;
-  private apiUrlUpdateTeams = environment.apiUrlUpdateTeams;
+  private Login = environment.Login;
+  private CreateUser = environment.CreateUser;
+  private GetUsers = environment.GetUsers;
+  private UpdateTeams = environment.UpdateTeams;
 
   //Valida el TOKEN
   validToken(): Observable<any> {
@@ -25,7 +25,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(this.apiUrlLogin + 'checkSafe', {
+    return this.http.get(this.Login + 'checkSafe', {
       headers,
       responseType: 'text',
     });
@@ -59,8 +59,6 @@ export class PersonaService {
     this.token = serviceLocalStorage.getItem('jwt');
   }
 
-  //.....................................................................
-
   //Loggearse en la aplicacion
   login(user: persona): Observable<any> {
     const headers = new HttpHeaders({
@@ -70,33 +68,13 @@ export class PersonaService {
 
     console.log('correo: ', user.correo)
     console.log('contra: ', user.contra)
-    return this.http.get(`${this.apiUrlGetUsers}`, { headers }).pipe(
+    return this.http.get(`${this.GetUsers}`, { headers }).pipe(
       catchError((error) => {
         console.error('Error en la solicitud:', error);
         throw error;
       })
     );
   }
-
-  // Función para establecer el token
-  setToken(token: string) {
-    this.token = token;
-  }
-
-  // Función para obtener el token
-  getToken(): string | null {
-    return this.token;
-  }
-
-  // Función para agregar el token a las solicitudes
-  addTokenToHeaders(headers: HttpHeaders): HttpHeaders {
-    if (this.token) {
-      return headers.set('Authorization', 'Bearer ' + this.token);
-    }
-    return headers;
-  }
-
-  //.....................................................................
 
   //Trae la informacion del usuario loggeado
   setPersonaLog(): Observable<any> {
@@ -105,7 +83,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(this.apiUrlLogin + 'usuario', { headers });
+    return this.http.get(this.Login + 'usuario', { headers });
   }
 
   //Traer a todos los usuarios
@@ -114,7 +92,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(`${this.apiUrlGetUsers}`, { headers });
+    return this.http.get(`${this.GetUsers}`, { headers });
   }
 
   //Crear usuario
@@ -123,7 +101,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.post(this.apiUrlCreateUser, data, { headers });
+    return this.http.post(this.CreateUser, data, { headers });
   }
 
   //Modificar usuario
@@ -133,7 +111,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.put(this.apiUrlUpdateTeams, persona, { headers });
+    return this.http.put(this.UpdateTeams, persona, { headers });
   }
 
   //Cambiar contraseña del usuario
@@ -142,7 +120,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.put(this.apiUrlLogin + 'chpass', user, {
+    return this.http.put(this.Login + 'chpass', user, {
       headers,
       responseType: 'text',
     });
