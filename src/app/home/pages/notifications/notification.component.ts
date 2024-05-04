@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SocketService } from '../../../services/socket/socket.service';
-import { PersonaService } from '../../../services/personas/persona.service';
+import { SocketService } from '../../../services/socket.service';
+import { PersonaService } from '../../../services/persona.service';
 import { persona } from '../../../interface/persona';
 import { notificacion } from '../../../interface/notificacion';
 

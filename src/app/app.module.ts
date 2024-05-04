@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import { SocketService } from './services/socket/socket.service';
+import { SocketService } from './services/socket.service';
 import { NgClass } from '@angular/common';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { NotificationComponent } from './home/pages/notifications//notification.
 import { NavComponent } from './shared/nav/nav.component';
 import { TeamsComponent } from './home/pages/teams/teams/teams.component';
 import { InformationComponent } from './home/pages/infoUser/information.component';
-import { TeamservService } from './services/teams/teamserv.service';
+import { TeamservService } from './services/teamserv.service';
 import { CambContraComponent } from './home/pages/changePass/camb-contra.component';
 import { ModpersonaComponent } from './home/pages/persons/modpersona/modpersona.component';
 import { ModequipoComponent } from './home/pages/teams/modequipo/modequipo.component';

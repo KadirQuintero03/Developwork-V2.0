@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { equipo } from '../../../../interface/equipo';
-import { TeamservService } from '../../../../services/teams/teamserv.service';
+import { TeamservService } from '../../../../services/teamserv.service';
 import { estado } from '../../../../interface/estado';
-import { EstadoserviceService } from '../../../../services/Estados/estadoservice.service';
+import { EstadoserviceService } from '../../../../services/estadoservice.service';
 import { rol } from '../../../../interface/rol';
-import { RolserviceService } from '../../../../services/Roles/rolservice.service';
+import { RolserviceService } from '../../../../services/rolservice.service';
 
 @Component({
   selector: 'app-modequipo',
@@ -18,7 +18,7 @@ export class ModequipoComponent {
   verestado: estado[] = [];
   verroles: rol[] = [];
   verequipo: equipo[] = [];
-  
+
   constructor(
     private router: Router,
     private serviceequipo: TeamservService,

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LocalStorageService } from '../loalStorage/local-storage.service';
-import { persona } from '../../interface/persona';
-import { notificacion } from '../../interface/notificacion';
+import { LocalStorageService } from './local-storage.service';
+import { persona } from '../interface/persona';
+import { notificacion } from '../interface/notificacion';
 
 @Injectable({
   providedIn: 'root',
