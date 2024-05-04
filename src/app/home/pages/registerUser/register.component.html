@@ -5,73 +5,83 @@
       (ngSubmit)="addPersona()"
       method="post"
     >
-      <h1 class="text-center">Register</h1>
+      <h1 class="text-4xl font-semibold text-center mb-3">Register</h1>
 
-      <fieldset class="field-select">
-        <label for=""> Team </label>
-        <select name="id_equipo" id="id_equipo" [(ngModel)]="persona.equipo">
+      <fieldset>
+        <label class="text-xl ml-1"> Team </label>
+        <select
+          class="rounded-2xl w-48 ml-1 p-1"
+          name="id_equipo"
+          id="id_equipo"
+          [(ngModel)]="persona.equipo"
+        >
           <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
             {{ equipo.nombre }}
           </option>
         </select>
 
-        <label for=""> Role </label>
-        <select name="id_rol" id="id_rol" [(ngModel)]="persona.rol">
+        <label class="text-xl ml-1"> Role </label>
+        <select
+          class="rounded-2xl w-48 ml-1 p-1"
+          name="id_rol"
+          id="id_rol"
+          [(ngModel)]="persona.rol"
+        >
           <option *ngFor="let rol of verroles" [value]="rol.id_rol">
             {{ rol.nombre }}
           </option>
         </select>
       </fieldset>
 
-      <fieldset class="field-input">
-        <label>N° Id </label>
+      <fieldset class="flex justify-center items-center flex-column gap-1 mt-3">
+        <label class="text-xl">N° Id </label>
         <input
           [(ngModel)]="persona.id_usuario"
           name="id_usuario"
-          class="form-input input-text"
+          class="input-text text-lg w-[300px] p-2 rounded-lg border border-black"
           type="text"
           required
         />
 
-        <label>First name</label>
+        <label class="text-xl">First name</label>
         <input
           [(ngModel)]="persona.nombre1"
           name="nombre"
-          class="form-input input-text"
+          class="input-text w-[300px] p-2 rounded-lg border border-black"
           type="text"
           required
         />
 
-        <label>Second name</label>
+        <label class="text-xl">Second name</label>
         <input
           [(ngModel)]="persona.nombre2"
           name="nombre2"
-          class="form-input input-text"
+          class="input-text w-[300px] p-2 rounded-lg border border-black"
           type="text"
         />
 
-        <label>Last name</label>
+        <label class="text-xl">Last name</label>
         <input
           [(ngModel)]="persona.apellido1"
           name="apellido"
-          class="form-input input-text"
+          class="input-text w-[300px] p-2 rounded-lg border border-black"
           type="text"
           required
         />
 
-        <label>Second last name</label>
+        <label class="text-xl">Second last name</label>
         <input
           [(ngModel)]="persona.apellido2"
           name="apellido2"
-          class="form-input input-text"
+          class="input-text w-[300px] p-[3px] rounded-lg border border-black"
           type="text"
         />
 
-        <label>Email</label>
+        <label class="text-xl">Email</label>
         <input
           [(ngModel)]="persona.correo"
           name="correo"
-          class="form-input input-email"
+          class="input-email w-[300px] p-2 rounded-lg border border-black"
           type="email"
           required
         />
@@ -86,16 +96,18 @@
 </main>
 
 <style>
+  .input-text,
+  .input-email {
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-size: auto 1.563em;
+  }
+
   .input-text {
     background-image: url(../../../../assets/icon/User.svg);
   }
 
   .input-email {
     background-image: url(../../../../assets/icon/Email.svg);
-  }
-
-
-  .input-pass {
-    background-image: url(../../../../assets/icon/PassShow.svg);
   }
 </style>
