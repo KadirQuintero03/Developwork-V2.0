@@ -10,12 +10,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.form-title {
-  font-size: 60px;
-  font-weight: 600;
-  margin-top: 0.5rem;
-}
-
 /*Centra el contenido de los diferentes contenedores(Main,Divs,img)*/
 .container {
   display: flex;
@@ -29,13 +23,6 @@ img {
   position: relative;
   top: 43px;
   width: 20%;
-}
-
-.label-email,
-.label-password {
-  color: #000;
-  margin-left: 5px;
-  font-weight: 300;
 }
 
 /*Estilos de los campos Email y Password*/
@@ -95,16 +82,6 @@ img {
   padding: 1em;
   border-radius: 10px;
   background-color: rgb(251, 252, 241);
-}
-
-/*Formulario de inicio de Sesión*/
-#form-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  font-size: 16px;
-  gap: 20px;
-  padding: 16px;
 }
 
 .label-showpass {

@@ -1,11 +1,16 @@
-<div class="container" id="container-main">
-  <div class="container" id="div-img">
+<main class="container" id="container-main">
+
+  <header class="container">
     <img src="../../../../assets/img/Header.png" alt="logo" />
-  </div>
+  </header>
+
   <div class="container" id="div-login">
-    <H1 class="form-title"> Log In </H1>
-    <form id="form-body">
-      <label class="label-email">Email</label>
+
+    <h1 class="text-6xl font-semibold mt-2"> Log In </h1>
+
+    <form class="flex flex-column w-full gap-[20px] p-4">
+
+      <label class="text-black ml-1 font-light">Email</label>
       <input
         class="email"
         type="email"
@@ -15,7 +20,7 @@
         placeholder="Enter your email"
       />
 
-      <label class="label-password">Password</label>
+      <label class="text-black ml-1 font-light">Password</label>
       <input
         class="password"
         name="password"
@@ -40,4 +45,4 @@
       />
     </form>
   </div>
-</div>
+</main>

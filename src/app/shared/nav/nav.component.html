@@ -1,5 +1,9 @@
-<main id="container-main" (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
-  <nav id="navi-admin">
+<main
+  class="h-full w-full p-[10px] bg-[#FBFCF1] bg-opacity-[0.5]"
+  (mouseenter)="VerBoton()"
+  (mouseleave)="VerBoton()"
+>
+  <nav class="text-lg flex flex-column gap-12">
     <button class="nav_button principal" (click)="Principal()">
       <span *ngIf="MostrarBoton"></span>
     </button>
@@ -18,11 +22,55 @@
     <Button class="nav_button Info" (click)="Information()">
       <span *ngIf="MostrarBoton"></span>
     </Button>
-    <Button class="nav_button LogOut" (click)="LogOut()">
+    <Button
+      class="nav_button LogOut absolute w-[73%] bottom-2"
+      (click)="LogOut()"
+    >
       <span *ngIf="MostrarBoton"></span>
     </Button>
   </nav>
 </main>
+
+<style>
+  .nav_button {
+    padding: 0.313rem;
+    border: none;
+    border-radius: 8px;
+    height: 2em;
+    background-color: #fff;
+    background-size: 1.25em;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .principal {
+    background-image: url(../../../assets/icon/Home.svg);
+  }
+
+  .Register {
+    background-image: url(../../../assets/icon/Register.svg);
+  }
+
+  .Team {
+    background-image: url(../../../assets/icon/Team.svg);
+  }
+
+  .List {
+    background-image: url(../../../assets/icon/list.svg);
+  }
+
+  .Notifi {
+    background-image: url(../../../assets/icon/Notificacion.svg);
+  }
+
+  .Info {
+    background-image: url(../../../assets/icon/Info.svg);
+  }
+
+  .LogOut {
+    background-image: url(../../../assets/icon/LogOut.svg);
+  }
+</style>
 
 <!--
 *ngIf="validarOpera || validarAdmin"
