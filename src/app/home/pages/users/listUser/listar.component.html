@@ -7,12 +7,13 @@
       <div class="con-table">
         <table>
           <thead>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>Estado</th>
-            <th>Rol</th>
-            <th>Equipo</th>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>State</th>
+            <th>Role</th>
+            <th>Team</th>
           </thead>
           <tbody>
             <tr
@@ -20,6 +21,7 @@
               (click)="this.personaSelect = persona"
               [ngClass]="{ seleccionado: personaSelect == persona }"
             >
+              <td>{{ persona.id_usuario }}</td>
               <td>{{ persona.nombre1 }}</td>
               <td>{{ persona.apellido1 }}</td>
               <td>{{ persona.correo }}</td>
@@ -35,6 +37,10 @@
           (click)="modPersona()"
         >
           Modificar
+        </button>
+
+        <button (click)="addUser()">
+          Agregar
         </button>
       </div>
     </section>

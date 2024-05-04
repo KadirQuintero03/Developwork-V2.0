@@ -10,20 +10,21 @@ import { PersonaService } from '../../../../services/personas/persona.service';
   styleUrls: ['./ordenes-m.component.css'],
 })
 export class OrdenesMComponent implements OnInit {
-  ngOnInit(): void {
-    this.refresh();
-  }
-  
   modorden: ordenes_matenimiento = new ordenes_matenimiento();
   userLog: persona = new persona();
+  ordenesP: ordenes_matenimiento[] = [];
+  ordenesR: ordenes_matenimiento[] = [];
+
   constructor(
     private sordenes: SordenesService,
     private spersona: PersonaService
   ) {
     this.modorden = this.sordenes.getOrden();
   }
-  ordenesP: ordenes_matenimiento[] = [];
-  ordenesR: ordenes_matenimiento[] = [];
+
+  ngOnInit(): void {
+    this.refresh();
+  }
 
   modOrden(ordenM: ordenes_matenimiento) {
     this.refresh();
@@ -31,28 +32,9 @@ export class OrdenesMComponent implements OnInit {
   }
 
   newOrden() {
-    var fechaHoraActual = new Date();
-    var año = fechaHoraActual.getFullYear();
-    var mes = fechaHoraActual.getMonth() + 1; // Los meses comienzan desde cero, por lo que se suma 1
-    var dia = fechaHoraActual.getDate();
-    var horas = fechaHoraActual.getHours();
-    var minutos = fechaHoraActual.getMinutes();
-    var segundos = fechaHoraActual.getSeconds();
+    this.modorden.idOrder = 'O';
+  }
 
-    var fechaHoraFormateada =
-      año +
-      this.pad(mes) +
-      this.pad(dia) +
-      this.pad(horas) +
-      this.pad(minutos) +
-      this.pad(segundos);
-    console.log(fechaHoraFormateada);
-    this.modorden = new ordenes_matenimiento();
-    this.modorden.idOrder = 'O' + fechaHoraFormateada;
-  }
-  pad(numero: number): string {
-    return numero < 10 ? '0' + numero.toString() : numero.toString();
-  }
   refresh() {
     // this.spersona.setPersonaLog().subscribe((Response) => {
     //   this.sordenes.ordenes(Response).subscribe((Response) => {

@@ -37,4 +37,8 @@ export class ListarComponent implements OnInit{
     this.servicepersona.setPersona(this.personaSelect);
     this.router.navigate(['user/modPersona']);
   }
+
+  addUser(){
+    this.router.navigate(['user/register']);
+  }
 }
