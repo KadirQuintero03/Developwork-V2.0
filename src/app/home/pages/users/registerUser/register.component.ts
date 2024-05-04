@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { persona } from '../../../interface/persona';
-import { PersonaService } from '../../../services/personas/persona.service';
-import { equipo } from '../../../interface/equipo';
-import { TeamservService } from '../../../services/teams/teamserv.service';
-import { estado } from '../../../interface/estado';
-import { EstadoserviceService } from '../../../services/Estados/estadoservice.service';
-import { rol } from '../../../interface/rol';
-import { RolserviceService } from '../../../services/Roles/rolservice.service';
+import { persona } from '../../../../interface/persona';
+import { PersonaService } from '../../../../services/personas/persona.service';
+import { equipo } from '../../../../interface/equipo';
+import { TeamservService } from '../../../../services/teams/teamserv.service';
+import { estado } from '../../../../interface/estado';
+import { EstadoserviceService } from '../../../../services/Estados/estadoservice.service';
+import { rol } from '../../../../interface/rol';
+import { RolserviceService } from '../../../../services/Roles/rolservice.service';
 
 @Component({
   selector: 'app-register',

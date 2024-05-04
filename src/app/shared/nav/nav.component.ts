@@ -50,7 +50,7 @@ export class NavComponent implements OnInit {
     this.router.navigate(['user/teams']);
   }
 
-  List(): void {
+  ListUser(): void {
     this.router.navigate(['user/list']);
   }
 

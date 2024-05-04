@@ -6,13 +6,13 @@ import { LoginComponent } from '../app/home/pages/login/login.component';
 import { NavComponent } from '../app/shared/nav/nav.component';
 import { TeamsComponent } from '../app/home/pages/teams/teams/teams.component';
 import { NotificationComponent } from '../app/home/pages/notifications/notification.component';
-import { registerComponent } from '../app/home/pages/registerUser/register.component';
+import { registerComponent } from './home/pages/users/registerUser/register.component';
 import { CambContraComponent } from '../app/home/pages/changePass/camb-contra.component';
-import { ModpersonaComponent } from './home/pages/persons/modpersona/modpersona.component';
-import { InformationComponent } from './home/pages/infoUser/information.component';
+import { ModpersonaComponent } from './home/pages/users/modUser/modpersona.component';
+import { InformationComponent } from './home/pages/users/infoUser/information.component';
 import { ModequipoComponent } from './home/pages/teams/modequipo/modequipo.component';
 import { OrdenesMComponent } from './home/pages/ordenes/ordenes-m/ordenes-m.component';
-import { ListarComponent } from './home/pages/list/listar.component';
+import { ListarComponent } from './home/pages/users/listUser/listar.component';
 
 //import { AuthGuard } from './Services/auth.guard';
 const routes: Routes = [

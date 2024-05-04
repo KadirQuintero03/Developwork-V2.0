@@ -7,13 +7,10 @@
     <button class="nav_button principal" (click)="Principal()">
       <span *ngIf="MostrarBoton"></span>
     </button>
-    <Button class="nav_button Register" (click)="RegisterUser()">
+    <Button class="nav_button Register" (click)="ListUser()">
       <span *ngIf="MostrarBoton"></span>
     </Button>
     <Button class="nav_button Team" (click)="Teams()">
-      <span *ngIf="MostrarBoton"></span>
-    </Button>
-    <Button class="nav_button List" (click)="List()">
       <span *ngIf="MostrarBoton"></span>
     </Button>
     <Button class="nav_button Notifi" (click)="Notifications()">
@@ -53,10 +50,6 @@
 
   .Team {
     background-image: url(../../../assets/icon/Team.svg);
-  }
-
-  .List {
-    background-image: url(../../../assets/icon/list.svg);
   }
 
   .Notifi {
