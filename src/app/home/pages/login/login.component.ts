@@ -7,7 +7,6 @@ import { LocalStorageService } from '../../../services/loalStorage/local-storage
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   public usuario: persona = new persona();
@@ -33,8 +32,8 @@ export class LoginComponent {
   }
 
   IniciarSesion(): void {
-    console.log('correo: ', this.usuario.correo)
-    console.log('contra: ', this.usuario.contra)
+    console.log('correo: ', this.usuario.correo);
+    console.log('contra: ', this.usuario.contra);
     // const { correo, contrasena } = this.usuario;
 
     // if (
@@ -60,10 +59,7 @@ export class LoginComponent {
         }
       },
       (error) => {
-        console.error(
-          'Error durante el inicio de sesión:',
-          error,
-        );
+        console.error('Error durante el inicio de sesión:', error);
       }
     );
   }

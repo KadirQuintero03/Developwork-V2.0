@@ -1,27 +1,21 @@
-<div id="body-register">
-  <div id="container-form">
-    <form id="formulario" (ngSubmit)="addPersona()" method="post">
-      <h1>Registrar</h1>
-      <fieldset class="field-select">
-        <!-- <label for=""> Estado </label>
-          <select
-            name="id_estado"
-            id="id_estado"
-            name="id_estado"
-            [(ngModel)]="persona.estado.id_estado">
-            <option *ngFor="let estado of verestado" [value]="estado.id_estado">
-              {{ estado.nombre_estado }}
-            </option>
-          </select> -->
+<main class="w-full h-[100vh] flex items-center justify-center">
+  <div>
+    <form
+      class="m-0 w-full h-full text-center bg-[#FBFBF1] p-3 text-base rounded-lg"
+      (ngSubmit)="addPersona()"
+      method="post"
+    >
+      <h1 class="text-center">Register</h1>
 
-        <label for=""> Equipo </label>
+      <fieldset class="field-select">
+        <label for=""> Team </label>
         <select name="id_equipo" id="id_equipo" [(ngModel)]="persona.equipo">
           <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
             {{ equipo.nombre }}
           </option>
         </select>
 
-        <label for=""> Rol </label>
+        <label for=""> Role </label>
         <select name="id_rol" id="id_rol" [(ngModel)]="persona.rol">
           <option *ngFor="let rol of verroles" [value]="rol.id_rol">
             {{ rol.nombre }}
@@ -30,7 +24,7 @@
       </fieldset>
 
       <fieldset class="field-input">
-        <label>N° Identificacion </label>
+        <label>N° Id </label>
         <input
           [(ngModel)]="persona.id_usuario"
           name="id_usuario"
@@ -39,7 +33,7 @@
           required
         />
 
-        <label>Primer nombre</label>
+        <label>First name</label>
         <input
           [(ngModel)]="persona.nombre1"
           name="nombre"
@@ -48,7 +42,7 @@
           required
         />
 
-        <label>Segundo nombre</label>
+        <label>Second name</label>
         <input
           [(ngModel)]="persona.nombre2"
           name="nombre2"
@@ -56,7 +50,7 @@
           type="text"
         />
 
-        <label>Primer apellido</label>
+        <label>Last name</label>
         <input
           [(ngModel)]="persona.apellido1"
           name="apellido"
@@ -65,7 +59,7 @@
           required
         />
 
-        <label>Segundo apellido</label>
+        <label>Second last name</label>
         <input
           [(ngModel)]="persona.apellido2"
           name="apellido2"
@@ -73,7 +67,7 @@
           type="text"
         />
 
-        <label>Correo</label>
+        <label>Email</label>
         <input
           [(ngModel)]="persona.correo"
           name="correo"
@@ -82,7 +76,26 @@
           required
         />
       </fieldset>
-      <input class="form-btn-registrar" type="submit" value="Registrar" />
+      <input
+        class="text-xl text-white bg-[#1e512c] p-1 w-[200px] rounded-lg mt-2"
+        type="submit"
+        value="Register"
+      />
     </form>
   </div>
-</div>
+</main>
+
+<style>
+  .input-text {
+    background-image: url(../../../../assets/icon/User.svg);
+  }
+
+  .input-email {
+    background-image: url(../../../../assets/icon/Email.svg);
+  }
+
+
+  .input-pass {
+    background-image: url(../../../../assets/icon/PassShow.svg);
+  }
+</style>
