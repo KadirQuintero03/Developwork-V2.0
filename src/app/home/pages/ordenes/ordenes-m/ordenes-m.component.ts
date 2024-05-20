@@ -9,6 +9,7 @@ import { PersonaService } from '../../../../services/persona.service';
   templateUrl: './ordenes-m.component.html',
   styleUrls: ['./ordenes-m.component.css'],
 })
+
 export class OrdenesMComponent implements OnInit {
   modorden: ordenes_matenimiento = new ordenes_matenimiento();
   userLog: persona = new persona();

@@ -13,7 +13,6 @@ import { PrioridadesService } from '../../../../services/prioridades.service';
 @Component({
   selector: 'app-forden',
   templateUrl: './forden.component.html',
-  styleUrls: ['./forden.component.css'],
 })
 export class FordenComponent {
   @Input() modorden: ordenes_matenimiento = new ordenes_matenimiento();
