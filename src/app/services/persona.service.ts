@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { persona } from '../../interface/persona';
+import { persona } from '../interface/persona';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError } from 'rxjs';
-import { LocalStorageService } from '../loalStorage/local-storage.service';
-import { environment } from '../../interface/enviroment';
+import { LocalStorageService } from './local-storage.service';
+import { environment } from '../interface/enviroment';
 
 @Injectable({
   providedIn: 'root',

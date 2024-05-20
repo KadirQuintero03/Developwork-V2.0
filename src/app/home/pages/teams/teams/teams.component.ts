@@ -1,16 +1,15 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { equipo } from '@/app/interface/equipo';
-import { TeamservService } from '@/app/services/teams/teamserv.service';
+import { TeamservService } from '@/app/services/teamserv.service';
 import { estado } from '@/app/interface/estado';
-import { EstadoserviceService } from '@/app/services/Estados/estadoservice.service';
+import { EstadoserviceService } from '@/app/services/estadoservice.service';
 import { rol } from '@/app/interface/rol';
-import { RolserviceService } from '@/app/services/Roles/rolservice.service';
+import { RolserviceService } from '@/app/services/rolservice.service';
 
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.css'],
 })
 
 export class TeamsComponent implements OnInit {

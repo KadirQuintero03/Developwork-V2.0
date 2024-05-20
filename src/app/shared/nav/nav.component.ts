@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LocalStorageService } from '../../services/loalStorage/local-storage.service';
-import { PersonaService } from '../../services/personas/persona.service';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { PersonaService } from '../../services/persona.service';
 
 @Component({
   selector: 'app-nav',

@@ -1,29 +1,29 @@
-<div class="container" id="container-main">
-  <header class="cabecera">
-    <img class="cab-img" src="../../../../../assets/img/Header.png" alt="logo" />
-  </header>
-  <form class="form">
-    <fieldset class="form-input">
-      <label for="nombre">Nombre </label>
+<main class="w-full h-[100vh] p-10 bg-[#FBFCF1] bg-opacity-[0.5]">
+  <form class="flex justify-center items-center">
+    <fieldset class="flex flex-column">
+      <label class="text-lg mx-2" for="nombre">Nombre</label>
       <input
         [(ngModel)]="nuevoEquipo.nombre"
+        class="w-30 p-1 mx-2 mb-2 rounded-lg"
         name="nombre"
         id="nombre"
       />
     </fieldset>
 
-    <fieldset class="form-input">
-      <label for="descripcion">Descripción </label>
+    <!-- <fieldset class="flex flex-column">
+      <label class="text-lg mx-2" for="descripcion">Descripción </label>
       <input
         [(ngModel)]="nuevoEquipo.descripcion"
+        class="w-40 p-1 mx-2 mb-2 rounded-lg"
         name="descripcion"
         id="descripcion"
       />
-    </fieldset>
+    </fieldset> -->
 
-    <fieldset class="form-input">
-      <label for=""> Estado </label>
+    <fieldset class="flex flex-column">
+      <label class="text-lg mx-2" for="estado">Estado</label>
       <select
+        class="w-40 p-1 mx-2 mb-2 rounded-lg"
         name="id_estado"
         id="id_estado"
         [(ngModel)]="nuevoEquipo.estado"
@@ -37,33 +37,15 @@
         </option>
       </select>
     </fieldset>
-
-    <fieldset class="form-input">
-      <!-- <label for=""> Rol </label>
-      <select
-        name="id_rol"
-        id="id_rol"
-        [(ngModel)]="nuevoEquipo.rol.id_rol"
-        [ngModelOptions]="{ standalone: true }"
-      >
-        <option
-          *ngFor="let rol of verroles"
-          [value]="rol.id_rol"
-          selected="rol === id_rol"
-        >
-          {{ rol.nombre_rol }}
-        </option>
-      </select> -->
-    </fieldset>
   </form>
 
-  <div id="container-teams">
-    <table>
+  <div class="w-full text-center bg-white rounded-lg px-2 overflow-y-auto">
+    <table class="w-full h-full rounded-lg my-2">
       <thead>
         <tr>
-          <th>Nombre</th>
-          <th>Descripcion</th>
-          <th>Estado</th>
+          <th class="text-lg px-3 pb-3">Nombre</th>
+          <!-- <th>Descripcion</th> -->
+          <th class="text-lg px-3 pb-3">Estado</th>
         </tr>
       </thead>
       <tbody>
@@ -72,25 +54,41 @@
           (click)="this.equipoSelect = equipo"
           [ngClass]="{ seleccionado: equipoSelect == equipo }"
         >
-          <td>{{ equipo.nombre }}</td>
-          <td>{{ equipo.descripcion }}</td>
-          <td>{{ equipo.estado }}</td>
-          <!-- <td>{{ equipo.rol.nombre_rol }}</td> -->
+          <td class="text-lg px-3 pb-3">{{ equipo.nombre }}</td>
+          <td class="text-lg px-3 pb-3">{{ equipo.descripcion }}</td>
+          <td class="text-lg px-3 pb-3">{{ equipo.estado }}</td>
         </tr>
       </tbody>
     </table>
   </div>
+
   <p *ngIf="msgValidarCamp">No puedes papalindo</p>
-  <div id="container-crud">
-    <button class="btn-crud crud_crear" (click)="AgregarEquipo()">
+
+  <div class="w-full p-2 mt-2 flex justify-center">
+    <button
+      class="text-white text-lg w-36 p-2 rounded-lg bg-[#1e512c] mx-12"
+      (click)="AgregarEquipo()"
+    >
       Agregar
     </button>
     <button
-      class="btn-crud crud_modificar"
+      class="text-white text-lg w-36 p-2 rounded-lg bg-[#1e512c] mx-12"
       [disabled]="equipoSelect.nombre == '' ? true : false"
       (click)="modEquipo()"
     >
       Modificar
     </button>
   </div>
-</div>
+</main>
+
+<style>
+  th,
+  td {
+    border-bottom: 1px solid black;
+  }
+
+  .seleccionado {
+    border: 4px solid green;
+    background-color: green;
+  }
+</style>

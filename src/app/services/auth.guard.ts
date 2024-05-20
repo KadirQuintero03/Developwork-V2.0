@@ -7,8 +7,8 @@ import {
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PersonaService } from '@/app/services/personas/persona.service';
-import { LocalStorageService } from './loalStorage/local-storage.service';
+import { PersonaService } from '@/app/services/persona.service';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',

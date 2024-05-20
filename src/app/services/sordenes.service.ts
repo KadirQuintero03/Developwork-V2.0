@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ordenes_matenimiento } from '../../interface/ordenes_mantenimiento';
-import { persona } from '../../interface/persona';
+import { ordenes_matenimiento } from '../interface/ordenes_mantenimiento';
+import { persona } from '../interface/persona';
 import { environment } from '@/app/interface/enviroment';
-import { LocalStorageService } from '../loalStorage/local-storage.service';
+import { LocalStorageService } from './local-storage.service';
 
 
 @Injectable({

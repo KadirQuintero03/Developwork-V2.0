@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SordenesService } from '../../../../services/ordenes/sordenes.service';
+import { SordenesService } from '../../../../services/sordenes.service';
 import { ordenes_matenimiento } from '../../../../interface/ordenes_mantenimiento';
 import { persona } from '../../../../interface/persona';
-import { PersonaService } from '../../../../services/personas/persona.service';
+import { PersonaService } from '../../../../services/persona.service';
 
 @Component({
   selector: 'app-ordenes-m',

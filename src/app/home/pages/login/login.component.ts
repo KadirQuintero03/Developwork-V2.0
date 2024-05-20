@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { persona } from '../../../interface/persona';
-import { PersonaService } from '../../../services/personas/persona.service';
-import { LocalStorageService } from '../../../services/loalStorage/local-storage.service';
+import { PersonaService } from '../../../services/persona.service';
+import { LocalStorageService } from '../../../services/local-storage.service';
 
 @Component({
   selector: 'app-login',
