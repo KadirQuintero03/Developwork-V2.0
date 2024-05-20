@@ -14,17 +14,6 @@
   overflow: hidden;
 }
 
-.cabecera {
-  position: relative;
-  top: 2.625em;
-  text-align: center;
-  margin-top: -2.813em;
-}
-
-.cab-img {
-  width: 22%;
-}
-
 form {
   padding: 2em;
   background-color: rgb(251, 252, 241);

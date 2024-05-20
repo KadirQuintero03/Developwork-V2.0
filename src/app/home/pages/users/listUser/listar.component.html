@@ -1,48 +1,57 @@
-<main id="main-div">
-  <article>
-    <section>
-      <div class="camp-buscar">
-        <input type="text" placeholder="Buscar persona" />
-      </div>
-      <div class="con-table">
-        <table>
-          <thead>
-            <th>Id</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email</th>
-            <th>State</th>
-            <th>Role</th>
-            <th>Team</th>
-          </thead>
-          <tbody>
-            <tr
-              *ngFor="let persona of lstpersonas"
-              (click)="this.personaSelect = persona"
-              [ngClass]="{ seleccionado: personaSelect == persona }"
-            >
-              <td>{{ persona.id_usuario }}</td>
-              <td>{{ persona.nombre1 }}</td>
-              <td>{{ persona.apellido1 }}</td>
-              <td>{{ persona.correo }}</td>
-              <td>{{ persona.nombre }}</td>
-              <td>{{ persona.rol }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="btn">
-        <button
-          [disabled]="personaSelect.nombre1 == '' ? true : false"
-          (click)="modPersona()"
+<main class="bg-[#FBFCF1] bg-opacity-[0.5] w-full h-[100vh] p-9">
+  <div class="w-full h-full overflow-y-auto px-2 text-center rounded-lg">
+    <table class="w-full h-4 text-2xl bg-white overflow-hidden rounded-lg">
+      <thead class="text-center text-lg h-4">
+        <th class="p-3">Id</th>
+        <th class="p-3">Nombre</th>
+        <th class="p-3">Apellido</th>
+        <th class="p-3">Correo</th>
+        <th class="p-3">Estado</th>
+        <th class="p-3">Rol</th>
+        <th class="p-3">Equipo</th>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let persona of lstpersonas"
+          (click)="this.personaSelect = persona"
+          [ngClass]="{ seleccionado: personaSelect == persona }"
         >
-          Modificar
-        </button>
+          <td class="p-3">{{ persona.id_usuario }}</td>
+          <td class="p-3">{{ persona.nombre1 }}</td>
+          <td class="p-3">{{ persona.apellido1 }}</td>
+          <td class="p-3">{{ persona.correo }}</td>
+          <td class="p-3">{{ persona.nombre }}</td>
+          <td class="p-3">{{ persona.rol }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mt-2 flex justify-evenly items-center">
+      <button
+        class="text-white bg-[#1e512c] w-[200px] rounded-lg p-2"
+        (click)="addUser()"
+      >
+        Agregar
+      </button>
 
-        <button (click)="addUser()">
-          Agregar
-        </button>
-      </div>
-    </section>
-  </article>
+      <button
+        class="text-white bg-[#1e512c] w-[200px] rounded-lg p-2"
+        [disabled]="personaSelect.nombre1 == '' ? true : false"
+        (click)="modPersona()"
+      >
+        Modificar
+      </button>
+    </div>
+  </div>
 </main>
+
+<style>
+  td,
+  th {
+    border-bottom: 1px solid #000;
+  }
+
+  .seleccionado {
+    border: 4px solid green;
+    background-color: green;
+  }
+</style>
