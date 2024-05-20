@@ -12,7 +12,6 @@ import { PersonaService } from '../../../../services/persona.service';
 @Component({
   selector: 'app-modpersona',
   templateUrl: './modpersona.component.html',
-  styleUrls: ['./modpersona.component.css'],
 })
 
 export class ModpersonaComponent {
