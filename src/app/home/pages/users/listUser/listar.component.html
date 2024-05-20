@@ -25,10 +25,23 @@
         </tr>
       </tbody>
     </table>
+
+    <app-register
+      class="bg-black bg-opacity-50 absolute top-0 bottom-0 left-0 right-0"
+      *ngIf="visibility ? true : false"
+    >
+    </app-register>
+
+    <button
+      class="exit absolute top-0 right-0 mt-1 mr-2 h-7 w-7 z-50 cursor-pointer"
+      (click)="changeVisibility()"
+      *ngIf="visibility ? true : false"
+    ></button>
+
     <div class="mt-2 flex justify-evenly items-center">
       <button
         class="text-white bg-[#1e512c] w-[200px] rounded-lg p-2"
-        (click)="addUser()"
+        (click)="changeVisibility()"
       >
         Agregar
       </button>
@@ -53,5 +66,14 @@
   .seleccionado {
     border: 4px solid green;
     background-color: green;
+  }
+
+  .exit {
+    border: none;
+    background-image: url(.../../../../../../../assets/icon/Exit.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
   }
 </style>

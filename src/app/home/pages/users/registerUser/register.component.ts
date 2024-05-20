@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { persona } from '../../../../interface/persona';
 import { PersonaService } from '../../../../services/persona.service';
 import { equipo } from '../../../../interface/equipo';
@@ -7,6 +7,7 @@ import { estado } from '../../../../interface/estado';
 import { EstadoserviceService } from '../../../../services/estadoservice.service';
 import { rol } from '../../../../interface/rol';
 import { RolserviceService } from '../../../../services/rolservice.service';
+
 
 @Component({
   selector: 'app-register',
@@ -29,7 +30,6 @@ export class registerComponent {
   ngOnInit(): void {
     this.serviceteam.getData().subscribe((Response: any) => {
       this.verequipo = Response.data;
-      // console.log('Equipos: ', this.verequipo)
     });
 
     // this.serviceestado.getData().subscribe((Response: estado[]) => {
@@ -38,7 +38,6 @@ export class registerComponent {
 
     this.rolService.getData().subscribe((Response: any) => {
       this.verroles = Response.data.roles;
-      // console.log('Roles: ', this.verroles);
     });
 
     // let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
@@ -121,7 +120,7 @@ export class registerComponent {
     }
 
     this.persona.contra = this.randomPassword(8);
-    console.log('contraseña: ', this.persona.contra)
+    console.log('contraseña: ', this.persona.contra);
     this.persona.estado = '1';
 
     this.personaSerive.postData(this.persona).subscribe(

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { persona } from '../../../../interface/persona';
 import { PersonaService } from '../../../../services/persona.service';
@@ -7,10 +7,12 @@ import { PersonaService } from '../../../../services/persona.service';
   selector: 'app-listar',
   templateUrl: './listar.component.html',
 })
+
 export class ListarComponent implements OnInit {
   personaSelect: persona = new persona();
   user: persona = new persona();
   lstpersonas: persona[] = [];
+  visibility: boolean = false;
 
   constructor(private servicepersona: PersonaService, private router: Router) {
     this.user = this.servicepersona.getUser();
@@ -39,5 +41,10 @@ export class ListarComponent implements OnInit {
   modPersona() {
     this.servicepersona.setPersona(this.personaSelect);
     this.router.navigate(['user/modPersona']);
+  }
+
+  changeVisibility(){
+    this.visibility = !this.visibility
+    console.log(this.visibility)
   }
 }
