@@ -1,57 +1,30 @@
-<main
-  class="flex flex-column items-center justify-center w-full h-[100vh] p-8 relative"
->
+<main class="flex flex-column items-center justify-center w-full h-[100vh] p-8">
   <header class="flex justify-center w-full">
-    <img
-      class="relative top-[52px] w-[20%]"
-      src="../../../../assets/img/Header.png"
-      alt="logo"
-    />
+    <img class="relative top-[52px] w-[20%]" src="../../../../assets/img/Header.png" alt="logo" />
   </header>
 
-  <div
-    class="flex flex-column items-center justify-center h-full w-[45%] p-4 rounded-lg bg-[#FBFBF1]"
-  >
+  <div class="flex flex-column items-center justify-center h-full w-[45%] p-4 rounded-lg bg-[#FBFBF1]">
     <h1 class="text-6xl font-semibold mt-2">Log In</h1>
 
     <form class="flex flex-column w-full gap-[20px] p-4">
       <label class="text-black ml-1 font-light">Email</label>
-      <input
-        class="email -mt-[15px] bg-[#ededec] rounded-md p-3"
-        name="email"
-        type="email"
-        [(ngModel)]="usuario.correo"
-        required
-        placeholder="Enter your email"
-      />
+      <input class="email -mt-[15px] bg-[#ededec] rounded-md p-3" name="email" type="email" [(ngModel)]="usuario.correo"
+        required placeholder="Enter your email" />
 
       <label class="text-black ml-1 font-light">Password</label>
-      <input
-        class="password -mt-[15px] bg-[#ededec] rounded-md p-3"
-        name="password"
-        [type]="ChangeType ? 'password' : 'text'"
-        [(ngModel)]="usuario.contra"
-        required
-        placeholder="Enter your password"
-      />
+      <input class="password -mt-[15px] bg-[#ededec] rounded-md p-3" name="password"
+        [type]="ChangeType ? 'password' : 'text'" [(ngModel)]="usuario.contra" required
+        placeholder="Enter your password" />
 
       <div>
         <label class="text-black flex items-center ml-[5px]">
-          <input
-            class="w-4 h-4 mr-1 cursor-pointer"
-            type="checkbox"
-            (click)="viewpass()"
-          />
+          <input class="w-4 h-4 mr-1 cursor-pointer" type="checkbox" (click)="viewpass()" />
           Show Password
         </label>
       </div>
 
-      <input
-        (click)="IniciarSesion()"
-        class="text-white text-[22px] rounded-lg bg-[#1e512c] w-full p-1"
-        type="submit"
-        value="Login"
-      />
+      <input (click)="IniciarSesion()" class="text-white text-[22px] rounded-lg bg-[#1e512c] w-full p-1" type="submit"
+        value="Login" />
     </form>
   </div>
 </main>

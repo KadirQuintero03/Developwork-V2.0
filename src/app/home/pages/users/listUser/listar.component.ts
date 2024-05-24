@@ -14,6 +14,12 @@ export class ListarComponent implements OnInit {
   lstpersonas: persona[] = [];
   visibility: boolean = false;
 
+  isActivo: boolean = false;
+
+  color(){
+    this.isActivo = !this.isActivo
+  }
+
   constructor(private servicepersona: PersonaService, private router: Router) {
     this.user = this.servicepersona.getUser();
 

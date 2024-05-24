@@ -1,64 +1,64 @@
-<main
-  (mouseenter)="VerBoton()"
-  (mouseleave)="VerBoton()"
->
+<main (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
   <nav class="flex flex-column gap-16 items-center mt-[70px]">
-    <button class="nav_button principal" (click)="Principal()">
+    <button class="principal" (click)="Principal()">
       <span *ngIf="MostrarBoton"></span>
+      <button>
+        <img
+          class="w-7 h-7"
+          src="../../../assets/icon/Home.svg"
+          alt="Ordenes"
+        />
+      </button>
     </button>
-    <Button class="nav_button Register" (click)="ListUser()">
-      <span *ngIf="MostrarBoton"></span>
+    <Button class="ListUser" (click)="ListUser()">
+      <span *ngIf="MostrarBoton"> </span>
+      <img
+        class="w-7 h-7"
+        src="../../../assets/icon/Register.svg"
+        alt="Usuarios"
+      />
     </Button>
-    <Button class="nav_button Team" (click)="Teams()">
+    <Button class="Team" (click)="Teams()">
       <span *ngIf="MostrarBoton"></span>
+      <img class="w-7 h-7" src="../../../assets/icon/Team.svg" alt="Equipos" />
     </Button>
-    <Button class="nav_button Notifi" (click)="Notifications()">
+    <Button class="w-7 h-7" class="Notifi" (click)="Notifications()">
       <span *ngIf="MostrarBoton"></span>
+      <img
+        class="w-7 h-7"
+        src="../../../assets/icon/Notificacion.svg"
+        alt="Notificaciones"
+      />
     </Button>
-    <Button class="nav_button Info" (click)="Information()">
+    <Button class="Info" (click)="Information()">
       <span *ngIf="MostrarBoton"></span>
+      <img class="w-7 h-7" src="../../../assets/icon/Info.svg" alt="Personal" />
     </Button>
-    <Button
-      class="nav_button LogOut absolute w-[73%] bottom-2"
-      (click)="LogOut()"
-    >
+    <Button class="LogOut absolute w-[73%] bottom-3" (click)="LogOut()">
       <span *ngIf="MostrarBoton"></span>
+      <img class="w-7 h-7" src="../../../assets/icon/LogOut.svg" alt="Salir" />
     </Button>
   </nav>
 </main>
 
 <style>
-  .nav_button {
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    transition: 0.5s;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    background-size: 25px;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
-  .principal {
-    background-image: url(../../../assets/icon/Home.svg);
-  }
-
-  .Register {
-    background-image: url(../../../assets/icon/Register.svg);
-  }
-
-  .Team {
-    background-image: url(../../../assets/icon/Team.svg);
-  }
-
-  .Notifi {
-    background-image: url(../../../assets/icon/Notificacion.svg);
-  }
-
-  .Info {
-    background-image: url(../../../assets/icon/Info.svg);
-  }
-
-  .LogOut {
-    background-image: url(../../../assets/icon/LogOut.svg);
+  .principal:hover,
+  .ListUser:hover,
+  .Team:hover,
+  .Notifi:hover,
+  .Info:hover,
+  .LogOut:hover {
+    background-color: #ccd32a;
   }
 </style>
 
