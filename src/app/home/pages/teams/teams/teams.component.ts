@@ -42,7 +42,6 @@ export class TeamsComponent implements OnInit {
     ValidarCamp(value: string): boolean {
     return value.trim() !== '';
   }
-  msgValidarCamp: boolean = false;
 
   async AgregarEquipo() {
     this.nuevoEquipo.id_equipo = '23524'

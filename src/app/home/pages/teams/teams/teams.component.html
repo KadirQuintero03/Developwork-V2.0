@@ -1,92 +1,85 @@
-<main class="w-full h-[100vh] p-10 bg-[#FBFCF1] bg-opacity-[0.5]">
-  <form class="flex justify-center items-center">
-    <fieldset class="flex flex-column">
-      <label class="text-lg mx-2" for="nombre">Nombre</label>
+<main class="p-10 bg-[#D9D9D9] bg-opacity-[25%]">
+  <Label class="text-3xl text-[#004438] font-bold mb-3">Registrar equipo</Label>
+  <div class="flex justify-between mb-3">
+    <div class="flex items-center">
       <input
-        [(ngModel)]="nuevoEquipo.nombre"
-        class="w-30 p-1 mx-2 mb-2 rounded-lg"
-        name="nombre"
-        id="nombre"
+        class="w-[546px] h-60px rounded-[50px] text-lg py-2 px-4"
+        placeholder="Buscar..."
+        type="text"
       />
-    </fieldset>
 
-    <!-- <fieldset class="flex flex-column">
-      <label class="text-lg mx-2" for="descripcion">Descripción </label>
-      <input
-        [(ngModel)]="nuevoEquipo.descripcion"
-        class="w-40 p-1 mx-2 mb-2 rounded-lg"
-        name="descripcion"
-        id="descripcion"
-      />
-    </fieldset> -->
+      <button class="w-[27px] h-[27px] -ml-10 relative">
+        <img src="../../../../../assets/icon/Search.svg" alt="" />
+      </button>
+    </div>
 
-    <fieldset class="flex flex-column">
-      <label class="text-lg mx-2" for="estado">Estado</label>
-      <select
-        class="w-40 p-1 mx-2 mb-2 rounded-lg"
-        name="id_estado"
-        id="id_estado"
-        [(ngModel)]="nuevoEquipo.estado"
-      >
-        <option
-          *ngFor="let estado of verestado"
-          [value]="estado.id_estado"
-          selected="estado === id_estado"
-        >
-          {{ estado.nombre }}
-        </option>
-      </select>
-    </fieldset>
-  </form>
-
-  <div class="w-full text-center bg-white rounded-lg px-2 overflow-y-auto">
-    <table class="w-full h-full rounded-lg my-2">
-      <thead>
-        <tr>
-          <th class="text-lg px-3 pb-3">Nombre</th>
-          <!-- <th>Descripcion</th> -->
-          <th class="text-lg px-3 pb-3">Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          *ngFor="let equipo of verequipo"
-          (click)="this.equipoSelect = equipo"
-          [ngClass]="{ seleccionado: equipoSelect == equipo }"
-        >
-          <td class="text-lg px-3 pb-3">{{ equipo.nombre }}</td>
-          <td class="text-lg px-3 pb-3">{{ equipo.descripcion }}</td>
-          <td class="text-lg px-3 pb-3">{{ equipo.estado }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p *ngIf="msgValidarCamp">No puedes papalindo</p>
-
-  <div class="w-full p-2 mt-2 flex justify-center">
     <button
-      class="text-white text-lg w-36 p-2 rounded-lg bg-[#1e512c] mx-12"
+      class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
       (click)="AgregarEquipo()"
     >
-      Agregar
-    </button>
-    <button
-      class="text-white text-lg w-36 p-2 rounded-lg bg-[#1e512c] mx-12"
-      [disabled]="equipoSelect.nombre == '' ? true : false"
-      (click)="modEquipo()"
-    >
-      Modificar
+      + AGREGAR
     </button>
   </div>
+
+  <label class="text-lg mx-2" for="nombre">Nombre</label>
+  <input
+    [(ngModel)]="nuevoEquipo.nombre"
+    class="w-30 p-1 mx-2 mb-2 rounded-lg"
+    name="nombre"
+    id="nombre"
+  />
+
+  <label class="text-lg mx-2" for="estado">Estado</label>
+  <select
+    class="w-40 p-1 mx-2 mb-2 rounded-lg"
+    name="id_estado"
+    id="id_estado"
+    [(ngModel)]="nuevoEquipo.estado"
+  >
+    <option
+      *ngFor="let estado of verestado"
+      [value]="estado.id_estado"
+      selected="estado === id_estado"
+    >
+      {{ estado.nombre }}
+    </option>
+  </select>
+
+  <table class="w-full h-full text-2xl bg-white overflow-hidden rounded-lg">
+    <thead
+      class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]"
+    >
+      <th class="p-3">Nombre</th>
+      <th class="p-3">Estado</th>
+      <th class="p-3">Accion</th>
+    </thead>
+    <tbody>
+      <tr class="text-center">
+        <td class="py-4">Equipo alfa maravilla</td>
+        <td>Activo</td>
+        <td>
+          <button
+            [disabled]="equipoSelect.nombre == '' ? true : false"
+            (click)="modEquipo()"
+          >
+            <img src="../../../../../assets/icon/modificar.svg" alt="Modify" />
+          </button>
+        </td>
+      </tr>
+      <!-- <tr
+        *ngFor="let equipo of verequipo"
+        (click)="this.equipoSelect = equipo"
+        [ngClass]="{ seleccionado: equipoSelect == equipo }"
+      >
+        <td class="p-3">{{ equipo.nombre }}</td>
+        <td class="p-3">{{ equipo.descripcion }}</td>
+        <td class="p-3">{{ equipo.estado }}</td>
+      </tr> -->
+    </tbody>
+  </table>
 </main>
 
 <style>
-  th,
-  td {
-    border-bottom: 1px solid black;
-  }
-
   .seleccionado {
     border: 4px solid green;
     background-color: green;
