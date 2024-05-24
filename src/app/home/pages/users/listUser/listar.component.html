@@ -1,14 +1,13 @@
-<main class="bg-[#FBFCF1] bg-opacity-[0.5] w-full h-[100vh] p-9">
+<main class="bg-[#FBFCF1] bg-opacity-[0.5] w-full h-[100%] p-9">
   <div class="w-full h-full overflow-y-auto px-2 text-center rounded-lg">
     <table class="w-full h-4 text-2xl bg-white overflow-hidden rounded-lg">
       <thead class="text-center text-lg h-4">
-        <th class="p-3">Id</th>
         <th class="p-3">Nombre</th>
-        <th class="p-3">Apellido</th>
         <th class="p-3">Correo</th>
         <th class="p-3">Estado</th>
         <th class="p-3">Rol</th>
         <th class="p-3">Equipo</th>
+        <th class="p-3">Accion</th>
       </thead>
       <tbody>
         <tr
@@ -16,9 +15,7 @@
           (click)="this.personaSelect = persona"
           [ngClass]="{ seleccionado: personaSelect == persona }"
         >
-          <td class="p-3">{{ persona.id_usuario }}</td>
-          <td class="p-3">{{ persona.nombre1 }}</td>
-          <td class="p-3">{{ persona.apellido1 }}</td>
+          <td class="p-3">{{ persona.nombre1 }} {{ persona.apellido1 }}</td>
           <td class="p-3">{{ persona.correo }}</td>
           <td class="p-3">{{ persona.nombre }}</td>
           <td class="p-3">{{ persona.rol }}</td>

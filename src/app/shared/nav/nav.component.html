@@ -1,9 +1,8 @@
 <main
-  class="h-full w-full p-[10px] bg-[#FBFCF1] bg-opacity-[0.5]"
   (mouseenter)="VerBoton()"
   (mouseleave)="VerBoton()"
 >
-  <nav class="text-lg flex flex-column gap-12">
+  <nav class="flex flex-column gap-16 items-center mt-9">
     <button class="nav_button principal" (click)="Principal()">
       <span *ngIf="MostrarBoton"></span>
     </button>
@@ -30,12 +29,11 @@
 
 <style>
   .nav_button {
-    padding: 0.313rem;
-    border: none;
-    border-radius: 8px;
-    height: 2em;
-    background-color: #fff;
-    background-size: 1.25em;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: burlywood;
+    background-size: 25px;
     background-repeat: no-repeat;
     background-position: center;
   }
