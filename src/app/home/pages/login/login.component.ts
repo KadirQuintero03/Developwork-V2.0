@@ -32,24 +32,21 @@ export class LoginComponent {
   }
 
   IniciarSesion(): void {
-    console.log('correo: ', this.usuario.correo);
-    console.log('contra: ', this.usuario.contra);
-    // const { correo, contrasena } = this.usuario;
+    const { correo, contra } = this.usuario;
 
-    // if (
-    //   (correo !== undefined && !this.ValidarCamp(correo)) ||
-    //   (contrasena !== undefined && !this.ValidarCamp(contrasena))
-    // ) {
-    //   // this.msgValidarCamp = true;
-    //   alert('Los campos correo y contraseña no pueden estar vacios');
-    //   return;
-    // }
+    if (
+      (correo !== undefined && !this.ValidarCamp(correo)) ||
+      (contra !== undefined && !this.ValidarCamp(contra))
+    ) {
+      alert('Los campos correo y contraseña no pueden estar vacios');
+      return;
+    }
 
-    // if (correo !== undefined && !this.validarEmail(correo)) {
-    //   // this.msgValidarEmail = true;
-    //   alert('Formato de correo invalido');
-    //   return;
-    // }
+    if (correo !== undefined && !this.validarEmail(correo)) {
+      alert('Formato de correo invalido');
+      return;
+    }
+
     this.PersonaService.login(this.usuario).subscribe(
       (response: string) => {
         if (response != undefined) {

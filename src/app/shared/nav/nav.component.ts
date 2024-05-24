@@ -50,10 +50,6 @@ export class NavComponent implements OnInit {
     this.router.navigate(['user/teams']);
   }
 
-  Notifications(): void {
-    this.router.navigate(['user/notification']);
-  }
-
   Information(): void {
     this.router.navigate(['user/information']);
   }

@@ -22,14 +22,6 @@
       <span *ngIf="MostrarBoton"></span>
       <img class="w-7 h-7" src="../../../assets/icon/Team.svg" alt="Equipos" />
     </Button>
-    <Button class="w-7 h-7" class="Notifi" (click)="Notifications()">
-      <span *ngIf="MostrarBoton"></span>
-      <img
-        class="w-7 h-7"
-        src="../../../assets/icon/Notificacion.svg"
-        alt="Notificaciones"
-      />
-    </Button>
     <Button class="Info" (click)="Information()">
       <span *ngIf="MostrarBoton"></span>
       <img class="w-7 h-7" src="../../../assets/icon/Info.svg" alt="Personal" />
@@ -55,7 +47,6 @@
   .principal:hover,
   .ListUser:hover,
   .Team:hover,
-  .Notifi:hover,
   .Info:hover,
   .LogOut:hover {
     background-color: #ccd32a;
