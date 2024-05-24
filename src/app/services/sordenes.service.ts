@@ -15,8 +15,8 @@ export class SordenesService {
   private token: string = '';
   private headers = new HttpHeaders();
   private CreateOrden = environment.CreateOrden
-
   private _ordenes: ordenes_matenimiento[] = [];
+  
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService

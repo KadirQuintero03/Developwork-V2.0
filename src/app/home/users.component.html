@@ -1,17 +1,7 @@
-<main class="m-0">
-  <app-nav class="nav"></app-nav>
-  <body class="position-relative w-full h-full pl-20">
-    <router-outlet></router-outlet>
+<main>
+  <app-header class="fixed z-50 w-full"/>
+  <app-nav class="fixed w-16 h-[100vh] bg-white p-[10px]"/>
+  <body class="w-full h-full pl-[64px] pt-[62px] absolute">
+    <router-outlet/>
   </body>
 </main>
-
-<!-- class="position-fixed w-16 z-50 h-full" -->
-
-<style>
-.nav{
-  position: fixed;
-  width: 4rem;
-  z-index: 100;
-  height: 100%;
-}
-</style>

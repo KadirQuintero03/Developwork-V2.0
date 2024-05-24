@@ -6,8 +6,8 @@ import { PersonaService } from '../../services/persona.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css'],
 })
+
 export class NavComponent implements OnInit {
   constructor(
     private router: Router,
@@ -42,16 +42,12 @@ export class NavComponent implements OnInit {
     this.router.navigate(['user']);
   }
 
-  RegisterUser(): void {
-    this.router.navigate(['user/register']);
+  ListUser(): void {
+    this.router.navigate(['user/list']);
   }
 
   Teams(): void {
     this.router.navigate(['user/teams']);
-  }
-
-  List(): void {
-    this.router.navigate(['user/list']);
   }
 
   Notifications(): void {

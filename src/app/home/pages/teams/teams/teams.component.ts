@@ -10,7 +10,6 @@ import { RolserviceService } from '@/app/services/rolservice.service';
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.css'],
 })
 
 export class TeamsComponent implements OnInit {
@@ -43,7 +42,6 @@ export class TeamsComponent implements OnInit {
     ValidarCamp(value: string): boolean {
     return value.trim() !== '';
   }
-  msgValidarCamp: boolean = false;
 
   async AgregarEquipo() {
     this.nuevoEquipo.id_equipo = '23524'

@@ -4,14 +4,13 @@ import { ordenes_matenimiento } from '../../../../interface/ordenes_mantenimient
 @Component({
   selector: 'app-orden',
   templateUrl: './orden.component.html',
-  styleUrls: ['./orden.component.css']
+  styleUrls: ['./orden.component.css'],
 })
 export class OrdenComponent implements OnInit {
-  @Input() orden :ordenes_matenimiento= new ordenes_matenimiento();
-  constructor(){
-  }
-  
+  @Input() orden: ordenes_matenimiento = new ordenes_matenimiento();
+  constructor() {}
+
   ngOnInit(): void {
-      console.log(this.orden);
+    console.log(this.orden);
   }
 }

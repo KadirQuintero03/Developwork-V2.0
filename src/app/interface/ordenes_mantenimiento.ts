@@ -1,7 +1,6 @@
 import { persona } from '../interface/persona';
 export class ordenes_matenimiento {
   idOrder: string = '';
-  //comentarios: string = '';
   idEquipo: string = '';
   prioridad: string = '';
   estado: string = '';

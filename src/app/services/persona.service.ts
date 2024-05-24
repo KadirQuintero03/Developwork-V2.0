@@ -10,7 +10,7 @@ import { environment } from '../interface/enviroment';
 })
 export class PersonaService {
   private static lstPersonas: persona[] = [];
-  private static personaLog: persona = new persona();
+  private user: persona = new persona();
   private personaMod: persona = new persona();
   private token: string = '';
 
@@ -29,6 +29,14 @@ export class PersonaService {
       headers,
       responseType: 'text',
     });
+  }
+
+  getUser(){
+    return this.user;
+  }
+
+  setUser(_user: persona){
+    this.user = _user;
   }
 
   getPersonas(): persona[] {
@@ -86,15 +94,6 @@ export class PersonaService {
     return this.http.get(this.Login + 'usuario', { headers });
   }
 
-  //Traer a todos los usuarios
-  getData(): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.token,
-    });
-    return this.http.get(`${this.GetUsers}`, { headers });
-  }
-
   //Crear usuario
   postData(data: persona): Observable<any> {
     const headers = new HttpHeaders({
@@ -103,6 +102,15 @@ export class PersonaService {
     });
     return this.http.post(this.CreateUser, data, { headers });
   }
+
+    //Traer a todos los usuarios
+    getData(): Observable<any> {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.token,
+      });
+      return this.http.get(`${this.GetUsers}`, { headers });
+    }
 
   //Modificar usuario
   modPersona(persona: persona): Observable<any> {

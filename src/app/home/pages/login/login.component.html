@@ -1,43 +1,95 @@
-<div class="container" id="container-main">
-  <div class="container" id="div-img">
-    <img src="../../../../assets/img/Header.png" alt="logo" />
-  </div>
-  <div class="container" id="div-login">
-    <H1 class="form-title"> Log In </H1>
-    <form id="form-body">
-      <label class="label-email">Email</label>
+<main class="flex flex-column items-center justify-center w-full h-[100vh] p-8">
+  <header class="flex justify-center w-full">
+    <img
+      class="relative top-[52px] w-[20%]"
+      src="../../../../assets/img/Header.png"
+      alt="logo"
+    />
+  </header>
+
+  <div
+    class="flex flex-column items-center justify-center h-full w-[45%] p-4 rounded-lg bg-[#FBFBF1]"
+  >
+    <h1 class="text-6xl font-semibold mt-2">Log In</h1>
+
+    <form class="flex flex-column w-full gap-[20px] p-4">
+      <label class="text-black ml-1 font-light">Email</label>
       <input
-        class="email"
-        type="email"
+        class="email -mt-[15px] bg-[#ededec] rounded-md p-3"
         name="email"
+        type="email"
         [(ngModel)]="usuario.correo"
         required
         placeholder="Enter your email"
       />
 
-      <label class="label-password">Password</label>
+      <label class="text-black ml-1 font-light">Password</label>
       <input
-        class="password"
+        class="password -mt-[15px] bg-[#ededec] rounded-md p-3"
         name="password"
-        [(ngModel)]="usuario.contra"
         [type]="ChangeType ? 'password' : 'text'"
+        [(ngModel)]="usuario.contra"
         required
         placeholder="Enter your password"
       />
 
       <div>
-        <label class="label-showpass">
-          <input (click)="viewpass()" type="checkbox" />
+        <label class="text-black flex items-center ml-[5px]">
+          <input
+            class="w-4 h-4 mr-1 cursor-pointer"
+            type="checkbox"
+            (click)="viewpass()"
+          />
           Show Password
         </label>
       </div>
 
       <input
         (click)="IniciarSesion()"
-        class="btn_enter"
+        class="text-white text-[22px] rounded-lg bg-[#1e512c] w-full p-1"
         type="submit"
         value="Login"
       />
     </form>
   </div>
-</div>
+</main>
+
+<style>
+  main {
+    background-image: url("../../../../assets/img/BackDesenfoque.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .email::placeholder,
+  .password::placeholder {
+    color: #000;
+    opacity: 0.5;
+  }
+
+  .email:focus,
+  .password:focus {
+    outline: none;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  .email,
+  .password {
+    background-size: 1.25em;
+    background-repeat: no-repeat;
+    background-position: 98%;
+  }
+
+  .email {
+    background-image: url(../../../../assets/icon/User.svg);
+  }
+
+  .password {
+    background-image: url(../../../../assets/icon/lock-solid.svg);
+  }
+</style>

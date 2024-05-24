@@ -1,59 +1,54 @@
-<div class="_modal">
-  <div class="_content">
+<div class="fixed top-0 left-0 z-50 w-full h-[100vh] bg-black bg-opacity-50">
+  <div class="absolute top-[10vh] h-[80vh] w-[80%] left-[10%] bg-white rounded-lg p-5">
     <form action="post">
-      <h1>Orden de mantenimiento: {{ modorden.idOrder }}</h1>
+      <h1 class="text-center text-3xl font-medium">
+        Orden de mantenimiento: {{ modorden.idOrder }}
+      </h1>
 
-      <fieldset class="group_1">
-        <label>Administrativo adscrito:
-          <input
-          name="id_usuario"
-          [(ngModel)]="modorden.idUser"
-          type="text"
-          
-          />
-        </label>
-
-        <label>Prioridad:
-          <select
-          name="id_prioridad"
-          id="id_prioridad"
-          [(ngModel)]="modorden.prioridad">
-          <option
-            *ngFor="let item of prioridades"
-            [value]="item.id_prioridad">
-            {{ item.nombre }}
-          </option>
-        </select>
-        </label>
-
-        <label>Estado de la orden:
-          <select name="id_estado" [(ngModel)]="modorden.estado">
-            <option *ngFor="let estado of estados" [value]="estado.id_estado">
-              {{ estado.nombre }}
-            </option>
-          </select>
+      <fieldset class="flex justify-around">
+        <label
+          >Administrativo adscrito:
+          <input name="id_usuario" [(ngModel)]="modorden.idUser" type="text" />
         </label>
       </fieldset>
 
-      <fieldset class="group_2">
-        <label>Equipo: </label>
-        <select name="id_equipo" [(ngModel)]="modorden.idEquipo">
-          <option *ngFor="let item of equipos" [value]="item.id_equipo">
-            {{ item.nombre }}
-          </option>
-        </select>
-
+      <fieldset class="flex flex-column gap-2">
         <label>Descripcion de la orden: </label>
-        <textarea name="descripcion" id="descripcion" [(ngModel)]="modorden.description"
-        cols="30" rows="3"></textarea>
-        </fieldset>
+        <textarea
+          class="p-1 rounded-[3px]"
+          name="descripcion"
+          id="descripcion"
+          [(ngModel)]="modorden.description"
+          cols="30"
+          rows="3"
+        ></textarea>
+      </fieldset>
     </form>
-    <button class="btn btn-success" (click)="cerrar()"></button>
+    <button
+      class="exit absolute top-0 right-0 mt-1 mr-2 h-7 w-7"
+      (click)="cerrar()"
+    ></button>
 
-    <div class="div-crud">
-      <button class="btn-crud"  (click)="agregar()">Agregar Orden</button>
+    <div class="flex justify-evenly mt-3 rounded-lg bg-[#1e512c] w-48">
+      <button class="text-white py-2 px-1" (click)="agregar()">
+        Agregar Orden
+      </button>
       <!-- <button class="btn-crud" (click)="actualizar()">Modificar Orden</button> -->
     </div>
   </div>
 </div>
 <!-- *ngIf="nuevo" -->
+
+<style>
+  textarea {
+    border: 1px solid #000;
+  }
+  .exit {
+    border: none;
+    background-image: url(.../../../../../../../assets/icon/Exit.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+  }
+</style>

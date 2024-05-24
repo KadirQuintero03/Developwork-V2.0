@@ -1,23 +1,57 @@
-<div id="body">
-  <app-forden [modorden]="modorden" (mensajeCambiado)="modOrden($event)" *ngIf="modorden.idOrder"></app-forden>
+<main class="p-10 bg-[#D9D9D9] bg-opacity-[25%]">
+  <Label class="text-3xl text-[#004438] font-bold mb-3"
+  >Ordenes de mantenimiento</Label
+>
+  <div class="flex justify-between mb-3">
+    <div class="flex items-center">
+      <input
+        class="w-[970px] h-[50px] rounded-[50px] text-lg py-2 px-4"
+        placeholder="Buscar..."
+        type="text"
+      />
+
+      <button class="w-[27px] h-[27px] -ml-10 relative">
+        <img src="../../../../../assets/icon/Search.svg" alt="" />
+      </button>
+    </div>
+
+    <button
+      class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
+      (click)="newOrden()"
+    >
+      + AGREGAR
+    </button>
+  </div>
+
+  <app-forden
+    [modorden]="modorden"
+    (mensajeCambiado)="modOrden($event)"
+    *ngIf="modorden.idOrder"
+  ></app-forden>
+  
   <div class="contenedor_carrusel">
     <h2>Ordenes Pendientes</h2>
     <ul class="carrusel">
-        <li *ngFor="let orden of ordenesP">
-            <app-orden class=".carousel-item" (click)="modOrden(orden)" [orden]="orden"></app-orden>
-        </li>
+      <li *ngFor="let orden of ordenesP">
+        <app-orden
+          class=".carousel-item"
+          (click)="modOrden(orden)"
+          [orden]="orden"
+        ></app-orden>
+      </li>
     </ul>
   </div>
 
-  <div class="contenedor_carrusel" >
+  <div class="contenedor_carrusel">
     <h2>Ordenes Revision</h2>
     <ul class="carrusel">
-        <li *ngFor="let orden of ordenesR">
-            <app-orden class=".carousel-item" (click)="modOrden(orden)" [orden]="orden"></app-orden>
-        </li>
+      <li *ngFor="let orden of ordenesR">
+        <app-orden
+          class=".carousel-item"
+          (click)="modOrden(orden)"
+          [orden]="orden"
+        ></app-orden>
+      </li>
     </ul>
   </div>
-</div>
-<button class="agregar" (click)="newOrden()">
-  Agregar
-</button>
+</main>

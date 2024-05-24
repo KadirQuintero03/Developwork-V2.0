@@ -13,12 +13,11 @@ import { PrioridadesService } from '../../../../services/prioridades.service';
 @Component({
   selector: 'app-forden',
   templateUrl: './forden.component.html',
-  styleUrls: ['./forden.component.css'],
 })
 export class FordenComponent {
   @Input() modorden: ordenes_matenimiento = new ordenes_matenimiento();
   @Output() mensajeCambiado = new EventEmitter<ordenes_matenimiento>();
-  prioridades: prioridad[] = []
+  prioridades: prioridad[] = [];
   equipos: equipo[] = [];
   estados: estado[] = [
     {
@@ -38,7 +37,11 @@ export class FordenComponent {
       nombre: 'finalizado',
     },
   ];
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> b863b339312b06a740bd205383ffe203aa90c3b6
   nuevo: boolean = false;
   administrativo: persona = new persona();
   cerrar() {
@@ -56,13 +59,13 @@ export class FordenComponent {
   ngOnInit(): void {
     this.sequipos.getData().subscribe((Response: any) => {
       this.equipos = Response.data;
-      console.log("Equipos: ", this.equipos)
+      console.log('Equipos: ', this.equipos);
     });
 
     this.getPrioridades.getData().subscribe((Response: any) => {
       this.prioridades = Response.data;
-      console.log("prioridades: ", this.prioridades)
-    })
+      console.log('prioridades: ', this.prioridades);
+    });
 
     //Carga en el select de los estados, los estados disponibles
     // this.sestados.getData().subscribe((Response) => {
@@ -93,7 +96,7 @@ export class FordenComponent {
     this.sordenes.createOrden(this.modorden).subscribe(
       (response) => {
         console.log(response);
-        alert("Nueva orden registrada con exito")
+        alert('Nueva orden registrada con exito');
       },
       (error) => {
         console.log(error);

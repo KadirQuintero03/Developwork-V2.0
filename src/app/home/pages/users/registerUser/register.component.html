@@ -1,0 +1,112 @@
+<main class="w-full h-[100vh] flex items-center justify-center">
+  <div>
+    <form
+      class="m-0 w-full h-full text-center bg-[#FBFBF1] p-3 text-base rounded-lg"
+      (ngSubmit)="addPersona()"
+      method="post"
+    >
+      <h1 class="text-4xl font-semibold text-center mb-3">Register</h1>
+      <fieldset>
+        <label class="text-xl ml-1"> Team </label>
+        <select
+          class="rounded-2xl w-48 ml-1 p-1"
+          name="id_equipo"
+          id="id_equipo"
+          [(ngModel)]="persona.equipo"
+        >
+          <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+            {{ equipo.nombre }}
+          </option>
+        </select>
+
+        <label class="text-xl ml-1"> Role </label>
+        <select
+          class="rounded-2xl w-48 ml-1 p-1"
+          name="id_rol"
+          id="id_rol"
+          [(ngModel)]="persona.rol"
+        >
+          <option *ngFor="let rol of verroles" [value]="rol.id_rol">
+            {{ rol.nombre }}
+          </option>
+        </select>
+      </fieldset>
+
+      <fieldset class="flex justify-center items-center flex-column gap-1 mt-3">
+        <label class="text-xl">N° Id </label>
+        <input
+          [(ngModel)]="persona.id_usuario"
+          name="id_usuario"
+          class="input-text w-[300px] p-1 rounded-lg border border-black"
+          type="text"
+          required
+        />
+
+        <label class="text-xl">First name</label>
+        <input
+          [(ngModel)]="persona.nombre1"
+          name="nombre"
+          class="input-text w-[300px] p-1 rounded-lg border border-black"
+          type="text"
+          required
+        />
+
+        <label class="text-xl">Second name</label>
+        <input
+          [(ngModel)]="persona.nombre2"
+          name="nombre2"
+          class="input-text w-[300px] p-1 rounded-lg border border-black"
+          type="text"
+        />
+
+        <label class="text-xl">Last name</label>
+        <input
+          [(ngModel)]="persona.apellido1"
+          name="apellido"
+          class="input-text w-[300px] p-1 rounded-lg border border-black"
+          type="text"
+          required
+        />
+
+        <label class="text-xl">Second last name</label>
+        <input
+          [(ngModel)]="persona.apellido2"
+          name="apellido2"
+          class="input-text w-[300px] p-1 rounded-lg border border-black"
+          type="text"
+        />
+
+        <label class="text-xl">Email</label>
+        <input
+          [(ngModel)]="persona.correo"
+          name="correo"
+          class="input-email w-[300px] p-1 rounded-lg border border-black"
+          type="email"
+          required
+        />
+      </fieldset>
+      <input
+        class="text-xl text-white bg-[#1e512c] p-1 w-[200px] rounded-lg mt-2"
+        type="submit"
+        value="Register"
+      />
+    </form>
+  </div>
+</main>
+
+<style>
+  .input-text,
+  .input-email {
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-size: auto 1.563em;
+  }
+
+  .input-text {
+    background-image: url(../../../../assets/icon/User.svg);
+  }
+
+  .input-email {
+    background-image: url(../../../../assets/icon/Email.svg);
+  }
+</style>
