@@ -10,37 +10,9 @@
           >Administrativo adscrito:
           <input name="id_usuario" [(ngModel)]="modorden.idUser" type="text" />
         </label>
-
-        <!-- <label>Prioridad:
-          <select
-          name="id_prioridad"
-          id="id_prioridad"
-          [(ngModel)]="modorden.prioridad">
-          <option
-            *ngFor="let item of prioridades"
-            [value]="item.id_prioridad">
-            {{ item.nombre }}
-          </option>
-        </select>
-        </label> -->
-
-        <!-- <label>Estado de la orden:
-          <select name="id_estado" [(ngModel)]="modorden.estado">
-            <option *ngFor="let estado of estados" [value]="estado.id_estado">
-              {{ estado.nombre }}
-            </option>
-          </select>
-        </label> -->
       </fieldset>
 
       <fieldset class="flex flex-column gap-2">
-        <!-- <label>Equipo: </label>
-        <select name="id_equipo" [(ngModel)]="modorden.idEquipo">
-          <option *ngFor="let item of equipos" [value]="item.id_equipo">
-            {{ item.nombre }}
-          </option>
-        </select> -->
-
         <label>Descripcion de la orden: </label>
         <textarea
           class="p-1 rounded-[3px]"
