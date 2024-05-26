@@ -29,7 +29,7 @@ export class ModpersonaComponent {
   ) { }
 
   ngOnInit(): void {
-    if (this.servicePersona.getPersona().id_user == '') {
+    if (this.servicePersona.getPersona().id_usuario == '') {
       this.router.navigate(['/user/personas']);
     } else {
       this.persona = this.servicePersona.getPersona();
@@ -51,7 +51,7 @@ export class ModpersonaComponent {
 
   modificar() {
     console.log('Id de la persona: ', this.persona.id_usuario)
-    console.log('Id equipo: ', this.persona.id_equipo)
+    console.log('Id equipo: ', this.persona.equipo.id_equipo)
     this.servicePersona.modPersona(this.persona).subscribe();
     this.servicePersona.setPersona(new persona());
     this.router.navigate(['/user/personas']);

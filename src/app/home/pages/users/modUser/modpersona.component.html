@@ -9,10 +9,10 @@
           <select
             class="cursor-pointer rounded-lg p-1 mr-1 w-[200px]"
             name="id_equipo"
-            [(ngModel)]="persona.id_equipo"
+            [(ngModel)]="persona.equipo.id_equipo"
           >
             <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
-              {{ equipo.nombre }}
+              {{ equipo.nombre_equipo }}
             </option>
           </select>
         </label>

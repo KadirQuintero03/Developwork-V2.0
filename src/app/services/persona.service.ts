@@ -75,7 +75,7 @@ export class PersonaService {
     });
 
     console.log('correo: ', user.correo)
-    console.log('contra: ', user.contra)
+    console.log('contra: ', user.contrasena)
     return this.http.get(`${this.GetUsers}`, { headers }).pipe(
       catchError((error) => {
         console.error('Error en la solicitud:', error);

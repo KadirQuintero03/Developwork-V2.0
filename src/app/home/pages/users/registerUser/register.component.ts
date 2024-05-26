@@ -119,9 +119,9 @@ export class registerComponent {
       return;
     }
 
-    this.persona.contra = this.randomPassword(8);
-    console.log('contraseña: ', this.persona.contra);
-    this.persona.estado = '1';
+    this.persona.contrasena = this.randomPassword(8);
+    console.log('contraseña: ', this.persona.contrasena);
+    this.persona.estado.id_estado = '1';
 
     this.personaSerive.postData(this.persona).subscribe(
       (response) => {

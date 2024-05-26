@@ -10,27 +10,27 @@
   <div
     class="flex flex-column items-center justify-center h-full w-[45%] p-4 rounded-lg bg-[#FBFBF1]"
   >
-    <h1 class="text-6xl font-semibold mt-2">Log In</h1>
+    <h1 class="text-6xl font-semibold mt-2">Iniciar sesion</h1>
 
     <form class="flex flex-column w-full gap-[20px] p-4">
-      <label class="text-black ml-1 font-light">Email</label>
+      <label class="text-black ml-1 font-light">Correo</label>
       <input
         class="email -mt-[15px] bg-[#ededec] rounded-md p-3"
         name="email"
         type="email"
         [(ngModel)]="usuario.correo"
         required
-        placeholder="Enter your email"
+        placeholder="Ingrese su correo"
       />
 
-      <label class="text-black ml-1 font-light">Password</label>
+      <label class="text-black ml-1 font-light">Contraseña</label>
       <input
         class="password -mt-[15px] bg-[#ededec] rounded-md p-3"
         name="password"
         [type]="ChangeType ? 'password' : 'text'"
-        [(ngModel)]="usuario.contra"
+        [(ngModel)]="usuario.contrasena"
         required
-        placeholder="Enter your password"
+        placeholder="Ingrese su contraseña"
       />
 
       <div>
@@ -40,7 +40,7 @@
             type="checkbox"
             (click)="viewpass()"
           />
-          Show Password
+          Mostrar contraseña
         </label>
       </div>
 
@@ -48,48 +48,8 @@
         (click)="IniciarSesion()"
         class="text-white text-[22px] rounded-lg bg-[#1e512c] w-full p-1"
         type="submit"
-        value="Login"
+        value="Acceder"
       />
     </form>
   </div>
 </main>
-
-<style>
-  main {
-    background-image: url("../../../../assets/img/BackDesenfoque.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-
-  .email::placeholder,
-  .password::placeholder {
-    color: #000;
-    opacity: 0.5;
-  }
-
-  .email:focus,
-  .password:focus {
-    outline: none;
-
-    &::placeholder {
-      color: transparent;
-    }
-  }
-
-  .email,
-  .password {
-    background-size: 1.25em;
-    background-repeat: no-repeat;
-    background-position: 98%;
-  }
-
-  .email {
-    background-image: url(../../../../assets/icon/User.svg);
-  }
-
-  .password {
-    background-image: url(../../../../assets/icon/lock-solid.svg);
-  }
-</style>

@@ -7,6 +7,7 @@ import { LocalStorageService } from '../../../services/local-storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   public usuario: persona = new persona();
@@ -32,11 +33,11 @@ export class LoginComponent {
   }
 
   IniciarSesion(): void {
-    const { correo, contra } = this.usuario;
+    const { correo, contrasena } = this.usuario;
 
     if (
       (correo !== undefined && !this.ValidarCamp(correo)) ||
-      (contra !== undefined && !this.ValidarCamp(contra))
+      (contrasena !== undefined && !this.ValidarCamp(contrasena))
     ) {
       alert('Los campos correo y contraseña no pueden estar vacios');
       return;

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { persona } from '../../../../interface/persona';
 import { PersonaService } from '../../../../services/persona.service';
@@ -28,7 +28,7 @@ export class ListarComponent implements OnInit {
       this.lstpersonas = Response.data;
     });
 
-    if (this.personaSelect.id_user == '') {
+    if (this.personaSelect.id_usuario == '') {
       this.servicepersona.getData().subscribe((Response: any) => {
         this.lstpersonas = Response.data;
       });

@@ -84,7 +84,7 @@
             [(ngModel)]="persona.equipo"
           >
             <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
-              {{ equipo.nombre }}
+              {{ equipo.nombre_equipo }}
             </option>
           </select></label
         >
@@ -98,7 +98,7 @@
             [(ngModel)]="persona.rol"
           >
             <option *ngFor="let rol of verroles" [value]="rol.id_rol">
-              {{ rol.nombre }}
+              {{ rol.nombre_rol }}
             </option>
           </select></label
         >

@@ -1,0 +1,37 @@
+main {
+  background-image: url("../../../../assets/img/BackDesenfoque.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.email::placeholder,
+.password::placeholder {
+  color: #000;
+  opacity: 0.5;
+}
+
+.email:focus,
+.password:focus {
+  outline: none;
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.email,
+.password {
+  background-size: 1.25em;
+  background-repeat: no-repeat;
+  background-position: 98%;
+}
+
+.email {
+  background-image: url(../../../../assets/icon/User.svg);
+}
+
+.password {
+  background-image: url(../../../../assets/icon/lock-solid.svg);
+}

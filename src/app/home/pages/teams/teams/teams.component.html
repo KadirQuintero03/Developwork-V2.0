@@ -23,7 +23,7 @@
 
   <label class="text-lg mx-2" for="nombre">Nombre</label>
   <input
-    [(ngModel)]="nuevoEquipo.nombre"
+    [(ngModel)]="nuevoEquipo.nombre_equipo"
     class="w-30 p-1 mx-2 mb-2 rounded-lg"
     name="nombre"
     id="nombre"
@@ -59,7 +59,7 @@
         <td>Activo</td>
         <td>
           <button
-            [disabled]="equipoSelect.nombre == '' ? true : false"
+            [disabled]="equipoSelect.nombre_equipo == '' ? true : false"
             (click)="modEquipo()"
           >
             <img src="../../../../../assets/icon/modificar.svg" alt="Modify" />
