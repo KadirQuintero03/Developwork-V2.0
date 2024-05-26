@@ -22,19 +22,19 @@ export class FordenComponent {
   estados: estado[] = [
     {
       id_estado: '1',
-      nombre: 'no iniciado',
+      nombre_estado: 'no iniciado',
     },
     {
       id_estado: '2',
-      nombre: 'en curso',
+      nombre_estado: 'en curso',
     },
     {
       id_estado: '3',
-      nombre: 'revision',
+      nombre_estado: 'revision',
     },
     {
       id_estado: '4',
-      nombre: 'finalizado',
+      nombre_estado: 'finalizado',
     },
   ];
 

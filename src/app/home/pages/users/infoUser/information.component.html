@@ -4,22 +4,18 @@
       <h1>Personal information</h1>
       <section class="text-lg text-start p-3">
         <ul class="personal-details">
-          <li>
-            <strong>Name:</strong> {{ personalog.nombre1 }}
-            {{ personalog.nombre2 }}
-          </li>
-          <li>
-            <strong>Last name:</strong> {{ personalog.apellido1 }}
-            {{ personalog.apellido2 }}
-          </li>
-          <li><strong>Email:</strong> {{ personalog.correo }}</li>
-          <li><strong>Role:</strong> {{ personalog.rol }}</li>
-          <li><strong>Status:</strong> {{ personalog.estado }}</li>
+          <li>Nombre: {{ personalog.nombre1 }}</li>
+          <li>Segundo nombre: {{ personalog.nombre2 }}</li>
+          <li>Apellido: {{ personalog.apellido1 }}</li>
+          <li>Segundo apellido: {{ personalog.apellido2 }}</li>
+          <li>Correo: {{ personalog.correo }}</li>
+          <li>Rol: {{ personalog.rol }}</li>
+          <li>Estados: {{ personalog.estado }}</li>
         </ul>
       </section>
 
       <Button
-        class="p-1 mb-1 w-[200px] text-white rounded-xl bg-[#1e512c]"
+        class="w-40 h-7 p-1 text-sm text-white rounded-lg bg-[#00214D]"
         (click)="CambContra()"
       >
         Cambiar contraseña

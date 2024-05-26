@@ -1,4 +1,4 @@
 export class estado{
     id_estado:string='';
-    nombre?:string='';
+    nombre_estado:string='';
 }
