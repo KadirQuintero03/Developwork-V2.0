@@ -3,15 +3,27 @@
     <article class="p-3 bg-[#FBFCF1] rounded-xl">
       <h1>Personal information</h1>
       <section class="text-lg text-start p-3">
-        <ul class="personal-details">
-          <li>Nombre: {{ personalog.nombre1 }}</li>
-          <li>Segundo nombre: {{ personalog.nombre2 }}</li>
-          <li>Apellido: {{ personalog.apellido1 }}</li>
-          <li>Segundo apellido: {{ personalog.apellido2 }}</li>
-          <li>Correo: {{ personalog.correo }}</li>
-          <li>Rol: {{ personalog.rol }}</li>
-          <li>Estados: {{ personalog.estado }}</li>
-        </ul>
+        <p class="text-[#00214D] font-bold text-xl">
+          Nombre {{ personalog.nombre1 }}
+        </p>
+        <p class="text-black text-[16px] opacity-[50%]">
+          Segundo nombre {{ personalog.nombre2 }}
+        </p>
+        <p class="text-black text-[16px] opacity-[50%]">
+          Apellido {{ personalog.apellido1 }}
+        </p>
+        <p class="text-black text-[16px] opacity-[50%]">
+          Segundo apellido {{ personalog.apellido2 }}
+        </p>
+        <p class="text-black text-[16px] opacity-[50%]">
+          Correo {{ personalog.correo }}
+        </p>
+        <p class="text-[#014F41] text-[13px]">
+          Rol {{ personalog.rol.nombre_rol }}
+        </p>
+        <p class="text-[#014F41] text-[13px]">
+          Estados {{ personalog.estado.nombre_estado }}
+        </p>
       </section>
 
       <Button
