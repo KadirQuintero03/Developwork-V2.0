@@ -1,78 +1,88 @@
-<main class="w-[500px] h-[100vh] flex justify-center items-center">
-  <div
-    class="bg-[#FBFCF1] bg-opacity-[0.5] rounded-lg overflow-hidden h-full w-[80%]"
-  >
-    <form class="bg-[#FBFCF1] p-8 text-center h-[700px]">
-      <fieldset class="flex flex-column gap-2 mt-2">
-        <label class="mr-1">
-          Equipo
-          <select
-            class="cursor-pointer rounded-lg p-1 mr-1 w-[200px]"
-            name="id_equipo"
-            [(ngModel)]="persona.equipo.id_equipo"
-          >
-            <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
-              {{ equipo.nombre_equipo }}
-            </option>
-          </select>
-        </label>
+<main class="w-full h-[85vh] flex justify-center items-center">
+  <form class="bg-[#FBFCF1] p-8 h-[425px] rounded-[20px]">
+    <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Modificar usuario</h1>
 
-        <label> Identificacion </label>
+    <div class="flex justify-center items-center gap-4 mt-3">
+      <fieldset class="flex flex-column gap-1 mt-2">
+        <label class="text-base text-black"> Identificacion </label>
         <input
-          class="text-lg p-1 rounded-lg"
+          class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
           name="identificacion"
+          placeholder="cc"
           [(ngModel)]="persona.id_usuario"
         />
-        <label> Primer Nombre </label>
+        <label class="text-base text-black"> Primer Nombre </label>
         <input
-          class="text-lg p-1 rounded-lg"
+          class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
           name="nombre"
+          placeholder="Ingrese el primer nombre"
           [(ngModel)]="persona.nombre1"
         />
-        <label> Segundo Nombre </label>
+        <label class="text-base text-black"> Segundo Nombre </label>
         <input
-          class="text-lg p-1 rounded-lg"
+          class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
           name="nombre2"
+          placeholder="Ingrese el segundo nombre"
           [(ngModel)]="persona.nombre2"
         />
-        <label> Primer Apellido </label>
+      </fieldset>
+
+      <fieldset class="flex flex-column gap-1 mt-2">
+        <label class="text-base text-black"> Primer Apellido </label>
         <input
-          class="text-lg p-1 rounded-lg"
+          class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
           name="apellido"
+          placeholder="Ingrese el primer apellido"
           [(ngModel)]="persona.apellido1"
         />
-        <label> Segundo Apellido </label>
+        <label class="text-base text-black"> Segundo Apellido </label>
         <input
-          class="text-lg p-1 rounded-lg"
+          class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
           name="apellido2"
+          placeholder="Ingrese el segundo apellido"
           [(ngModel)]="persona.apellido2"
         />
-        <label> Correo </label>
+        <label class="text-base text-black"> Correo </label>
         <input
-          class="text-lg p-1 rounded-lg"
+          class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
           name="correo"
+          placeholder="Ingrese su correo"
           [(ngModel)]="persona.correo"
         />
       </fieldset>
+    </div>
+
+    <label class="text-base text-black mt-3">
+      Equipo
+      <select
+        class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
+        name="id_equipo"
+        [(ngModel)]="persona.equipo.id_equipo"
+      >
+        <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+          {{ equipo.nombre_equipo }}
+        </option>
+      </select>
+    </label>
+
+    <div class="flex justify-evenly mt-3">
       <button
-        class="text-white bg-[#1e512c] rounded-lg p-1 w-[100px] mt-3"
+        class="text-xl text-white bg-[#00214D] w-[210px] h-[26] rounded-lg p-2"
+      >
+        Cancelar
+      </button>
+      <button
+        class="text-xl text-white bg-[#014F41] w-[210px] h-[26] rounded-lg p-2"
         (click)="modificar()"
       >
         Modificar
       </button>
-    </form>
-  </div>
+    </div>
+  </form>
 </main>
-
-<style>
-  select,
-  input {
-    border: 1px solid #000;
-  }
-</style>
