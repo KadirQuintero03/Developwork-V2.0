@@ -1,0 +1,22 @@
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+.principal:hover,
+.ListUser:hover,
+.Team:hover,
+.Info:hover,
+.LogOut:hover {
+  background-color: #ccd32a;
+}
+
+img{
+  width: 28px;
+  height: 28px;
+}

@@ -6,6 +6,7 @@ import { PersonaService } from '../../../../services/persona.service';
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
+  styleUrls: ['./listar.component.css'],
 })
 
 export class ListarComponent implements OnInit {

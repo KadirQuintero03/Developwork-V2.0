@@ -1,57 +1,29 @@
 <main (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
-  <nav class="flex flex-column gap-16 items-center mt-[70px]">
+  <nav class="flex flex-column gap-16 items-center mt-[20px]">
     <button class="principal" (click)="Principal()">
       <span *ngIf="MostrarBoton"></span>
       <button>
-        <img
-          class="w-7 h-7"
-          src="../../../assets/icon/Home.svg"
-          alt="Ordenes"
-        />
+        <img src="../../../assets/icon/Home.svg" alt="Ordenes" />
       </button>
     </button>
     <Button class="ListUser" (click)="ListUser()">
       <span *ngIf="MostrarBoton"> </span>
-      <img
-        class="w-7 h-7"
-        src="../../../assets/icon/Register.svg"
-        alt="Usuarios"
-      />
+      <img src="../../../assets/icon/Register.svg" alt="Usuarios" />
     </Button>
     <Button class="Team" (click)="Teams()">
       <span *ngIf="MostrarBoton"></span>
-      <img class="w-7 h-7" src="../../../assets/icon/Team.svg" alt="Equipos" />
+      <img src="../../../assets/icon/Team.svg" alt="Equipos" />
     </Button>
     <Button class="Info" (click)="Information()">
       <span *ngIf="MostrarBoton"></span>
-      <img class="w-7 h-7" src="../../../assets/icon/Info.svg" alt="Personal" />
+      <img src="../../../assets/icon/Info.svg" alt="Personal" />
     </Button>
-    <Button class="LogOut absolute w-[73%] bottom-3" (click)="LogOut()">
+    <Button class="LogOut" (click)="LogOut()">
       <span *ngIf="MostrarBoton"></span>
-      <img class="w-7 h-7" src="../../../assets/icon/LogOut.svg" alt="Salir" />
+      <img src="../../../assets/icon/LogOut.svg" alt="Salir" />
     </Button>
   </nav>
 </main>
-
-<style>
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 34px;
-    height: 34px;
-    transition: 0.5s;
-    border-radius: 50%;
-  }
-
-  .principal:hover,
-  .ListUser:hover,
-  .Team:hover,
-  .Info:hover,
-  .LogOut:hover {
-    background-color: #ccd32a;
-  }
-</style>
 
 <!--
 *ngIf="validarOpera || validarAdmin"

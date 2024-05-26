@@ -1,55 +1,44 @@
 <main class="p-10 bg-[#D9D9D9] bg-opacity-[25%]">
-  <Label class="text-3xl text-[#004438] font-bold mb-3"
-    >Registrar usuario</Label
-  >
+  <Label class="text-3xl text-[#004438] font-bold mb-3">Listado de usuarios</Label>
+
   <div class="flex justify-between mb-3">
     <div class="flex items-center">
-      <input
-        class="w-[546px] h-60px rounded-[50px] text-lg py-2 px-4"
-        placeholder="Buscar..."
-        type="text"
-      />
-
+      <input class="w-[546px] h-60px rounded-[50px] text-lg py-2 px-4" placeholder="Buscar..." type="text" />
       <button class="w-[27px] h-[27px] -ml-10 relative">
         <img src="../../../../../assets/icon/Search.svg" alt="" />
       </button>
     </div>
 
-    <button
-      class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
-      (click)="changeVisibility()"
-    >
+    <button class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
+      (click)="changeVisibility()">
       + AGREGAR
     </button>
   </div>
-  <table class="w-full h-full text-2xl bg-white overflow-hidden rounded-lg">
-    <thead
-      class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]"
-    >
-      <th class="p-3">Nombre</th>
-      <th class="p-3">Correo</th>
-      <th class="p-3">Estado</th>
-      <th class="p-3">Rol</th>
-      <th class="p-3">Equipo</th>
-      <th class="p-3">Accion</th>
-    </thead>
-    <tbody>
-      <tr class="text-center">
-        <td class="py-4">Kadir Quintero</td>
-        <td>test@gmail.com</td>
-        <td>Activo</td>
-        <td>Administrador</td>
-        <td>TeamCoders</td>
-        <td>
-          <button
-            [disabled]="personaSelect.nombre1 == '' ? true : false"
-            (click)="modPersona()"
-          >
-            <img src="../../../../../assets/icon/modificar.svg" alt="Modify" />
-          </button>
-        </td>
-      </tr>
-      <!-- <tr
+
+  <div class="h-[420px] overflow-y-auto">
+    <table class="w-full h-full bg-white rounded-lg overflow-hidden">
+      <thead class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]">
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Estado</th>
+        <th>Rol</th>
+        <th>Equipo</th>
+        <th>Accion</th>
+      </thead>
+      <tbody class="text-xl">
+        <tr class="text-center">
+          <td>Kadir Quintero</td>
+          <td>test@gmail.com</td>
+          <td>Activo</td>
+          <td>Administrador</td>
+          <td>TeamCoders</td>
+          <td>
+            <button [disabled]="personaSelect.nombre1 == '' ? true : false" (click)="modPersona()">
+              <img src="../../../../../assets/icon/modificar.svg" alt="Modify" />
+            </button>
+          </td>
+        </tr>
+        <!-- <tr
         *ngFor="let persona of lstpersonas"
         (click)="this.personaSelect = persona"
         [ngClass]="{ seleccionado: personaSelect == persona }"
@@ -59,26 +48,15 @@
         <td class="p-3">{{ persona.nombre }}</td>
         <td class="p-3">{{ persona.rol }}</td>
       </tr> -->
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 
-  <app-register
-    class="bg-black bg-opacity-50 absolute top-0 bottom-0 left-0 right-0"
-    *ngIf="visibility ? true : false"
-  />
-
-  <button
-    class="exit absolute top-0 right-0 mt-1 mr-2 h-7 w-7 z-50 cursor-pointer"
-    (click)="changeVisibility()"
-    *ngIf="visibility ? true : false"
-  >
-    <img src=".../../../../../../../assets/icon/Exit.svg" alt="ExitRegister" />
-  </button>
+  <div *ngIf="visibility" class="fixed w-full h-full top-0 left-0 z-[1000] bg-black bg-opacity-50">
+    <app-register />
+    <!-- Botón de salida para cerrar el modal -->
+    <button class="exit" (click)="changeVisibility()">
+      <img src="../../../../../assets/icon/Exit.svg" alt="CloseModal" />
+    </button>
+  </div>
 </main>
-
-<style>
-  .seleccionado {
-    border: 4px solid green;
-    background-color: green;
-  }
-</style>

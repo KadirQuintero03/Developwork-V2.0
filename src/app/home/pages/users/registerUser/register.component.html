@@ -1,119 +1,123 @@
-<main class="w-[661px] h-[550px]">
-  <form
-    class="w-full h-full bg-[#FBFBF1] p-8 rounded-[20px]"
-    (ngSubmit)="addPersona()"
-    method="post"
-  >
-    <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Registro de usuarios</h1>
-    <h6 class="text-black opacity-[70%]">
-      Por favor, ingrese los datos del usuario
-    </h6>
-    <div class="flex justify-center items-center gap-4 mt-4">
-      <fieldset class="flex flex-column gap-1">
-        <label class="text-base text-black"> Identificacion </label>
-        <input
-          [(ngModel)]="persona.id_usuario"
-          name="id_usuario"
-          class="w-[271px] h-[41px] p-1 rounded-lg border"
-          type="text"
-          placeholder="cc"
-          required
-        />
+<main class="w-full flex items-center justify-center">
+  <div>
+    <form
+      class="w-[661px] h-[550px] bg-[#FBFBF1] p-8 rounded-[20px]"
+      (ngSubmit)="addPersona()"
+      method="post"
+    >
+      <h1 class="text-4xl font-bold mb-3 text-[#014F41]">
+        Registro de usuarios
+      </h1>
+      <h6 class="text-black opacity-[70%]">
+        Por favor, ingrese los datos del usuario
+      </h6>
+      <div class="flex justify-center items-center gap-4 mt-4">
+        <fieldset class="flex flex-column gap-1">
+          <label class="text-base text-black"> Identificacion </label>
+          <input
+            [(ngModel)]="persona.id_usuario"
+            name="id_usuario"
+            class="w-[271px] h-[41px] p-1 rounded-lg border"
+            type="text"
+            placeholder="cc"
+            required
+          />
 
-        <label class="text-base text-black">Primer nombre</label>
-        <input
-          [(ngModel)]="persona.nombre1"
-          name="nombre"
-          class="w-[271px] h-[41px] p-1 rounded-lg border"
-          type="text"
-          placeholder="Ingrese el primer nombre"
-          required
-        />
+          <label class="text-base text-black">Primer nombre</label>
+          <input
+            [(ngModel)]="persona.nombre1"
+            name="nombre"
+            class="w-[271px] h-[41px] p-1 rounded-lg border"
+            type="text"
+            placeholder="Ingrese el primer nombre"
+            required
+          />
 
-        <label class="text-base text-black">Segundo nombre</label>
-        <input
-          [(ngModel)]="persona.nombre2"
-          name="nombre2"
-          class="w-[271px] h-[41px] p-1 rounded-lg border"
-          placeholder="Ingrese el segundo nombre"
-          type="text"
-        />
+          <label class="text-base text-black">Segundo nombre</label>
+          <input
+            [(ngModel)]="persona.nombre2"
+            name="nombre2"
+            class="w-[271px] h-[41px] p-1 rounded-lg border"
+            placeholder="Ingrese el segundo nombre"
+            type="text"
+          />
+        </fieldset>
+
+        <fieldset class="flex flex-column gap-1">
+          <label class="text-base text-black">Primer apellido</label>
+          <input
+            [(ngModel)]="persona.apellido1"
+            name="apellido"
+            class="w-[271px] h-[41px] p-1 rounded-lg border"
+            type="text"
+            placeholder="Ingrese el primer apellido"
+            required
+          />
+
+          <label class="text-base text-black">Segundo apellido</label>
+          <input
+            [(ngModel)]="persona.apellido2"
+            name="apellido2"
+            class="w-[271px] h-[41px] p-1 rounded-lg border"
+            placeholder="Ingrese el segundo apellido"
+            type="text"
+          />
+
+          <label class="text-base text-black">Correo electronico</label>
+          <input
+            [(ngModel)]="persona.correo"
+            name="correo"
+            class="w-[271px] h-[41px] p-1 rounded-lg border"
+            type="email"
+            placeholder="Ingrese su correo"
+            required
+          />
+        </fieldset>
+      </div>
+
+      <fieldset class="flex items-center flex-column mt-3 gap-3">
+        <label class="text-base text-black">
+          Equipo
+          <select
+            class="rounded-lg border w-[514px] h-[36px] p-1"
+            name="id_equipo"
+            id="id_equipo"
+            [(ngModel)]="persona.equipo"
+          >
+            <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+              {{ equipo.nombre }}
+            </option>
+          </select></label
+        >
+
+        <label class="text-base text-black">
+          Rol
+          <select
+            class="rounded-lg border w-[540px] h-[36px] p-1"
+            name="id_rol"
+            id="id_rol"
+            [(ngModel)]="persona.rol"
+          >
+            <option *ngFor="let rol of verroles" [value]="rol.id_rol">
+              {{ rol.nombre }}
+            </option>
+          </select></label
+        >
       </fieldset>
 
-      <fieldset class="flex flex-column gap-1">
-        <label class="text-base text-black">Primer apellido</label>
-        <input
-          [(ngModel)]="persona.apellido1"
-          name="apellido"
-          class="w-[271px] h-[41px] p-1 rounded-lg border"
-          type="text"
-          placeholder="Ingrese el primer apellido"
-          required
-        />
-
-        <label class="text-base text-black">Segundo apellido</label>
-        <input
-          [(ngModel)]="persona.apellido2"
-          name="apellido2"
-          class="w-[271px] h-[41px] p-1 rounded-lg border"
-          placeholder="Ingrese el segundo apellido"
-          type="text"
-        />
-
-        <label class="text-base text-black">Correo electronico</label>
-        <input
-          [(ngModel)]="persona.correo"
-          name="correo"
-          class="w-[271px] h-[41px] p-1 rounded-lg border"
-          type="email"
-          placeholder="Ingrese su correo"
-          required
-        />
-      </fieldset>
-    </div>
-
-    <fieldset class="flex items-center flex-column mt-3 gap-3">
-      <label class="text-base text-black">
-        Equipo
-        <select
-          class="rounded-lg border w-[514px] h-[36px] p-1"
-          name="id_equipo"
-          id="id_equipo"
-          [(ngModel)]="persona.equipo"
+      <div class="flex justify-evenly mt-3">
+        <button
+          class="text-xl text-white bg-[#00214D] w-[271px] h-[47] rounded-lg p-2"
         >
-          <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
-            {{ equipo.nombre }}
-          </option>
-        </select></label
-      >
+          Cancelar
+        </button>
 
-      <label class="text-base text-black">
-        Rol
-        <select
-          class="rounded-lg border w-[540px] h-[36px] p-1"
-          name="id_rol"
-          id="id_rol"
-          [(ngModel)]="persona.rol"
-        >
-          <option *ngFor="let rol of verroles" [value]="rol.id_rol">
-            {{ rol.nombre }}
-          </option>
-        </select></label
-      >
-    </fieldset>
-
-    <div class="flex justify-evenly mt-3">
-      <button
-        class="text-xl text-white bg-[#00214D] w-[271px] h-[47] rounded-lg p-2"
-      >
-        Cancelar
-      </button>
-
-      <input
-        class="text-xl text-white bg-[#014F41] w-[271px] h-[47] rounded-lg p-2"
-        type="submit"
-        value="Confirmar"
-      />
-    </div>
-  </form>
+        <input
+          class="text-xl text-white bg-[#014F41] w-[271px] h-[47] rounded-lg p-2"
+          type="submit"
+          value="Confirmar"
+        />
+      </div>
+    </form>
+  </div>
 </main>
