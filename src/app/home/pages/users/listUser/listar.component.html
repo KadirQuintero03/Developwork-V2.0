@@ -1,4 +1,4 @@
-<main class="p-10 bg-[#D9D9D9] bg-opacity-[25%]">
+<main class="px-10 py-4 bg-[#D9D9D9] bg-opacity-[25%]">
   <Label class="text-3xl text-[#004438] font-bold mb-3">Listado de usuarios</Label>
 
   <div class="flex justify-between mb-3">
@@ -15,7 +15,7 @@
     </button>
   </div>
 
-  <div class="h-[420px] overflow-y-auto">
+  <div class="h-[428px] overflow-y-auto">
     <table class="w-full h-full bg-white rounded-lg overflow-hidden">
       <thead class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]">
         <th>Nombre</th>
@@ -52,11 +52,9 @@
     </table>
   </div>
 
-  <div *ngIf="visibility" class="fixed w-full h-full top-0 left-0 z-[1000] bg-black bg-opacity-50">
-    <app-register />
-    <!-- Botón de salida para cerrar el modal -->
-    <button class="exit" (click)="changeVisibility()">
-      <img src="../../../../../assets/icon/Exit.svg" alt="CloseModal" />
-    </button>
-  </div>
+  <app-register *ngIf="visibility" class="h-52 absolute inset-0 bg-black bg-opacity-50 z-[100]" />
+  <!-- Botón de salida para cerrar el modal -->
+  <button class="exit" (click)="changeVisibility()">
+    <img src="../../../../../assets/icon/Exit.svg" alt="CloseModal" />
+  </button>
 </main>
