@@ -1,0 +1,4 @@
+.sec-grid{
+  display: grid;
+  grid-template-columns: 32% 1fr;
+}

@@ -1,37 +1,47 @@
-<div class="text-center w-full h-[100vh] flex justify-center items-center">
-  <main class="rounded-xl bg-[#FBFCF1] bg-opacity-[0.5]">
-    <article class="p-3 bg-[#FBFCF1] rounded-xl">
-      <h1>Personal information</h1>
-      <section class="text-lg text-start p-3">
-        <p class="text-[#00214D] font-bold text-xl">
-          Nombre {{ personalog.nombre1 }}
-        </p>
-        <p class="text-black text-[16px] opacity-[50%]">
-          Segundo nombre {{ personalog.nombre2 }}
-        </p>
-        <p class="text-black text-[16px] opacity-[50%]">
-          Apellido {{ personalog.apellido1 }}
-        </p>
-        <p class="text-black text-[16px] opacity-[50%]">
-          Segundo apellido {{ personalog.apellido2 }}
-        </p>
-        <p class="text-black text-[16px] opacity-[50%]">
-          Correo {{ personalog.correo }}
-        </p>
-        <p class="text-[#014F41] text-[13px]">
-          Rol {{ personalog.rol.nombre_rol }}
-        </p>
-        <p class="text-[#014F41] text-[13px]">
-          Estados {{ personalog.estado.nombre_estado }}
-        </p>
-      </section>
+<main class="w-full h-[90vh] bg-[#D9D9D9] bg-opacity-[25%] rounded-l-xl p-4">
+  <h1 class="text-4xl font-bold text-[#004438]">Informacion de usuario</h1>
+  <article class="flex items-center justify-center">
+    <section class="sec-grid text-lg p-3 bg-[#FFFFFF] rounded-xl w-[670px] mt-8">
+      <div class="text-white text-center bg-[#014F41] rounded-[50%] w-40 h-40">
+        K
+      </div>
 
-      <Button
-        class="w-40 h-7 p-1 text-sm text-white rounded-lg bg-[#00214D]"
-        (click)="CambContra()"
-      >
-        Cambiar contraseña
-      </Button>
-    </article>
-  </main>
-</div>
+      <div class="flex flex-col gap-8">
+        <div class="flex gap-14">
+          <p class="text-[#00214D] font-bold text-xl">
+            Nombre {{ personalog.nombre1 }}
+          </p>
+          <Button
+            class="w-40 h-7 p-1 text-sm text-white rounded-lg bg-[#00214D]"
+            (click)="CambContra()"
+            >Cambiar contraseña</Button
+          >
+        </div>
+
+        <div class="flex gap-14">
+          <p class="text-black text-[16px] opacity-[50%]">
+            Segundo nombre {{ personalog.nombre2 }}
+          </p>
+          <p class="text-black text-[16px] opacity-[50%]">
+            Apellido {{ personalog.apellido1 }}
+          </p>
+          <p class="text-black text-[16px] opacity-[50%]">
+            Segundo apellido {{ personalog.apellido2 }}
+          </p>
+        </div>
+
+        <div class="flex gap-14">
+          <p class="text-[#014F41] text-[13px]">
+            Rol {{ personalog.rol.nombre_rol }}
+          </p>
+          <p class="text-[#014F41] text-[13px]">
+            Estados {{ personalog.estado.nombre_estado }}
+          </p>
+          <p class="text-black text-[16px] opacity-[50%]">
+            Correo {{ personalog.correo }}
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
