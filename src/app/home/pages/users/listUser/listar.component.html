@@ -1,23 +1,33 @@
 <main class="px-10 py-4 bg-[#D9D9D9] bg-opacity-[25%]">
-  <Label class="text-3xl text-[#004438] font-bold mb-3">Listado de usuarios</Label>
+  <Label class="text-3xl text-[#004438] font-bold mb-3"
+    >Listado de usuarios</Label
+  >
 
   <div class="flex justify-between mb-3">
     <div class="flex items-center">
-      <input class="w-[546px] h-60px rounded-[50px] text-lg py-2 px-4" placeholder="Buscar..." type="text" />
+      <input
+        class="w-[546px] h-60px rounded-[50px] text-lg py-2 px-4"
+        placeholder="Buscar..."
+        type="text"
+      />
       <button class="w-[27px] h-[27px] -ml-10 relative">
         <img src="../../../../../assets/icon/Search.svg" alt="" />
       </button>
     </div>
 
-    <button class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
-      (click)="changeVisibility()">
+    <button
+      class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
+      (click)="changeVisibility()"
+    >
       + AGREGAR
     </button>
   </div>
 
   <div class="h-[428px] overflow-y-auto">
     <table class="w-full h-full bg-white rounded-lg overflow-hidden">
-      <thead class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]">
+      <thead
+        class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]"
+      >
         <th>Nombre</th>
         <th>Correo</th>
         <th>Estado</th>
@@ -33,8 +43,14 @@
           <td>Administrador</td>
           <td>TeamCoders</td>
           <td>
-            <button [disabled]="personaSelect.nombre1 == '' ? true : false" (click)="modPersona()">
-              <img src="../../../../../assets/icon/modificar.svg" alt="Modify" />
+            <button
+              [disabled]="personaSelect.nombre1 == '' ? true : false"
+              (click)="modPersona()"
+            >
+              <img
+                src="../../../../../assets/icon/modificar.svg"
+                alt="Modify"
+              />
             </button>
           </td>
         </tr>
@@ -52,7 +68,10 @@
     </table>
   </div>
 
-  <app-register *ngIf="visibility" class="h-52 absolute inset-0 bg-black bg-opacity-50 z-[100]" />
+  <app-register
+    *ngIf="visibility"
+    class="h-52 absolute inset-0 bg-black bg-opacity-50 z-[100]"
+  />
   <!-- Botón de salida para cerrar el modal -->
   <button class="exit" (click)="changeVisibility()">
     <img src="../../../../../assets/icon/Exit.svg" alt="CloseModal" />
