@@ -1,0 +1,8 @@
+button {
+  background-color: transparent;
+  background-image: url(../../../../assets/icon/Trash.svg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: bottom;
+}

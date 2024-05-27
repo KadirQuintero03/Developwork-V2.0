@@ -7,7 +7,7 @@ import { notificacion } from '../../../interface/notificacion';
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
-  //styleUrls: ['./notification.component.css'],
+  styleUrls: ['./notification.component.css'],
 })
 
 export class NotificationComponent implements OnInit, OnDestroy {
