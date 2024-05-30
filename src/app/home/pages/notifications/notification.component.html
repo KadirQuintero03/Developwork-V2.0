@@ -1,14 +1,12 @@
-<main class="w-full h-[100vh] flex justify-center items-center">
-  <div class="p-3 bg-white rounded-sm">
-    <h2 class="text-xl text-[#00214D] font-semibold">Notificaciones</h2>
-    <ul>
-      <li
-        class="mt-1 mb-1 text-xl w-full grid-cols-2"
-        *ngFor="let notificacion of notificaciones"
-      >
-        {{ notificacion.mensaje }}
-        <button class="h-5 w-[30px]" (click)="eliminar(notificacion)"></button>
-      </li>
-    </ul>
-  </div>
-</main>
+<div class="p-3 rounded-sm bg-white fixed top-[2vh] left-[80vw] z-[100]">
+  <h2 class="text-xl text-[#00214D] font-semibold">Notificaciones</h2>
+  <ul>
+    <li
+      class="mt-1 mb-1 text-xl w-full grid-cols-2"
+      *ngFor="let notificacion of notificaciones"
+    >
+      {{ notificacion.mensaje }}
+      <button class="h-5 w-[30px]" (click)="eliminar(notificacion)"></button>
+    </li>
+  </ul>
+</div>
