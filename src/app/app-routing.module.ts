@@ -30,10 +30,10 @@ const routes: Routes = [
             path: '',
             component: OrdenesMComponent,
           },
-          {
-            // path: 'register',
-            // component: registerComponent,
-          },
+          // {
+          //   path: 'register',
+          //   component: registerComponent,
+          // },
           {
             path: 'list',
             component: ListarComponent,
