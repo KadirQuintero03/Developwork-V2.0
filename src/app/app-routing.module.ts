@@ -31,14 +31,14 @@ const routes: Routes = [
             component: OrdenesMComponent,
           },
           {
-            path: 'register',
-            component: registerComponent,
+            // path: 'register',
+            // component: registerComponent,
           },
           {
             path: 'list',
             component: ListarComponent,
           },
-          { path: 'nav', component: NavComponent },
+          // { path: 'nav', component: NavComponent },
           {
             path: 'teams',
             component: TeamsComponent,
