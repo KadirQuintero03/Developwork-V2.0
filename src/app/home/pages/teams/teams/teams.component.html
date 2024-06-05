@@ -1,4 +1,4 @@
-<main class="p-10 bg-[#D9D9D9] bg-opacity-[25%]">
+<main class="px-10 py-4 bg-[#D9D9D9] bg-opacity-[25%]">
   <Label class="text-3xl text-[#004438] font-bold mb-3"
     >Listado de equipos</Label
   >
@@ -18,35 +18,10 @@
 
     <button
       class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
-      (click)="AgregarEquipo()"
     >
       + AGREGAR
     </button>
   </div>
-
-  <label class="text-lg mx-2" for="nombre">Nombre</label>
-  <input
-    [(ngModel)]="nuevoEquipo.nombre_equipo"
-    class="w-30 p-1 mx-2 mb-2 rounded-lg"
-    name="nombre"
-    id="nombre"
-  />
-
-  <label class="text-lg mx-2" for="estado">Estado</label>
-  <select
-    class="w-40 p-1 mx-2 mb-2 rounded-lg"
-    name="id_estado"
-    id="id_estado"
-    [(ngModel)]="nuevoEquipo.estado"
-  >
-    <option
-      *ngFor="let estado of verestado"
-      [value]="estado.id_estado"
-      selected="estado === id_estado"
-    >
-      {{ estado.nombre_estado }}
-    </option>
-  </select>
 
   <div class="h-[428px] overflow-y-auto">
     <table class="w-full h-full bg-white rounded-lg overflow-hidden">
