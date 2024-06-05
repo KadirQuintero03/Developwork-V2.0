@@ -17,7 +17,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
   constructor(private Ssoket: SocketService, private spersona: PersonaService) {}
 
   ngOnDestroy(): void {
-    this.Ssoket.disconet().subscribe();
+    // this.Ssoket.disconet().subscribe();
   }
 
   ngOnInit(): void {
