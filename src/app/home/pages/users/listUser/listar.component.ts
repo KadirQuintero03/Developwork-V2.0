@@ -14,7 +14,6 @@ export class ListarComponent implements OnInit {
   user: persona = new persona();
   lstpersonas: persona[] = [];
   visibility: boolean = false;
-
   isActivo: boolean = false;
 
   color(){
@@ -50,8 +49,8 @@ export class ListarComponent implements OnInit {
     this.router.navigate(['user/modPersona']);
   }
 
-  changeVisibility(){
-    this.visibility = !this.visibility
+  changeVisibility(newValue: boolean){
+    this.visibility = newValue
     console.log(this.visibility)
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { PersonaService } from '../../../services/persona.service';
 import { persona } from '../../../interface/persona';
 
@@ -13,6 +13,12 @@ export class CambContraComponent {
   ChangeType: boolean = true;
   _user: persona = new persona();
   response: String = '';
+
+  @Output() eventState = new EventEmitter<boolean>
+
+  changeState(){
+    this.eventState.emit(false)
+  }
 
   constructor(private servicePersona: PersonaService) {
     this.servicePersona.setPersonaLog().subscribe((response: persona) => {

@@ -47,8 +47,8 @@ const routes: Routes = [
             path: 'information',
             component: InformationComponent,
           },
-          { path: 'cambcontraseña', component: CambContraComponent },
-          { path: 'notification', component: NotificationComponent },
+          // { path: 'cambcontraseña', component: CambContraComponent },
+          // { path: 'notification', component: NotificationComponent },
           {
             path: 'modPersona',
             component: ModpersonaComponent,

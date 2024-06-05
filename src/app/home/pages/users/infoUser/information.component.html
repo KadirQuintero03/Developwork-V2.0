@@ -1,7 +1,9 @@
 <main class="w-full h-[90vh] bg-[#D9D9D9] bg-opacity-[25%] rounded-l-xl p-4">
   <h1 class="text-4xl font-bold text-[#004438]">Informacion de usuario</h1>
   <article class="flex items-center justify-center">
-    <section class="sec-grid text-lg p-3 bg-[#FFFFFF] rounded-xl w-[670px] mt-8">
+    <section
+      class="sec-grid text-lg p-3 bg-[#FFFFFF] rounded-xl w-[670px] mt-8"
+    >
       <div class="text-white text-center bg-[#014F41] rounded-[50%] w-40 h-40">
         K
       </div>
@@ -13,7 +15,7 @@
           </p>
           <Button
             class="w-40 h-7 p-1 text-sm text-white rounded-lg bg-[#00214D]"
-            (click)="CambContra()"
+            (click)="changeVisibility(true)"
             >Cambiar contraseña</Button
           >
         </div>
@@ -44,4 +46,9 @@
       </div>
     </section>
   </article>
+  <app-camb-contra
+    *ngIf="visibility"
+    class="fixed inset-0 bg-black bg-opacity-50 z-[100]"
+    (eventState)="changeVisibility($event)"
+  />
 </main>

@@ -8,7 +8,8 @@
     <span class="text-[#FDDA00]">Develop </span>
     <span class="text-[#004438]"> Work</span></label
   >
-  <Button class="absolute right-12" (click)="Notifications()">
+  <Button class="absolute right-12" (click)="changeVisibility()">
+    <app-notification *ngIf="visibility"/>
     <img
       class="w-6 h-6"
       src="../../../assets/icon/Notificacion.svg"

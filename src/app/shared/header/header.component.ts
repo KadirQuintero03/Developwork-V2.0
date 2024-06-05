@@ -7,8 +7,10 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   constructor(private router: Router) {}
+  visibility: boolean = false;
 
-  Notifications(): void {
-    this.router.navigate(['user/notification']);
+  changeVisibility(){
+    this.visibility = !this.visibility
+    console.log(this.visibility)
   }
 }

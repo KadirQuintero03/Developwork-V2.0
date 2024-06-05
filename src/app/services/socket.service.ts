@@ -25,6 +25,7 @@ export class SocketService {
     this.socket.connect();
     return this.socket.fromEvent('notificaciones');
   }
+
   escucharNuevaNotificacion() {
     return this.socket.fromEvent('nuevaNotificacion');
   }
@@ -32,6 +33,7 @@ export class SocketService {
   enviarNuevaNotificacion(mensaje: notificacion) {
     this.socket.emit('nuevaNotificacion', mensaje);
   }
+
   eliminar(__notificacion: notificacion): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -40,6 +42,7 @@ export class SocketService {
     console.log(__notificacion);
     return this.http.delete(`${this.URL}`, { headers, body: __notificacion });
   }
+  
   disconet() {
     return this.socket.emit('disconect');
   }

@@ -11,6 +11,13 @@ import { persona } from '../../../../interface/persona';
 
 export class InformationComponent {
   personalog: persona = new persona();
+  visibility: boolean = false;
+
+  changeVisibility(newValue: boolean){
+    this.visibility = newValue
+    console.log(this.visibility)
+  }
+
   constructor(private router: Router, private personaService: PersonaService) {
     this.personaService.setPersonaLog().subscribe((Response :persona)=>{
       this.personalog=Response;

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { persona } from '../../../../interface/persona';
 import { PersonaService } from '../../../../services/persona.service';
 import { equipo } from '../../../../interface/equipo';
@@ -20,11 +20,17 @@ export class registerComponent {
   verroles: rol[] = [];
   serviceLocalStorage: any;
 
+  @Output() eventState = new EventEmitter<boolean>();
+
+  changeState(){
+    this.eventState.emit(false);
+  }
+
   constructor(
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
-    private personaSerive: PersonaService
+    private personaSerive: PersonaService,
   ) {}
 
   ngOnInit(): void {

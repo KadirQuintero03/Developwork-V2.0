@@ -19,6 +19,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.Ssoket.disconet().subscribe();
   }
+
   ngOnInit(): void {
     this.spersona.setPersonaLog().subscribe((Response: persona) => {
       this.nuevaNotificacion.idAdmin = Response.id_usuario;
@@ -33,6 +34,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
       this.notificaciones.push(notificacion);
     });
   }
+
   eliminar(__notificacion: notificacion) {
     this.Ssoket.eliminar(__notificacion).subscribe((Response) => {
       console.log(Response);

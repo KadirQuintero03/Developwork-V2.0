@@ -1,0 +1,6 @@
+projectKey=DevelopWork
+serverUrl=http://localhost:9000
+serverVersion=10.5.1.90531
+dashboardUrl=http://localhost:9000/dashboard?id=DevelopWork
+ceTaskId=adc4c97c-67f7-4017-b360-4082308d80f8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=adc4c97c-67f7-4017-b360-4082308d80f8
