@@ -23,6 +23,7 @@ import { OrdenComponent } from './home/pages/ordenes/orden/orden.component';
 import { FordenComponent } from './home/pages/ordenes/forden/forden.component';
 import { ListarComponent } from './home/pages/users/listUser/listar.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { RegisterTeamComponent } from './home/pages/teams/registerTeam/registerTeam.component';
 
 const config: SocketIoConfig = {
   url: 'http://191.88.249.172:3002',
@@ -45,7 +46,8 @@ const config: SocketIoConfig = {
     OrdenComponent,
     FordenComponent,
     ListarComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterTeamComponent
   ],
   imports: [
     BrowserModule,
