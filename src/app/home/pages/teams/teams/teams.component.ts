@@ -11,6 +11,7 @@ import { TeamservService } from '@/app/services/teamserv.service';
 export class TeamsComponent implements OnInit {
   equipoSelect: equipo = new equipo();
   verequipo: equipo[] = [];
+  visibilityRT: boolean = false;
 
   constructor(
     private router: Router,
@@ -24,6 +25,10 @@ export class TeamsComponent implements OnInit {
     // this.serviceestado.getData().subscribe((Response: any) => {
     //   this.verestado = Response.data.estados;
     // });
+  }
+
+  changeVisibilityRT(newValue: boolean){
+    this.visibilityRT = newValue;
   }
 
   modEquipo() {

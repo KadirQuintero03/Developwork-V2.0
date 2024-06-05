@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { estado } from '@/app/interface/estado';
 import { EstadoserviceService } from '@/app/services/estadoservice.service';
 import { equipo } from '@/app/interface/equipo';
@@ -13,6 +13,12 @@ export class RegisterTeamComponent {
   verestado: estado[] = [];
   verequipo: equipo[] = [];
   nuevoEquipo: equipo = new equipo();
+
+  @Output() changeStateRT = new EventEmitter<boolean>;
+
+  changeVisibilityRT(){
+    this.changeStateRT.emit(false)
+  }
 
   constructor(private serviceestado: EstadoserviceService, private serviceteam: TeamservService,) {}
 

@@ -1,30 +1,50 @@
-<label class="text-lg mx-2" for="nombre">Nombre</label>
-  <input
-    [(ngModel)]="nuevoEquipo.nombre_equipo"
-    class="w-30 p-1 mx-2 mb-2 rounded-lg"
-    name="nombre"
-    id="nombre"
-  />
-
-  <label class="text-lg mx-2" for="estado">Estado</label>
-  <select
-    class="w-40 p-1 mx-2 mb-2 rounded-lg"
-    name="id_estado"
-    id="id_estado"
-    [(ngModel)]="nuevoEquipo.estado"
+<main class="w-full h-[85vh] flex justify-center items-center">
+  <form
+    class="w-[450px] h-[310px] bg-[#FFFFFF] p-8 rounded-[20px]"
+    method="post"
   >
-    <option
-      *ngFor="let estado of verestado"
-      [value]="estado.id_estado"
-      selected="estado === id_estado"
-    >
-      {{ estado.nombre_estado }}
-    </option>
-  </select>
+  <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Registro de equipo</h1>
+  <div class="flex flex-col gap-1">
 
-  <button
-  class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
-  (click)="AgregarEquipo()"
->
-  + AGREGAR
-</button>
+    <label class="text-lg mx-2" for="estado">Estado</label>
+    <select
+      class="rounded-lg border w-[385px] h-[35px] p-1 cursor-pointer"
+      name="id_estado"
+      id="id_estado"
+      [(ngModel)]="nuevoEquipo.estado"
+    >
+      <option
+        *ngFor="let estado of verestado"
+        [value]="estado.id_estado"
+        selected="estado === id_estado"
+      >
+        {{ estado.nombre_estado }}
+      </option>
+    </select>
+
+    <label class="text-lg mx-2" for="nombre">Nombre del equipo</label>
+    <input
+      [(ngModel)]="nuevoEquipo.nombre_equipo"
+      class="w-[385px] h-[35px] p-2 rounded-lg border"
+      name="nombre"
+      id="nombre"
+    />
+  </div>
+
+    <div class="flex justify-evenly mt-3">
+      <button
+        class="text-xl text-white bg-[#00214D] w-[160px] h-[26] rounded-lg p-2"
+        (click)="changeVisibilityRT()"
+      >
+        Cancelar
+      </button>
+
+      <button
+        class="text-xl text-white bg-[#014F41] w-[160px] h-[26] rounded-lg p-2"
+        (click)="AgregarEquipo()"
+      >
+        Registrar
+      </button>
+    </div>
+  </form>
+</main>
