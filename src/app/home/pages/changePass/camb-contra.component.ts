@@ -34,7 +34,7 @@ export class CambContraComponent {
     const user: any = {
       correo: this._user.correo,
       contrasena: this.contrasena,
-      id_usuario: this._user.id_usuario,
+      id_usuario: this._user.idUsuario,
       nuevaCon: this.newCon,
     };
     this.servicePersona.chPass(user).subscribe(

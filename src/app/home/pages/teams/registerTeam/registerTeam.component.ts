@@ -14,13 +14,16 @@ export class RegisterTeamComponent {
   verequipo: equipo[] = [];
   nuevoEquipo: equipo = new equipo();
 
-  @Output() changeStateRT = new EventEmitter<boolean>;
+  @Output() changeStateRT = new EventEmitter<boolean>();
 
-  changeVisibilityRT(){
-    this.changeStateRT.emit(false)
+  changeVisibilityRT() {
+    this.changeStateRT.emit(false);
   }
 
-  constructor(private serviceestado: EstadoserviceService, private serviceteam: TeamservService,) {}
+  constructor(
+    private serviceestado: EstadoserviceService,
+    private serviceteam: TeamservService
+  ) {}
 
   ngOnInit(): void {
     // this.serviceteam.getData().subscribe((Response: equipo[]) => {
@@ -40,11 +43,13 @@ export class RegisterTeamComponent {
     // this.nuevoEquipo.id_equipo = '23524'
 
     this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
-      (response) => { console.log('Equipo agregado con éxito:', response);
-        alert("Nuevo equipo agregado con exito")
+      (response) => {
+        console.log('Equipo agregado con éxito:', response);
+        alert('Nuevo equipo agregado con exito');
         this.verequipo.push(this.nuevoEquipo);
       },
-      (error) => {console.error('Error al agregar equipo:', error);
+      (error) => {
+        console.error('Error al agregar equipo:', error);
       }
     );
   }

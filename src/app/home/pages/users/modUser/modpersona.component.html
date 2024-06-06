@@ -10,7 +10,7 @@
           type="text"
           name="identificacion"
           placeholder="cc"
-          [(ngModel)]="persona.id_usuario"
+          [(ngModel)]="persona.idUsuario"
         />
         <label class="text-base text-black"> Primer Nombre </label>
         <input
@@ -63,7 +63,7 @@
       <select
         class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
         name="id_equipo"
-        [(ngModel)]="persona.equipo.id_equipo"
+        [(ngModel)]="persona.idEquipo.id_equipo"
       >
         <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
           {{ equipo.nombre_equipo }}

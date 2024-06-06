@@ -24,7 +24,7 @@
   </div>
 
   <div class="h-[428px] overflow-y-auto">
-    <table class="w-full h-full bg-white rounded-lg overflow-hidden">
+    <table class="w-full bg-white rounded-lg overflow-hidden">
       <thead
         class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]"
       >
@@ -36,12 +36,17 @@
         <th>Accion</th>
       </thead>
       <tbody class="text-xl">
-        <tr class="text-center">
-          <td>Kadir Quintero</td>
-          <td>test@gmail.com</td>
-          <td>Activo</td>
-          <td>Administrador</td>
-          <td>TeamCoders</td>
+        <tr
+          class="text-center"
+          *ngFor="let persona of lstpersonas"
+          (click)="this.personaSelect = persona"
+          [ngClass]="{ seleccionado: personaSelect == persona }"
+        >
+          <td>{{ persona.nombre1 }} {{ persona.apellido1 }}</td>
+          <td>{{ persona.correo }}</td>
+          <td>{{ persona.idEstado.nombre_estado }}</td>
+          <td>{{ persona.idRol.nombre_rol }}</td>
+          <td>{{ persona.idEquipo.nombre_equipo }}</td>
           <td>
             <button
               [disabled]="personaSelect.nombre1 == '' ? true : false"
@@ -54,16 +59,6 @@
             </button>
           </td>
         </tr>
-        <!-- <tr
-        *ngFor="let persona of lstpersonas"
-        (click)="this.personaSelect = persona"
-        [ngClass]="{ seleccionado: personaSelect == persona }"
-      >
-        <td class="p-3">{{ persona.nombre1 }} {{ persona.apellido1 }}</td>
-        <td class="p-3">{{ persona.correo }}</td>
-        <td class="p-3">{{ persona.nombre }}</td>
-        <td class="p-3">{{ persona.rol }}</td>
-      </tr> -->
       </tbody>
     </table>
   </div>

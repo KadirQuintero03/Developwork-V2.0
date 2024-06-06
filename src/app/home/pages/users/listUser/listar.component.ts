@@ -14,20 +14,16 @@ export class ListarComponent implements OnInit {
   user: persona = new persona();
   lstpersonas: persona[] = [];
   visibility: boolean = false;
-  isActivo: boolean = false;
-
-  color(){
-    this.isActivo = !this.isActivo
-  }
-
+  
   constructor(private servicepersona: PersonaService, private router: Router) {
     this.user = this.servicepersona.getUser();
 
     this.servicepersona.getData().subscribe((Response: any) => {
-      this.lstpersonas = Response.data;
+      this.lstpersonas = Response.users;
+      console.log(this.lstpersonas)
     });
 
-    if (this.personaSelect.id_usuario == '') {
+    if (this.personaSelect.idUsuario == '') {
       this.servicepersona.getData().subscribe((Response: any) => {
         this.lstpersonas = Response.data;
       });
@@ -38,10 +34,6 @@ export class ListarComponent implements OnInit {
     this.servicepersona.getData().subscribe((Response: any) => {
       this.lstpersonas = Response.data;
     });
-  }
-
-  addUser() {
-    this.router.navigate(['user/register']);
   }
 
   modPersona() {

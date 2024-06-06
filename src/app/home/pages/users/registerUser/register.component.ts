@@ -1,22 +1,19 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { persona } from '../../../../interface/persona';
 import { PersonaService } from '../../../../services/persona.service';
 import { equipo } from '../../../../interface/equipo';
 import { TeamservService } from '../../../../services/teamserv.service';
-import { estado } from '../../../../interface/estado';
-import { EstadoserviceService } from '../../../../services/estadoservice.service';
 import { rol } from '../../../../interface/rol';
 import { RolserviceService } from '../../../../services/rolservice.service';
-
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
 })
+
 export class registerComponent {
   persona: persona = new persona();
   verequipo: equipo[] = [];
-  verestado: estado[] = [];
   verroles: rol[] = [];
   serviceLocalStorage: any;
 
@@ -28,7 +25,6 @@ export class registerComponent {
 
   constructor(
     private serviceteam: TeamservService,
-    private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
     private personaSerive: PersonaService,
   ) {}
@@ -38,20 +34,9 @@ export class registerComponent {
       this.verequipo = Response.data;
     });
 
-    // this.serviceestado.getData().subscribe((Response: estado[]) => {
-    //   this.verestado = Response;
-    // });
-
     this.rolService.getData().subscribe((Response: any) => {
-      this.verroles = Response.data.roles;
+      this.verroles = Response.data.estados;
     });
-
-    // let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
-    // console.log("Array normal: ", arrayNormal)
-  }
-
-  objectValues(obj: any) {
-    return Object.values(obj);
   }
 
   //Valida que el campo no este vacio
@@ -103,7 +88,6 @@ export class registerComponent {
     const { nombre1, nombre2, apellido1, apellido2, correo } = this.persona;
 
     if (!(this.validateField(nombre1) && this.validateField(apellido1))) {
-      // this.msgValidarCamp = true;
       alert('Ingrese minimo un nombre y un apellido');
       return;
     }
@@ -126,11 +110,10 @@ export class registerComponent {
     }
 
     this.persona.contrasena = this.randomPassword(8);
-    console.log('contraseña: ', this.persona.contrasena);
-    this.persona.estado.id_estado = '1';
+    this.persona.idEstado.id_estado = '1';
 
     this.personaSerive.postData(this.persona).subscribe(
-      (response) => {
+      (response) => { console.log('Usuario agregado con éxito:', response);
         alert(`El usuario ${nombre1} ${apellido1} fue registrado con éxito.`);
       },
       (error) => {
