@@ -3,21 +3,14 @@
     <form>
       <fieldset class="fieldSelect">
         <label for="estado">Estado</label>
-        <select name="id_estado" [(ngModel)]="equipo.estado">
+        <select name="id_estado" [(ngModel)]="equipo.idEstado">
           <option
             *ngFor="let estado of verestado"
-            [value]="equipo.estado"
+            [value]="equipo.idEstado"
           >
             {{ estado.nombre_estado }}
           </option>
         </select>
-
-        <!-- <label for="rol">Rol</label>
-        <select name="id_rol" [(ngModel)]="equipo.rol.id_rol">
-          <option *ngFor="let rol of verroles" [value]="equipo.rol.id_rol">
-            {{ rol.nombre_rol }}
-          </option>
-        </select> -->
       </fieldset>
 
       <fieldset class="fieldInput">
@@ -25,7 +18,7 @@
         <input
           type="text"
           name="nombre_equipo"
-          [(ngModel)]="equipo.nombre_equipo"
+          [(ngModel)]="equipo.nombreEquipo"
         />
 
       </fieldset>

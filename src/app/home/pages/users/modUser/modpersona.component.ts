@@ -51,7 +51,7 @@ export class ModpersonaComponent {
 
   modificar() {
     console.log('Id de la persona: ', this.persona.idUsuario)
-    console.log('Id equipo: ', this.persona.idEquipo.id_equipo)
+    console.log('Id equipo: ', this.persona.idEquipo.idEquipo)
     this.servicePersona.modPersona(this.persona).subscribe();
     this.servicePersona.setPersona(new persona());
     this.router.navigate(['/user/personas']);

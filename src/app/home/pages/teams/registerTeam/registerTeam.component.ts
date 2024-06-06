@@ -1,6 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { estado } from '@/app/interface/estado';
-import { EstadoserviceService } from '@/app/services/estadoservice.service';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { equipo } from '@/app/interface/equipo';
 import { TeamservService } from '@/app/services/teamserv.service';
 
@@ -10,9 +8,8 @@ import { TeamservService } from '@/app/services/teamserv.service';
   styles: [``],
 })
 export class RegisterTeamComponent {
-  verestado: estado[] = [];
-  verequipo: equipo[] = [];
   nuevoEquipo: equipo = new equipo();
+  verequipo: equipo[] = [];
 
   @Output() changeStateRT = new EventEmitter<boolean>();
 
@@ -21,18 +18,8 @@ export class RegisterTeamComponent {
   }
 
   constructor(
-    private serviceestado: EstadoserviceService,
     private serviceteam: TeamservService
   ) {}
-
-  ngOnInit(): void {
-    // this.serviceteam.getData().subscribe((Response: equipo[]) => {
-    //   this.verequipo = Response;
-    // });
-    this.serviceestado.getData().subscribe((Response: any) => {
-      this.verestado = Response.data.estados;
-    });
-  }
 
   ValidarCamp(value: string): boolean {
     return value.trim() !== '';
@@ -40,7 +27,8 @@ export class RegisterTeamComponent {
 
   async AgregarEquipo() {
     // Modificar que se genere el ID de manera random
-    // this.nuevoEquipo.id_equipo = '23524'
+    this.nuevoEquipo.idEquipo = '25550';
+    this.nuevoEquipo.idEstado.id_estado = '1';
 
     this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
       (response) => {

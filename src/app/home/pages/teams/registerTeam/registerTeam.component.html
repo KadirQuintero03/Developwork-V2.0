@@ -5,30 +5,21 @@
   >
   <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Registro de equipo</h1>
   <div class="flex flex-col gap-1">
-
-    <label class="text-lg mx-2" for="estado">Estado</label>
-    <select
-      class="rounded-lg border w-[385px] h-[35px] p-1 cursor-pointer"
-      name="id_estado"
-      id="id_estado"
-      [(ngModel)]="nuevoEquipo.estado"
-    >
-      <option
-        *ngFor="let estado of verestado"
-        [value]="estado.id_estado"
-        selected="estado === id_estado"
-      >
-        {{ estado.nombre_estado }}
-      </option>
-    </select>
-
     <label class="text-lg mx-2" for="nombre">Nombre del equipo</label>
     <input
-      [(ngModel)]="nuevoEquipo.nombre_equipo"
+      [(ngModel)]="nuevoEquipo.nombreEquipo"
       class="w-[385px] h-[35px] p-2 rounded-lg border"
       name="nombre"
       id="nombre"
     />
+
+    <label class="text-lg mx-2" for="intg">Numero de integrantes</label>
+    <input
+      class="rounded-lg border w-[385px] h-[35px] p-1 cursor-pointer"
+      [(ngModel)]="nuevoEquipo.NumIntegrantes"
+      name="intg"
+      id="intg"
+    >
   </div>
 
     <div class="flex justify-evenly mt-3">

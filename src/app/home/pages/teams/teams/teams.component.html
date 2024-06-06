@@ -30,6 +30,7 @@
         class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]"
       >
         <th>Nombre</th>
+        <th>Num Integrantes</th>
         <th>Estado</th>
         <th>Accion</th>
       </thead>
@@ -37,9 +38,18 @@
         <tr class="text-center">
           <td>Equipo alfa maravilla</td>
           <td>Activo</td>
+        </tr>
+        <tr
+          *ngFor="let equipo of verequipo"
+          (click)="this.equipoSelect = equipo"
+          [ngClass]="{ seleccionado: equipoSelect == equipo }"
+        >
+          <td>{{ equipo.nombreEquipo }}</td>
+          <td>{{ equipo.NumIntegrantes }}</td>
+          <td>{{ equipo.idEstado.nombre_estado }}</td>
           <td>
             <button
-              [disabled]="equipoSelect.nombre_equipo == '' ? true : false"
+              [disabled]="equipoSelect.nombreEquipo == '' ? true : false"
               (click)="modEquipo()"
             >
               <img
@@ -49,15 +59,6 @@
             </button>
           </td>
         </tr>
-        <!-- <tr
-          *ngFor="let equipo of verequipo"
-          (click)="this.equipoSelect = equipo"
-          [ngClass]="{ seleccionado: equipoSelect == equipo }"
-        >
-          <td class="p-3">{{ equipo.nombre }}</td>
-          <td class="p-3">{{ equipo.descripcion }}</td>
-          <td class="p-3">{{ equipo.estado }}</td>
-        </tr> -->
       </tbody>
     </table>
   </div>

@@ -20,9 +20,11 @@ export class TeamsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.serviceteam.getData().subscribe((Response: equipo[]) => {
-    //   this.verequipo = Response;
-    // });
+    this.serviceteam.getData().subscribe((Response: any) => {
+      this.verequipo = Response.data;
+      console.log('Equipos:', this.verequipo)
+    });
+
     // this.serviceestado.getData().subscribe((Response: any) => {
     //   this.verestado = Response.data.estados;
     // });
