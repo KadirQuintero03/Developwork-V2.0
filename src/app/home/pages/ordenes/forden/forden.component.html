@@ -1,21 +1,25 @@
 <div class="fixed top-0 left-0 z-50 w-full h-[100vh] bg-black bg-opacity-50">
-  <div class="absolute top-[10vh] h-[80vh] w-[80%] left-[10%] bg-white rounded-lg p-5">
+  <div
+    class="w-[661px]  bg-[#FFFFFF] p-8 rounded-[20px]"
+  >
     <form action="post">
-      <h1 class="text-center text-3xl font-medium">
-        Orden de mantenimiento: {{ modorden.idOrder }}
+      <h1 class="text-4xl font-bold mb-3 text-[#014F41]">
+        Registro de ordenes
       </h1>
 
-      <fieldset class="flex justify-around">
-        <label
+      <h2 class="text-2xl ">Número de referencia de la orden: {{ modorden.idOrder }}</h2>
+
+      <!-- <fieldset class="flex justify-around">
+        <label class="text-base text-black"
           >Administrativo adscrito:
           <input name="id_usuario" [(ngModel)]="modorden.idUser" type="text" />
         </label>
-      </fieldset>
+      </fieldset> -->
 
-      <fieldset class="flex flex-column gap-2">
-        <label>Descripcion de la orden: </label>
+      <fieldset class="flex flex-column mt-3">
+        <legend class="text-black text-lg">Descripcion de la orden</legend>
         <textarea
-          class="p-1 rounded-[3px]"
+          class="p-2 rounded-[3px] border"
           name="descripcion"
           id="descripcion"
           [(ngModel)]="modorden.description"
@@ -24,14 +28,20 @@
         ></textarea>
       </fieldset>
     </form>
-    <button
-      class="exit absolute top-0 right-0 mt-1 mr-2 h-7 w-7"
-      (click)="cerrar()"
-    ></button>
 
-    <div class="flex justify-evenly mt-3 rounded-lg bg-[#1e512c] w-48">
-      <button class="text-white py-2 px-1" (click)="agregar()">
-        Agregar Orden
+    <div class="flex justify-evenly mt-3">
+      <button
+        class="text-xl text-white bg-[#00214D] w-[210px] h-[26] rounded-lg p-2"
+        (click)="cerrar()"
+      >
+        Cancelar
+      </button>
+
+      <button
+        class="text-xl text-white bg-[#014F41] w-[210px] h-[26] rounded-lg p-2"
+        (click)="agregar()"
+      >
+        Enviar
       </button>
       <!-- <button class="btn-crud" (click)="actualizar()">Modificar Orden</button> -->
     </div>
@@ -39,16 +49,3 @@
 </div>
 <!-- *ngIf="nuevo" -->
 
-<style>
-  textarea {
-    border: 1px solid #000;
-  }
-  .exit {
-    border: none;
-    background-image: url(.../../../../../../../assets/icon/Exit.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: transparent;
-  }
-</style>
