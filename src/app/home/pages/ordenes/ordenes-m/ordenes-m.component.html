@@ -27,8 +27,9 @@
     [modorden]="modorden"
     (mensajeCambiado)="modOrden($event)"
     *ngIf="modorden.idOrder"
+    class="fixed inset-0 bg-black bg-opacity-50 z-[100]"
   ></app-forden>
-  
+
   <div class="contenedor_carrusel">
     <h2>Ordenes Pendientes</h2>
     <ul class="carrusel">
