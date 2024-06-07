@@ -1,35 +1,49 @@
 <main class="w-full h-[85vh] flex justify-center items-center">
-  <form class="bg-[#FFFFFF] p-8 h-[425px] rounded-[20px] flex flex-col gap-1 items-center">
+  <form
+    class="bg-[#FFFFFF] p-8 h-[425px] rounded-[20px] flex flex-col gap-1 items-center"
+  >
     <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Cambiar contraseña</h1>
 
-    <label class="text-lg text-black">Contraseña antigua</label>
+    <label for="contrasena" class="text-lg text-black"
+      >Contraseña antigua</label
+    >
     <input
       class="w-[271px] h-[35px] p-2 rounded-lg border"
       type="password"
+      id="contrasena"
       name="contrasena"
       [(ngModel)]="contrasena"
     />
 
-    <label class="text-start text-lg text-black">Contraseña nueva</label>
+    <label for="newCon" class="text-start text-lg text-black"
+      >Contraseña nueva</label
+    >
     <input
       class="w-[271px] h-[35px] p-2 rounded-lg border"
       type="password"
+      id="newCon"
       name="newCon"
       [type]="ChangeType ? 'password' : 'text'"
       [(ngModel)]="newCon"
     />
 
-    <label class="text-lg text-black">Confirmar contraseña</label>
+    <label for="confirmCon" class="text-lg text-black"
+      >Confirmar contraseña</label
+    >
     <input
       class="w-[271px] h-[35px] p-2 rounded-lg border"
       type="password"
+      id="confirmCon"
+      name="confirmCon"
       [type]="ChangeType ? 'password' : 'text'"
     />
 
-    <label class="flex items-center cursor-pointer mt-1"
+    <label for="viewpass" class="flex items-center cursor-pointer mt-1"
       >Mostrar contraseña
       <input
         class="w-8 h-4 cursor-pointer"
+        id="viewpass"
+        name="viewpass"
         type="checkbox"
         (click)="viewpass()"
       />
@@ -50,6 +64,5 @@
         Confirmar
       </button>
     </div>
-
   </form>
 </main>

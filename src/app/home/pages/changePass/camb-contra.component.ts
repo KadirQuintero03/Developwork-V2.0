@@ -6,18 +6,17 @@ import { persona } from '../../../interface/persona';
   selector: 'app-camb-contra',
   templateUrl: './camb-contra.component.html',
 })
-
 export class CambContraComponent {
-  contrasena: String = '';
-  newCon: String = '';
+  contrasena: string = '';
+  newCon: string = '';
   ChangeType: boolean = true;
   _user: persona = new persona();
-  response: String = '';
+  response: string = '';
 
-  @Output() eventState = new EventEmitter<boolean>
+  @Output() eventState = new EventEmitter<boolean>();
 
-  changeState(){
-    this.eventState.emit(false)
+  changeState() {
+    this.eventState.emit(false);
   }
 
   constructor(private servicePersona: PersonaService) {
@@ -40,9 +39,11 @@ export class CambContraComponent {
     this.servicePersona.chPass(user).subscribe(
       (response: any) => {
         this.response = response;
+        console.log('Contraseña modificada con exito:', this.response);
+        alert(`Contraseña modificada con éxito.`);
       },
       (error) => {
-        console.log(error.status);
+        console.error('Error en la solicitud:', error);
       }
     );
   }

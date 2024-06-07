@@ -3,18 +3,14 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { usersComponent } from '../app/home/users.component';
 import { LoginComponent } from '../app/home/pages/login/login.component';
-import { NavComponent } from '../app/shared/nav/nav.component';
 import { TeamsComponent } from '../app/home/pages/teams/teams/teams.component';
-import { NotificationComponent } from '../app/home/pages/notifications/notification.component';
-import { registerComponent } from './home/pages/users/registerUser/register.component';
-import { CambContraComponent } from '../app/home/pages/changePass/camb-contra.component';
 import { ModpersonaComponent } from './home/pages/users/modUser/modpersona.component';
 import { InformationComponent } from './home/pages/users/infoUser/information.component';
 import { ModequipoComponent } from './home/pages/teams/modequipo/modequipo.component';
 import { OrdenesMComponent } from './home/pages/ordenes/ordenes-m/ordenes-m.component';
 import { ListarComponent } from './home/pages/users/listUser/listar.component';
 
-//import { AuthGuard } from './Services/auth.guard';
+import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -30,15 +26,10 @@ const routes: Routes = [
             path: '',
             component: OrdenesMComponent,
           },
-          // {
-          //   path: 'register',
-          //   component: registerComponent,
-          // },
           {
             path: 'list',
             component: ListarComponent,
           },
-          // { path: 'nav', component: NavComponent },
           {
             path: 'teams',
             component: TeamsComponent,
@@ -47,15 +38,13 @@ const routes: Routes = [
             path: 'information',
             component: InformationComponent,
           },
-          // { path: 'cambcontraseña', component: CambContraComponent },
-          // { path: 'notification', component: NotificationComponent },
           {
             path: 'modPersona',
             component: ModpersonaComponent,
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
-        //canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
       },
     ],
   },
