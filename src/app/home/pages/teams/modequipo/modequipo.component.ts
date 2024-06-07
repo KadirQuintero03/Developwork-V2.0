@@ -38,7 +38,7 @@ export class ModequipoComponent {
   }
 
   ngOnInit(): void {
-    if (this.serviceequipo.getEquipo().id_equipo == '') {
+    if (this.serviceequipo.getEquipo().idEquipo == '') {
       this.router.navigate(['/user/teams']);
     } else {
       this.equipo = this.serviceequipo.getEquipo();

@@ -35,28 +35,14 @@
         <th>Accion</th>
       </thead>
       <tbody class="text-xl">
-        <tr class="text-center">
-          <td>Equipo alfa maravilla</td>
-          <td>2</td>
-          <td>Activo</td>
-          <td>Modificar</td>
-        </tr>
-        <tr
+        <tr class="text-center"
           *ngFor="let equipo of verequipo"
           (click)="this.equipoSelect = equipo"
           [ngClass]="{ seleccionado: equipoSelect == equipo }"
         >
-          <td>{{ equipo.nombre_equipo }}</td>
+          <td>{{ equipo.idEquipo }}</td>
           <td>{{ equipo.NumIntegrantes }}</td>
-          <td>{{ equipo.idEstado.nombre_estado }}</td>
-          <td
-            [ngClass]="{
-              styleActive: equipo.idEstado.nombre_estado === test,
-              styleInactive: equipo.idEstado.nombre_estado != test
-            }"
-          >
-            {{ equipo.idEstado.nombre_estado }}
-          </td>
+          <td>{{ equipo.estados.nombre_estado }}</td>
           <td>
             <button
               [disabled]="equipoSelect.nombre_equipo == '' ? true : false"

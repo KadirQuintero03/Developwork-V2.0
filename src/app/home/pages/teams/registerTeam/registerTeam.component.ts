@@ -36,23 +36,24 @@ export class RegisterTeamComponent {
   }
 
   async addTeam() {
-    const { nombre_equipo } = this.nuevoEquipo;
+    // const { nombre_equipo } = this.nuevoEquipo;
 
-    if (!this.validateCamp(nombre_equipo)) {
-      alert('Ingrese un nombre para el equipo');
-      return;
-    }
+    // if (!(this.validateCamp(nombre_equipo))) {
+    //   alert('Ingrese un nombre para el equipo');
+    //   return;
+    // }
 
-    if (!this.validateLenght(nombre_equipo)) {
-      alert('El nombre del equipo no puede superar los 10 caracteres');
-      return;
-    }
+    // if (!(this.validateLenght(nombre_equipo))) {
+    //   alert('El nombre del equipo no puede superar los 10 caracteres');
+    //   return;
+    // }
 
     //Asigna un ID aleatorio al equipo que se registre
-    this.nuevoEquipo.id_equipo = this.randomIdTeam(10000000);
+    this.nuevoEquipo.idEquipo = this.randomIdTeam(10000000);
     //Estado del equipo al registrar siempre será activo
-    this.nuevoEquipo.idEstado.id_estado = '1';
+    this.nuevoEquipo.estados.id_estado = '1';
 
+    console.log('Equipo:',this.nuevoEquipo)
     this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
       (response) => {
         console.log('Equipo agregado con éxito:', response);

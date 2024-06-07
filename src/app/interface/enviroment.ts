@@ -1,8 +1,10 @@
+const url: string = 'https://zc4fjp74-3002.brs.devtunnels.ms/'
+
 export const environment = {
   production: false,
 
   //Loggearse en la aplicacion
-  Login: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/user/login',
+  Login: `${url}api/v1/user/login`,
 
   //Registrar un usuario
   CreateUser: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/user',

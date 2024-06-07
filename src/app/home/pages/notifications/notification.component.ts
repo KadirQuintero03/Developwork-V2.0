@@ -19,7 +19,7 @@ export class NotificationComponent implements OnInit {
   ngOnInit(): void {
     this.spersona.setPersonaLog().subscribe((Response: persona) => {
       this.nuevaNotificacion.idAdmin = Response.idUsuario;
-      this.nuevaNotificacion.id_equipo = Response.idEquipo.id_equipo;
+      this.nuevaNotificacion.id_equipo = Response.idEquipo.idEquipo;
       this.Ssoket.conectarConIdUsuario(Response).subscribe(
         (notificacion: any) => {
           this.notificaciones = notificacion;

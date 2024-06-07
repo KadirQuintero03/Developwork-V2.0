@@ -3,10 +3,10 @@
     <form>
       <fieldset class="fieldSelect">
         <label for="estado">Estado</label>
-        <select name="id_estado" [(ngModel)]="equipo.idEstado">
+        <select name="id_estado" [(ngModel)]="equipo.estados">
           <option
             *ngFor="let estado of verestado"
-            [value]="equipo.idEstado"
+            [value]="equipo.estados"
           >
             {{ estado.nombre_estado }}
           </option>
