@@ -1,8 +1,8 @@
 import { estado } from "./estado";
 
 export class equipo {
-  idEquipo: string = '';
-  nombreEquipo: string = '';
+  id_equipo: string = '';
+  nombre_equipo: string = '';
   NumIntegrantes: string = '';
   idEstado: estado = new estado();
 }

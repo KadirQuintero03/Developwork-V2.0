@@ -1,5 +1,5 @@
 <main class="px-10 py-4 bg-[#D9D9D9] bg-opacity-[25%]">
-  <Label class="text-3xl text-[#004438] font-bold mb-3"
+  <Label for="listTeam" class="text-3xl text-[#004438] font-bold mb-3"
     >Listado de equipos</Label
   >
 
@@ -46,19 +46,20 @@
           (click)="this.equipoSelect = equipo"
           [ngClass]="{ seleccionado: equipoSelect == equipo }"
         >
-          <td>{{ equipo.nombreEquipo }}</td>
+          <td>{{ equipo.nombre_equipo }}</td>
           <td>{{ equipo.NumIntegrantes }}</td>
+          <td>{{ equipo.idEstado.nombre_estado }}</td>
           <td
             [ngClass]="{
-              'styleActive': equipo.idEstado.nombre_estado === test,
-              'styleInactive': equipo.idEstado.nombre_estado != test
+              styleActive: equipo.idEstado.nombre_estado === test,
+              styleInactive: equipo.idEstado.nombre_estado != test
             }"
           >
             {{ equipo.idEstado.nombre_estado }}
           </td>
           <td>
             <button
-              [disabled]="equipoSelect.nombreEquipo == '' ? true : false"
+              [disabled]="equipoSelect.nombre_equipo == '' ? true : false"
               (click)="modEquipo()"
             >
               <img

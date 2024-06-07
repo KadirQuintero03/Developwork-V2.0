@@ -4,25 +4,32 @@
 
     <div class="flex justify-center items-center gap-4 mt-3">
       <fieldset class="flex flex-column gap-1 mt-2">
-        <label class="text-base text-black"> Identificacion </label>
+        <label for="identificacion" class="text-base text-black">
+          Identificacion
+        </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
+          id="identificacion"
           name="identificacion"
           placeholder="cc"
           [(ngModel)]="persona.idUsuario"
         />
-        <label class="text-base text-black"> Primer Nombre </label>
+        <label for="nombre" class="text-base text-black"> Primer Nombre </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
+          id="nombre"
           name="nombre"
           placeholder="Ingrese el primer nombre"
           [(ngModel)]="persona.nombre1"
         />
-        <label class="text-base text-black"> Segundo Nombre </label>
+        <label for="nombre2" class="text-base text-black">
+          Segundo Nombre
+        </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
+          id="nombre2"
           type="text"
           name="nombre2"
           placeholder="Ingrese el segundo nombre"
@@ -31,26 +38,29 @@
       </fieldset>
 
       <fieldset class="flex flex-column gap-1 mt-2">
-        <label class="text-base text-black"> Primer Apellido </label>
+        <label for="apellido" class="text-base text-black"> Primer Apellido </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
+          id="apellido"
           name="apellido"
           placeholder="Ingrese el primer apellido"
           [(ngModel)]="persona.apellido1"
         />
-        <label class="text-base text-black"> Segundo Apellido </label>
+        <label for="apellido2" class="text-base text-black"> Segundo Apellido </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
+          id="apellido2"
           name="apellido2"
           placeholder="Ingrese el segundo apellido"
           [(ngModel)]="persona.apellido2"
         />
-        <label class="text-base text-black"> Correo </label>
+        <label for="correo" class="text-base text-black"> Correo </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
+          id="correo"
           name="correo"
           placeholder="Ingrese su correo"
           [(ngModel)]="persona.correo"
@@ -58,15 +68,15 @@
       </fieldset>
     </div>
 
-    <label class="text-base text-black mt-3">
+    <label for="equipo" class="text-base text-black mt-3">
       Equipo
       <select
         class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
         name="id_equipo"
-        [(ngModel)]="persona.idEquipo.idEquipo"
+        [(ngModel)]="persona.idEquipo.id_equipo"
       >
-        <option *ngFor="let equipo of verequipo" [value]="equipo.idEquipo">
-          {{ equipo.nombreEquipo }}
+        <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+          {{ equipo.nombre_equipo }}
         </option>
       </select>
     </label>

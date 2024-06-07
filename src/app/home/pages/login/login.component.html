@@ -13,9 +13,10 @@
     <h1 class="text-6xl font-semibold mt-2">Iniciar sesion</h1>
 
     <form class="flex flex-column w-full gap-[20px] p-4">
-      <label class="text-black ml-1 font-light">Correo</label>
+      <label for="email" class="text-black ml-1 font-light">Correo</label>
       <input
         class="email -mt-[15px] bg-[#ededec] rounded-md p-3"
+        id="email"
         name="email"
         type="email"
         [(ngModel)]="usuario.correo"
@@ -23,9 +24,12 @@
         placeholder="Ingrese su correo"
       />
 
-      <label class="text-black ml-1 font-light">Contraseña</label>
+      <label for="passoword" class="text-black ml-1 font-light"
+        >Contraseña</label
+      >
       <input
         class="password -mt-[15px] bg-[#ededec] rounded-md p-3"
+        id="password"
         name="password"
         [type]="ChangeType ? 'password' : 'text'"
         [(ngModel)]="usuario.contrasena"
@@ -34,8 +38,10 @@
       />
 
       <div>
-        <label class="text-black flex items-center ml-[5px]">
+        <label for="viewpass" class="text-black flex items-center ml-[5px]">
           <input
+            id="viewpass"
+            name="viewpass"
             class="w-4 h-4 mr-1 cursor-pointer"
             type="checkbox"
             (click)="viewpass()"

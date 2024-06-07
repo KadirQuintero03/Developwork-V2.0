@@ -6,9 +6,10 @@
     <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Registro de usuario</h1>
     <div class="flex justify-center items-center gap-4 mt-3">
       <fieldset class="flex flex-column gap-1">
-        <label class="text-base text-black"> Identificacion </label>
+        <label for="id_usuario" class="text-base text-black"> Identificacion </label>
         <input
           [(ngModel)]="persona.idUsuario"
+          id="id_usuario"
           name="id_usuario"
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
@@ -16,9 +17,10 @@
           required
         />
 
-        <label class="text-base text-black">Primer nombre</label>
+        <label for="nombre" class="text-base text-black">Primer nombre</label>
         <input
           [(ngModel)]="persona.nombre1"
+          id="nombre"
           name="nombre"
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
@@ -26,9 +28,10 @@
           required
         />
 
-        <label class="text-base text-black">Segundo nombre</label>
+        <label for="nombre2" class="text-base text-black">Segundo nombre</label>
         <input
           [(ngModel)]="persona.nombre2"
+          id="nombre2"
           name="nombre2"
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           placeholder="Ingrese el segundo nombre"
@@ -37,9 +40,10 @@
       </fieldset>
 
       <fieldset class="flex flex-column gap-1">
-        <label class="text-base text-black">Primer apellido</label>
+        <label for="apellido" class="text-base text-black">Primer apellido</label>
         <input
           [(ngModel)]="persona.apellido1"
+          id="apellido"
           name="apellido"
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
@@ -47,18 +51,20 @@
           required
         />
 
-        <label class="text-base text-black">Segundo apellido</label>
+        <label for="apellido2" class="text-base text-black">Segundo apellido</label>
         <input
           [(ngModel)]="persona.apellido2"
+          id="apellido2"
           name="apellido2"
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           placeholder="Ingrese el segundo apellido"
           type="text"
         />
 
-        <label class="text-base text-black">Correo electronico</label>
+        <label for="correo" class="text-base text-black">Correo electronico</label>
         <input
           [(ngModel)]="persona.correo"
+          id="correo"
           name="correo"
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="email"
@@ -69,7 +75,7 @@
     </div>
 
     <fieldset class="flex items-center flex-column mt-3 gap-3">
-      <label class="text-base text-black">
+      <label for="id_equipo" class="text-base text-black">
         Equipo
         <select
           class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
@@ -77,13 +83,13 @@
           id="id_equipo"
           [(ngModel)]="persona.idEquipo"
         >
-          <option *ngFor="let equipo of verequipo" [value]="equipo.idEquipo">
-            {{ equipo.nombreEquipo }}
+          <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+            {{ equipo.nombre_equipo }}
           </option>
         </select></label
       >
 
-      <label class="text-base text-black">
+      <label for="id_rol" class="text-base text-black">
         Rol
         <select
           class="rounded-lg border w-[540px] h-[32px] p-1"

@@ -38,10 +38,10 @@ export class ModpersonaComponent {
         this.verequipo = Response.data;
       });
 
-      // this.serviceestado.getData().subscribe((Response: any) => {
-      //   this.verestado = Response.data.roles;
-      //   console.log('roles: ', this.verroles)
-      // });
+      this.serviceestado.getData().subscribe((Response: any) => {
+        this.verestado = Response.data.roles;
+        console.log('roles: ', this.verroles)
+      });
 
       this.rolService.getData().subscribe((Response: any) => {
         this.verroles = Response.data.roles;
@@ -51,7 +51,7 @@ export class ModpersonaComponent {
 
   modificar() {
     console.log('Id de la persona: ', this.persona.idUsuario)
-    console.log('Id equipo: ', this.persona.idEquipo.idEquipo)
+    console.log('Id equipo: ', this.persona.idEquipo.id_equipo)
     this.servicePersona.modPersona(this.persona).subscribe();
     this.servicePersona.setPersona(new persona());
     this.router.navigate(['/user/personas']);

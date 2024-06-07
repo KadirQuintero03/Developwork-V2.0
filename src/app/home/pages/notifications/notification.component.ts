@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SocketService } from '../../../services/socket.service';
 import { PersonaService } from '../../../services/persona.service';
 import { persona } from '../../../interface/persona';
@@ -10,20 +10,16 @@ import { notificacion } from '../../../interface/notificacion';
   styleUrls: ['./notification.component.css'],
 })
 
-export class NotificationComponent implements OnInit, OnDestroy {
+export class NotificationComponent implements OnInit {
   notificaciones: any[] = [];
   nuevaNotificacion: notificacion = new notificacion();
 
   constructor(private Ssoket: SocketService, private spersona: PersonaService) {}
 
-  ngOnDestroy(): void {
-    // this.Ssoket.disconet().subscribe();
-  }
-
   ngOnInit(): void {
     this.spersona.setPersonaLog().subscribe((Response: persona) => {
       this.nuevaNotificacion.idAdmin = Response.idUsuario;
-      //this.nuevaNotificacion.id_equipo = Response.equipo.id_equipo;
+      this.nuevaNotificacion.id_equipo = Response.idEquipo.id_equipo;
       this.Ssoket.conectarConIdUsuario(Response).subscribe(
         (notificacion: any) => {
           this.notificaciones = notificacion;

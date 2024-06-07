@@ -6,32 +6,24 @@ import { TeamservService } from '@/app/services/teamserv.service';
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.css']
+  styleUrls: ['./teams.component.css'],
 })
-
 export class TeamsComponent implements OnInit {
   equipoSelect: equipo = new equipo();
   verequipo: equipo[] = [];
   visibilityRT: boolean = false;
-  test: string = 'Activo'
+  test: string = 'Activo';
 
-  constructor(
-    private router: Router,
-    private serviceteam: TeamservService,
-  ) {}
+  constructor(private router: Router, private serviceteam: TeamservService) {}
 
   ngOnInit(): void {
     this.serviceteam.getData().subscribe((Response: any) => {
       this.verequipo = Response.data;
-      console.log('Equipos:', this.verequipo)
+      console.log('Equipos:', this.verequipo);
     });
-
-    // this.serviceestado.getData().subscribe((Response: any) => {
-    //   this.verestado = Response.data.estados;
-    // });
   }
 
-  changeVisibilityRT(newValue: boolean){
+  changeVisibilityRT(newValue: boolean) {
     this.visibilityRT = newValue;
   }
 

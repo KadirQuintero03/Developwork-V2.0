@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { equipo } from '@/app/interface/equipo';
 import { TeamservService } from '@/app/services/teamserv.service';
-import { max } from 'rxjs';
 
 @Component({
   selector: 'app-register-team',
@@ -37,20 +36,20 @@ export class RegisterTeamComponent {
   }
 
   async addTeam() {
-    const { nombreEquipo } = this.nuevoEquipo;
+    const { nombre_equipo } = this.nuevoEquipo;
 
-    if (!this.validateCamp(nombreEquipo)) {
+    if (!this.validateCamp(nombre_equipo)) {
       alert('Ingrese un nombre para el equipo');
       return;
     }
 
-    if (!this.validateLenght(nombreEquipo)) {
+    if (!this.validateLenght(nombre_equipo)) {
       alert('El nombre del equipo no puede superar los 10 caracteres');
       return;
     }
 
     //Asigna un ID aleatorio al equipo que se registre
-    this.nuevoEquipo.idEquipo = this.randomIdTeam(10000000);
+    this.nuevoEquipo.id_equipo = this.randomIdTeam(10000000);
     //Estado del equipo al registrar siempre será activo
     this.nuevoEquipo.idEstado.id_estado = '1';
 

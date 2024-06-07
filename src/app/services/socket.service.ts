@@ -42,8 +42,4 @@ export class SocketService {
     console.log(__notificacion);
     return this.http.delete(`${this.URL}`, { headers, body: __notificacion });
   }
-  
-  disconet() {
-    return this.socket.emit('disconect');
-  }
 }

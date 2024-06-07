@@ -1,5 +1,5 @@
-<div id="body-modpersona">
-  <div id="container-main">
+<div class="flex items-center justify-center w-full h-[100vh]">
+  <div class="bg-[#FBFCF1] bg-opacity-[0.5] rounded-lg">
     <form>
       <fieldset class="fieldSelect">
         <label for="estado">Estado</label>
@@ -17,8 +17,9 @@
         <label for="nombre_equipo">Nombre</label>
         <input
           type="text"
+          id="nombre_equipo"
           name="nombre_equipo"
-          [(ngModel)]="equipo.nombreEquipo"
+          [(ngModel)]="equipo.nombre_equipo"
         />
 
       </fieldset>

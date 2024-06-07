@@ -10,7 +10,7 @@ import { ModequipoComponent } from './home/pages/teams/modequipo/modequipo.compo
 import { OrdenesMComponent } from './home/pages/ordenes/ordenes-m/ordenes-m.component';
 import { ListarComponent } from './home/pages/users/listUser/listar.component';
 
-import { AuthGuard } from './services/auth.guard';
+// import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -44,7 +44,7 @@ const routes: Routes = [
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
     ],
   },
