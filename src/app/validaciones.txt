@@ -1,0 +1,8 @@
+Equipo:
+Id: maximo de 8 caracteres.
+Nombre: maximo de 15 caracteres
+Integrantes: 2 - 10
+
+Usuario:
+Id: maximo 11 caracteres
+Nombres y apellidos: maximo 15 caracteres

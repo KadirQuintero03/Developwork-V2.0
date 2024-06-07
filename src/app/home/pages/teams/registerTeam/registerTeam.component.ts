@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { equipo } from '@/app/interface/equipo';
 import { TeamservService } from '@/app/services/teamserv.service';
+import { max } from 'rxjs';
 
 @Component({
   selector: 'app-register-team',
@@ -17,17 +18,40 @@ export class RegisterTeamComponent {
     this.changeStateRT.emit(false);
   }
 
-  constructor(
-    private serviceteam: TeamservService
-  ) {}
+  constructor(private serviceteam: TeamservService) {}
 
-  ValidarCamp(value: string): boolean {
+  validateCamp(value: string): boolean {
     return value.trim() !== '';
   }
 
-  async AgregarEquipo() {
-    // Modificar que se genere el ID de manera random
-    this.nuevoEquipo.idEquipo = '25550';
+  validateLenght(value: string): boolean {
+    return value.length <= 15;
+  }
+
+  randomIdTeam(length: number): string {
+    let newIdRandom = 0;
+
+    newIdRandom = Math.floor(Math.random() * length);
+
+    return newIdRandom.toString();
+  }
+
+  async addTeam() {
+    const { nombreEquipo } = this.nuevoEquipo;
+
+    if (!this.validateCamp(nombreEquipo)) {
+      alert('Ingrese un nombre para el equipo');
+      return;
+    }
+
+    if (!this.validateLenght(nombreEquipo)) {
+      alert('El nombre del equipo no puede superar los 10 caracteres');
+      return;
+    }
+
+    //Asigna un ID aleatorio al equipo que se registre
+    this.nuevoEquipo.idEquipo = this.randomIdTeam(10000000);
+    //Estado del equipo al registrar siempre será activo
     this.nuevoEquipo.idEstado.id_estado = '1';
 
     this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(

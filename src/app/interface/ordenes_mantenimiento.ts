@@ -4,7 +4,7 @@ export class ordenes_matenimiento {
   idEquipo: string = '';
   prioridad: string = '';
   estado: string = '';
-  idUser: string = ''; //No recuerdo pa' que era xd
-  description: string = ''; //no existe en la BD
-  personas: persona[] = []; //No recuerdo pa' que era
+  idUser: string = '';
+  description: string = '';
+  personas: persona[] = [];
 }

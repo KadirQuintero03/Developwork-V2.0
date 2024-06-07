@@ -13,6 +13,7 @@ export class TeamsComponent implements OnInit {
   equipoSelect: equipo = new equipo();
   verequipo: equipo[] = [];
   visibilityRT: boolean = false;
+  test: string = 'Activo'
 
   constructor(
     private router: Router,

@@ -39,24 +39,20 @@ export class registerComponent {
     });
   }
 
-  //Valida que el campo no este vacio
-  validateField(value: string): boolean {
+  validateCamp(value: string): boolean {
     return value.trim() !== '';
   }
 
-  //Valida que la longitud del nombre sea menor o igual 15
   validateLenght(value: string): boolean {
     return value.length <= 15;
   }
 
-  //Valida el formato del correo que se ingresa
   validateEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
-  //genera una contraseña aleatoria
-  randomPassword(longitud: number): string {
+  randomPassword(length: number): string {
     //Constante que almacena los caracteres que contrendra la contraseña
     const caracteres: string =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+';
@@ -64,11 +60,10 @@ export class registerComponent {
     //Obtenemos la longitud de los caracteres proporcionados
     const caractereslength = caracteres.length;
 
-    //Declaro una variable constraseña
     let password: string = '';
 
     //Se crea un array que será del tamaño de la longitud de la contraseña
-    const array = new Uint32Array(longitud);
+    const array = new Uint32Array(length);
 
     //Se usa el objeto crypto del navegador para generar valores aleatorios y cargar el 'array' con ellos
     window.crypto.getRandomValues(array);
@@ -76,18 +71,17 @@ export class registerComponent {
     /*Iteramos sobre cada elemento del 'array' concatenando los valores almacenados en el 'array'.
     array[i] % caracteresLength devuelve un índice aleatorio dentro del rango de caracteres permitido,
     utilizando el operador módulo %.*/
-    for (let i = 0; i < longitud; i++) {
+    for (let i = 0; i < length; i++) {
       password += caracteres[array[i] % caractereslength];
     }
 
-    //Retornamos la contraseña
     return password;
   }
 
-  async addPersona() {
+  async addUser() {
     const { nombre1, nombre2, apellido1, apellido2, correo } = this.persona;
 
-    if (!(this.validateField(nombre1) && this.validateField(apellido1))) {
+    if (!(this.validateCamp(nombre1) && this.validateCamp(apellido1))) {
       alert('Ingrese minimo un nombre y un apellido');
       return;
     }
@@ -109,7 +103,9 @@ export class registerComponent {
       return;
     }
 
+    //Asignacion de contraseña aleatoria al registrar el usuario
     this.persona.contrasena = this.randomPassword(8);
+    //Estado del usuario al registrar siempre será activo
     this.persona.idEstado.id_estado = '1';
 
     this.personaSerive.postData(this.persona).subscribe(

@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
+
   //Loggearse en la aplicacion
   Login: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/user/login',
 

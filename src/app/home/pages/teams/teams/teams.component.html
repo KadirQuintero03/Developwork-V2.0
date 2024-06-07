@@ -25,7 +25,7 @@
   </div>
 
   <div class="h-[428px] overflow-y-auto">
-    <table class="w-full h-full bg-white rounded-lg overflow-hidden">
+    <table class="w-full bg-white rounded-lg overflow-hidden">
       <thead
         class="h-4 text-center text-xl font-semibold text-[#00214D] bg-[#D9D9D9] bg-opacity-[56%]"
       >
@@ -37,7 +37,9 @@
       <tbody class="text-xl">
         <tr class="text-center">
           <td>Equipo alfa maravilla</td>
+          <td>2</td>
           <td>Activo</td>
+          <td>Modificar</td>
         </tr>
         <tr
           *ngFor="let equipo of verequipo"
@@ -46,7 +48,14 @@
         >
           <td>{{ equipo.nombreEquipo }}</td>
           <td>{{ equipo.NumIntegrantes }}</td>
-          <td>{{ equipo.idEstado.nombre_estado }}</td>
+          <td
+            [ngClass]="{
+              'styleActive': equipo.idEstado.nombre_estado === test,
+              'styleInactive': equipo.idEstado.nombre_estado != test
+            }"
+          >
+            {{ equipo.idEstado.nombre_estado }}
+          </td>
           <td>
             <button
               [disabled]="equipoSelect.nombreEquipo == '' ? true : false"
