@@ -49,7 +49,7 @@ export class RegisterTeamComponent {
     // }
 
     //Asigna un ID aleatorio al equipo que se registre
-    this.nuevoEquipo.idEquipo = this.randomIdTeam(10000000);
+    this.nuevoEquipo.id_equipo = this.randomIdTeam(10000000);
     //Estado del equipo al registrar siempre será activo
     this.nuevoEquipo.estados.id_estado = '1';
 

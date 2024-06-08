@@ -73,9 +73,9 @@
       <select
         class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
         name="id_equipo"
-        [(ngModel)]="persona.idEquipo.idEquipo"
+        [(ngModel)]="persona.idEquipo.id_equipo"
       >
-        <option *ngFor="let equipo of verequipo" [value]="equipo.idEquipo">
+        <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
           {{ equipo.nombre_equipo }}
         </option>
       </select>

@@ -18,8 +18,10 @@ export class TeamsComponent implements OnInit {
 
   ngOnInit(): void {
     this.serviceteam.getData().subscribe((Response: any) => {
-      this.verequipo = Response.data;
-      console.log('Equipos:', this.verequipo);
+      if (Response) {
+        this.verequipo = Response.data;
+        console.log('Equipos:', this.verequipo);
+      }
     });
   }
 

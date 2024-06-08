@@ -7,16 +7,16 @@ export const environment = {
   Login: `${url}api/v1/user/login`,
 
   //Registrar un usuario
-  CreateUser: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/user',
+  CreateUser: `${url}api/v1/user`,
   //Traer a los usuarios
-  GetUsers: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/user/getUsers',
+  GetUsers: `${url}api/v1/user/getUsers`,
   //Actualizar un usuario para asignarle un equipo
-  UpdateTeams: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/user/updateTeams',
+  UpdateTeams: `${url}api/v1/user/updateTeams`,
 
   //Registrar un equipo
-  CreateTeams: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/teams/createTeams',
+  CreateTeams: `${url}api/v1/teams/createTeams`,
   //Traer a los equipos
-  GetTeams: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/teams',
+  GetTeams: `${url}api/v1/teams`,
 
   //Traer las prioridades de las ordenes
   OrderPrio: 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/ordenes/prio',
