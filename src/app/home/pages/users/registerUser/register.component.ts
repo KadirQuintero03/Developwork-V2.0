@@ -32,10 +32,12 @@ export class registerComponent {
   ngOnInit(): void {
     this.serviceteam.getData().subscribe((Response: any) => {
       this.verequipo = Response.data;
+      console.log('Equipos:', this.verequipo)
     });
 
     this.rolService.getData().subscribe((Response: any) => {
       this.verroles = Response.data.estados;
+      console.log('Roles:', this.verroles)
     });
   }
 
@@ -108,6 +110,7 @@ export class registerComponent {
     //Estado del usuario al registrar siempre será activo
     this.persona.idEstado.id_estado = '1';
 
+    console.log('Usuario enviado:', this.persona)
     this.personaSerive.postData(this.persona).subscribe(
       (response) => { console.log('Usuario agregado con éxito:', response);
         alert(`El usuario ${nombre1} ${apellido1} fue registrado con éxito.`);

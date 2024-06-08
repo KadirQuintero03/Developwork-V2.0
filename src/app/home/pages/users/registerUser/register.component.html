@@ -8,7 +8,7 @@
       <fieldset class="flex flex-column gap-1">
         <label for="id_usuario" class="text-base text-black"> Identificacion </label>
         <input
-          [(ngModel)]="persona.idUsuario"
+          [(ngModel)]="persona.id_usuario"
           id="id_usuario"
           name="id_usuario"
           class="w-[271px] h-[35px] p-2 rounded-lg border"
@@ -92,7 +92,7 @@
       <label for="id_rol" class="text-base text-black">
         Rol
         <select
-          class="rounded-lg border w-[540px] h-[32px] p-1"
+          class="rounded-lg border w-[540px] h-[32px] p-1 cursor-pointer"
           name="id_rol"
           id="id_rol"
           [(ngModel)]="persona.idRol"

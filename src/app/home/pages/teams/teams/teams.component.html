@@ -35,7 +35,8 @@
         <th>Accion</th>
       </thead>
       <tbody class="text-xl">
-        <tr class="text-center"
+        <tr
+          class="text-center"
           *ngFor="let equipo of verequipo"
           (click)="this.equipoSelect = equipo"
           [ngClass]="{ seleccionado: equipoSelect == equipo }"

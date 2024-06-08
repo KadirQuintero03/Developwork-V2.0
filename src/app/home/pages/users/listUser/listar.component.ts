@@ -12,27 +12,23 @@ import { PersonaService } from '../../../../services/persona.service';
 export class ListarComponent implements OnInit {
   personaSelect: persona = new persona();
   user: persona = new persona();
-  lstpersonas: persona[] = [];
+  verusuario: persona[] = [];
   visibility: boolean = false;
-  
+
   constructor(private servicepersona: PersonaService, private router: Router) {
-    this.user = this.servicepersona.getUser();
+    // this.user = this.servicepersona.getUser();
 
-    this.servicepersona.getData().subscribe((Response: any) => {
-      this.lstpersonas = Response.users;
-      console.log(this.lstpersonas)
-    });
-
-    if (this.personaSelect.idUsuario == '') {
-      this.servicepersona.getData().subscribe((Response: any) => {
-        this.lstpersonas = Response.data;
-      });
-    }
+    // if (this.personaSelect.id_usuario == '') {
+    //   this.servicepersona.getData().subscribe((Response: any) => {
+    //     this.verusuario = Response.data;
+    //   });
+    // }
   }
 
   ngOnInit(): void {
     this.servicepersona.getData().subscribe((Response: any) => {
-      this.lstpersonas = Response.data;
+      this.verusuario = Response.users;
+      console.log(this.verusuario)
     });
   }
 

@@ -3,7 +3,7 @@ import { estado } from "./estado";
 import { rol } from "./rol";
 
 export class persona{
-    idUsuario:string='';
+    id_usuario:string='';
     nombre1:string='';
     nombre2:string='';
     apellido1:string='';
