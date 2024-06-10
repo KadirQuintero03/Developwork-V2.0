@@ -1,4 +1,4 @@
-const url: string = 'https://zc4fjp74-3002.brs.devtunnels.ms/'
+const url: string = 'https://zc4fjp74-3002.brs.devtunnels.ms/';
 
 export const environment = {
   production: false,
@@ -18,11 +18,11 @@ export const environment = {
   //Traer a los equipos
   GetTeams: `${url}api/v1/teams`,
 
+  //Traer los roles y estados
+  GetRolEstado: `${url}api/v1/user/getAtri`,
+
   //Traer las prioridades de las ordenes
   OrderPrio: 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/ordenes/prio',
   //Registrar una orden
   CreateOrden: 'https://2fc68cmh-3000.use2.devtunnels.ms/ordenes/realize',
-
-  //Traer los roles y estados
-  GetRolEstado: 'https://zc4fjp74-3002.brs.devtunnels.ms/api/v1/user/getAtri',
 };

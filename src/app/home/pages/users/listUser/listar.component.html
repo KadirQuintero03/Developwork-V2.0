@@ -17,7 +17,7 @@
 
     <button
       class="text-white text-[20px] font-semibold bg-[#014F41] w-[219px] h-[50px] rounded-[50px] p-2"
-      (click)="changeVisibility(true)"
+      (click)="newUser(true)"
     >
       + AGREGAR
     </button>
@@ -50,7 +50,7 @@
           <td>
             <button
               [disabled]="personaSelect.nombre1 == '' ? true : false"
-              (click)="modPersona()"
+              (click)="modUser(true)"
             >
               <img
                 src="../../../../../assets/icon/modificar.svg"
@@ -64,8 +64,14 @@
   </div>
 
   <app-register
-    *ngIf="visibility"
+    *ngIf="visibilityRU"
     class="fixed inset-0 bg-black bg-opacity-50 z-[100]"
-    (eventState)="changeVisibility($event)"
+    (changeStateRU)="newUser($event)"
   />
+
+  <app-modpersona
+    *ngIf="visibilityMU"
+    class="fixed inset-0 bg-black bg-opacity-50 z-[100]"
+    (changeStateMU)="modUser($event)"
+    />
 </main>

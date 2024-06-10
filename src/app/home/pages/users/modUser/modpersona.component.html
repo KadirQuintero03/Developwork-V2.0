@@ -1,5 +1,5 @@
 <main class="w-full h-[85vh] flex justify-center items-center">
-  <form class="bg-[#FBFCF1] p-8 h-[425px] rounded-[20px]">
+  <form class="bg-[#FBFCF1] p-8  rounded-[20px]">
     <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Modificar usuario</h1>
 
     <div class="flex justify-center items-center gap-4 mt-3">
@@ -38,7 +38,9 @@
       </fieldset>
 
       <fieldset class="flex flex-column gap-1 mt-2">
-        <label for="apellido" class="text-base text-black"> Primer Apellido </label>
+        <label for="apellido" class="text-base text-black">
+          Primer Apellido
+        </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
@@ -47,7 +49,9 @@
           placeholder="Ingrese el primer apellido"
           [(ngModel)]="persona.apellido1"
         />
-        <label for="apellido2" class="text-base text-black"> Segundo Apellido </label>
+        <label for="apellido2" class="text-base text-black">
+          Segundo Apellido
+        </label>
         <input
           class="w-[271px] h-[35px] p-2 rounded-lg border"
           type="text"
@@ -68,28 +72,45 @@
       </fieldset>
     </div>
 
-    <label for="equipo" class="text-base text-black mt-3">
-      Equipo
-      <select
-        class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
-        name="id_equipo"
-        [(ngModel)]="persona.idEquipo.id_equipo"
-      >
-        <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
-          {{ equipo.nombre_equipo }}
-        </option>
-      </select>
-    </label>
+    <div class="flex flex-col gap-1">
+      <label for="equipo" class="text-base text-black mt-3">
+        Equipo
+        <select
+          class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
+          name="id_equipo"
+          [(ngModel)]="persona.idEquipo.id_equipo"
+        >
+          <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+            {{ equipo.nombre_equipo }}
+          </option>
+        </select>
+      </label>
+
+      <label for="estado" class="text-base text-black mt-3">
+        Estado
+        <select
+          class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
+          name="id_estado"
+          [(ngModel)]="persona.idEstado.id_estado"
+        >
+          <option *ngFor="let equipo of verestado" [value]="persona.idEstado.id_estado">
+            {{ equipo.nombre_estado }}
+          </option>
+        </select>
+      </label>
+    </div>
+
 
     <div class="flex justify-evenly mt-3">
       <button
         class="text-xl text-white bg-[#00214D] w-[210px] h-[26] rounded-lg p-2"
+        (click)="closeMU()"
       >
         Cancelar
       </button>
       <button
         class="text-xl text-white bg-[#014F41] w-[210px] h-[26] rounded-lg p-2"
-        (click)="modificar()"
+        (click)="mod()"
       >
         Modificar
       </button>

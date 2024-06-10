@@ -20,12 +20,11 @@ export class TeamsComponent implements OnInit {
     this.serviceteam.getData().subscribe((Response: any) => {
       if (Response) {
         this.verequipo = Response.data;
-        console.log('Equipos:', this.verequipo);
       }
     });
   }
 
-  changeVisibilityRT(newValue: boolean) {
+  newTeam(newValue: boolean) {
     this.visibilityRT = newValue;
   }
 

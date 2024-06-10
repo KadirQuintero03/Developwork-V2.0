@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { persona } from '../../../../interface/persona';
 import { PersonaService } from '../../../../services/persona.service';
 
@@ -13,9 +12,10 @@ export class ListarComponent implements OnInit {
   personaSelect: persona = new persona();
   user: persona = new persona();
   verusuario: persona[] = [];
-  visibility: boolean = false;
+  visibilityRU: boolean = false;
+  visibilityMU: boolean = false;
 
-  constructor(private servicepersona: PersonaService, private router: Router) {
+  constructor(private servicepersona: PersonaService) {
     // this.user = this.servicepersona.getUser();
 
     // if (this.personaSelect.id_usuario == '') {
@@ -28,17 +28,15 @@ export class ListarComponent implements OnInit {
   ngOnInit(): void {
     this.servicepersona.getData().subscribe((Response: any) => {
       this.verusuario = Response.users;
-      console.log(this.verusuario)
     });
   }
 
-  modPersona() {
-    this.servicepersona.setPersona(this.personaSelect);
-    this.router.navigate(['user/modPersona']);
+  newUser(newValue: boolean){
+    this.visibilityRU = newValue
   }
 
-  changeVisibility(newValue: boolean){
-    this.visibility = newValue
-    console.log(this.visibility)
+  modUser(newValue: boolean) {
+    this.servicepersona.setPersona(this.personaSelect);
+    this.visibilityMU = newValue
   }
 }

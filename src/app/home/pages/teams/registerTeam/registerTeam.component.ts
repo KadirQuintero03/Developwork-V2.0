@@ -13,7 +13,7 @@ export class RegisterTeamComponent {
 
   @Output() changeStateRT = new EventEmitter<boolean>();
 
-  changeVisibilityRT() {
+  closeRT() {
     this.changeStateRT.emit(false);
   }
 
@@ -53,7 +53,6 @@ export class RegisterTeamComponent {
     //Estado del equipo al registrar siempre será activo
     this.nuevoEquipo.estados.id_estado = '1';
 
-    console.log('Equipo:',this.nuevoEquipo)
     this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
       (response) => {
         console.log('Equipo agregado con éxito:', response);
