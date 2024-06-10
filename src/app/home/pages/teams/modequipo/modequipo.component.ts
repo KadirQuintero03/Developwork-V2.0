@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { equipo } from '../../../../interface/equipo';
 import { TeamservService } from '../../../../services/teamserv.service';
@@ -19,6 +19,8 @@ export class ModequipoComponent {
   verroles: rol[] = [];
   verequipo: equipo[] = [];
 
+  @Output() changeStateMT = new EventEmitter<boolean>;
+
   constructor(
     private router: Router,
     private serviceequipo: TeamservService,
@@ -26,15 +28,16 @@ export class ModequipoComponent {
     private rolService: RolserviceService
   ) {}
 
-  modificarequipo() {
-    console.log('Modequipo, Modificarequipo, entro');
+  mod() {
     this.serviceequipo.modEquipo(this.equipo).subscribe();
-    console.log('paso el modEquipo.subscribe');
 
     this.serviceequipo.setEquipo(new equipo());
-    console.log('paso el setequipo new equipo');
 
     this.router.navigate(['user/teams']);
+  }
+
+  closeMT(){
+    this.changeStateMT.emit(false)
   }
 
   ngOnInit(): void {

@@ -47,7 +47,7 @@
           <td>
             <button
               [disabled]="equipoSelect.nombre_equipo == '' ? true : false"
-              (click)="modEquipo()"
+              (click)="modTeam(true)"
             >
               <img
                 src="../../../../../assets/icon/modificar.svg"
@@ -64,5 +64,11 @@
     class="fixed inset-0 bg-black bg-opacity-50 z-[100]"
     *ngIf="visibilityRT"
     (changeStateRT)="newTeam($event)"
+  />
+
+  <app-modequipo
+  class="fixed inset-0 bg-black bg-opacity-50 z-[100]"
+  *ngIf="visibilityMT"
+  (changeStateMT)="modTeam($event)"
   />
 </main>

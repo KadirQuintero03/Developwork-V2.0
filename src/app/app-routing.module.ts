@@ -5,7 +5,6 @@ import { usersComponent } from '../app/home/users.component';
 import { LoginComponent } from '../app/home/pages/login/login.component';
 import { TeamsComponent } from '../app/home/pages/teams/teams/teams.component';
 import { InformationComponent } from './home/pages/users/infoUser/information.component';
-import { ModequipoComponent } from './home/pages/teams/modequipo/modequipo.component';
 import { OrdenesMComponent } from './home/pages/ordenes/ordenes-m/ordenes-m.component';
 import { ListarComponent } from './home/pages/users/listUser/listar.component';
 
@@ -37,7 +36,6 @@ const routes: Routes = [
             path: 'information',
             component: InformationComponent,
           },
-          { path: 'modEquipo', component: ModequipoComponent },
         ],
         // canActivate: [AuthGuard],
       },
