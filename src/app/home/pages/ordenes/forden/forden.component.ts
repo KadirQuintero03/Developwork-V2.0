@@ -53,13 +53,13 @@ export class FordenComponent {
   ) {}
 
   ngOnInit(): void {
-    this.sequipos.getData().subscribe((Response: any) => {
-      this.equipos = Response.data;
-    });
+    // this.sequipos.getData().subscribe((Response: any) => {
+    //   this.equipos = Response.data;
+    // });
 
-    this.getPrioridades.getData().subscribe((Response: any) => {
-      this.prioridades = Response.data;
-    });
+    // this.getPrioridades.getData().subscribe((Response: any) => {
+    //   this.prioridades = Response.data;
+    // });
 
     //Carga en el select de los estados, los estados disponibles
     // this.sestados.getData().subscribe((Response) => {

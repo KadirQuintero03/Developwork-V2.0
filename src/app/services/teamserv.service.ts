@@ -8,36 +8,12 @@ import { environment } from '../interface/enviroment';
 @Injectable({
   providedIn: 'root',
 })
-
 export class TeamservService {
-  private static ltsEquipos: equipo[] = [];
   private equipoMod: equipo = new equipo();
   private token: string = '';
   private CreateTeams = environment.CreateTeams;
+  private Updateteams = environment.UpdateTeams
   private GetTeams = environment.GetTeams;
-
-  /*getEquipos(): equipo[] {
-    this.getData().subscribe(
-      (response) => {
-        TeamservService.ltsEquipos = response;
-        return TeamservService.ltsEquipos;
-      },
-      (error) => {
-        console.error('Error en la solicitud:', error);
-      }
-    );
-    return TeamservService.ltsEquipos;
-  }*/
-
-  //se usa en modEquipoComponent
-  setEquipo(_equipo: equipo) {
-    return (this.equipoMod = _equipo);
-  }
-
-  //se usa en modEquipoComponent
-  getEquipo(): equipo {
-    return this.equipoMod;
-  }
 
   constructor(
     private http: HttpClient,
@@ -46,6 +22,7 @@ export class TeamservService {
     this.token = this.serviceLocalStorage.getItem('jwt');
   }
 
+  //Agrega el equipo
   addEquipo(equipo: equipo): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -54,14 +31,7 @@ export class TeamservService {
     return this.http.post(`${this.CreateTeams}`, equipo, { headers });
   }
 
-  postData(data: equipo): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.token,
-    });
-    return this.http.post(this.CreateTeams, data, { headers });
-  }
-
+  //Modifica el equipo
   modEquipo(equipo: equipo): Observable<any> {
     this.token = this.serviceLocalStorage.getItem('jwt');
     const headers = new HttpHeaders({
@@ -69,14 +39,26 @@ export class TeamservService {
       Authorization: 'Bearer ' + this.token,
     });
     console.log(headers);
-    return this.http.put(this.CreateTeams, equipo, { headers, responseType: 'text' });
+    return this.http.put(this.Updateteams, equipo, {
+      headers,
+      responseType: 'text',
+    });
   }
 
+  //Trae a los equipos
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
     return this.http.get(`${this.GetTeams}`, { headers });
+  }
+
+  getEquipo(): equipo {
+    return this.equipoMod;
+  }
+
+  setEquipo(_equipo: equipo) {
+    return (this.equipoMod = _equipo);
   }
 }

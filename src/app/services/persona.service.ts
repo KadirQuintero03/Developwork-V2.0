@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { persona } from '../interface/persona';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
 import { environment } from '../interface/enviroment';
 
@@ -9,7 +9,6 @@ import { environment } from '../interface/enviroment';
   providedIn: 'root',
 })
 export class PersonaService {
-  private static lstPersonas: persona[] = [];
   private user: persona = new persona();
   private personaMod: persona = new persona();
   private token: string = '';
@@ -17,48 +16,7 @@ export class PersonaService {
   private Login = environment.Login;
   private CreateUser = environment.CreateUser;
   private GetUsers = environment.GetUsers;
-  private UpdateTeams = environment.UpdateTeams;
-
-  //Valida el TOKEN
-  validToken(): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.token,
-    });
-    return this.http.get(this.Login + 'checkSafe', {
-      headers,
-      responseType: 'text',
-    });
-  }
-
-  getUser(){
-    return this.user;
-  }
-
-  setUser(_user: persona){
-    this.user = _user;
-  }
-
-  getPersonas(): persona[] {
-    this.getData().subscribe(
-      (response) => {
-        PersonaService.lstPersonas = response;
-        return PersonaService.lstPersonas;
-      },
-      (error) => {
-        console.error('Error en la solicitud:', error);
-      }
-    );
-    return PersonaService.lstPersonas;
-  }
-
-  setPersona(_persona: persona) {
-    return (this.personaMod = _persona);
-  }
-
-  getPersona(): persona {
-    return this.personaMod;
-  }
+  private UpdateUser = environment.UpdateUser;
 
   constructor(
     private http: HttpClient,
@@ -71,17 +29,9 @@ export class PersonaService {
   login(user: persona): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.token,
+      Authorization: 'Bearer ',
     });
-
-    console.log('correo: ', user.correo)
-    console.log('contra: ', user.contrasena)
-    return this.http.get(`${this.GetUsers}`, { headers }).pipe(
-      catchError((error) => {
-        console.error('Error en la solicitud:', error);
-        throw error;
-      })
-    );
+    return this.http.get(this.Login, { headers });
   }
 
   //Trae la informacion del usuario loggeado
@@ -91,7 +41,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(this.Login + 'usuario', { headers });
+    return this.http.get(this.Login, { headers });
   }
 
   //Crear usuario
@@ -103,14 +53,14 @@ export class PersonaService {
     return this.http.post(this.CreateUser, data, { headers });
   }
 
-    //Traer a todos los usuarios
-    getData(): Observable<any> {
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + this.token,
-      });
-      return this.http.get(`${this.GetUsers}`, { headers });
-    }
+  //Traer a todos los usuarios
+  getData(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+    return this.http.get(`${this.GetUsers}`, { headers });
+  }
 
   //Modificar usuario
   modPersona(persona: persona): Observable<any> {
@@ -119,7 +69,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.put(this.UpdateTeams, persona, { headers });
+    return this.http.put(this.UpdateUser, persona, { headers });
   }
 
   //Cambiar contraseña del usuario
@@ -132,5 +82,33 @@ export class PersonaService {
       headers,
       responseType: 'text',
     });
+  }
+
+  //Valida el TOKEN
+  validToken(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+    return this.http.get(this.token, {
+      headers,
+      responseType: 'text',
+    });
+  }
+
+  getUser() {
+    return this.user;
+  }
+
+  setUser(_user: persona) {
+    this.user = _user;
+  }
+
+  getPersona(): persona {
+    return this.personaMod;
+  }
+
+  setPersona(_persona: persona) {
+    return (this.personaMod = _persona);
   }
 }

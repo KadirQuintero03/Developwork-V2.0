@@ -30,10 +30,10 @@ export class NotificationComponent implements OnInit {
       this.notificaciones.push(notificacion);
     });
 
-    // this.Ssoket.escucharNuevaNotificacion().subscribe((Response: any) => {
-    //   this.notificaciones = Response
-    // })
-    
+    this.Ssoket.escucharNuevaNotificacion().subscribe((Response: any) => {
+      this.notificaciones = Response
+    })
+
     console.log('Probando notificaciones')
   }
 

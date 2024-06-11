@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { estado } from '../interface/estado';
 import { LocalStorageService } from './local-storage.service';
 import { environment } from '../interface/enviroment';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class EstadoserviceService {
-  private Estados: estado[] = [];
   private token: string = '';
   private GetRolEstado = environment.GetRolEstado
-
-  getEstado() {
-    return this.Estados;
-  }
 
   constructor(
     private http: HttpClient,

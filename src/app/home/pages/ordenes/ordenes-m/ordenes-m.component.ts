@@ -33,7 +33,7 @@ export class OrdenesMComponent implements OnInit {
   }
 
   newOrden() {
-    this.modorden.idOrder = 'O387537';
+    this.modorden.idOrden = '3875340';
   }
 
   refresh() {

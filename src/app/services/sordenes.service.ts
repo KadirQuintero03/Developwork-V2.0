@@ -14,9 +14,9 @@ export class SordenesService {
   private forden: ordenes_matenimiento = new ordenes_matenimiento();
   private token: string = '';
   private headers = new HttpHeaders();
-  private CreateOrden = environment.CreateOrden
+  private PetOrden = environment.PetOrden
   private _ordenes: ordenes_matenimiento[] = [];
-  
+
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
@@ -37,18 +37,18 @@ export class SordenesService {
   }
 
   ordenes(user:persona): Observable<any> {
-    return this.http.post(this.CreateOrden+"/data", user,{ headers: this.headers });
+    return this.http.post(this.PetOrden+"/data", user,{ headers: this.headers });
   }
 
   ordenesP(user:persona): Observable<any> {
-    return this.http.post(this.CreateOrden+"/pendientes",user ,{ headers: this.headers });
+    return this.http.post(this.PetOrden+"/pendientes",user ,{ headers: this.headers });
   }
 
   createOrden(orden: ordenes_matenimiento): Observable<any> {
-    return this.http.post(this.CreateOrden, orden, { headers: this.headers });
+    return this.http.post(this.PetOrden, orden, { headers: this.headers });
   }
 
   putOrden(orden: ordenes_matenimiento): Observable<any> {
-    return this.http.put(this.CreateOrden, orden, { headers: this.headers });
+    return this.http.put(this.PetOrden, orden, { headers: this.headers });
   }
 }

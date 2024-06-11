@@ -1,44 +1,62 @@
-<div class="flex items-center justify-center w-full h-[100vh]">
-  <div class="bg-[#FBFCF1] bg-opacity-[0.5] rounded-lg">
-    <form>
-      <fieldset class="fieldSelect">
-        <label for="estado">Estado</label>
-        <select name="id_estado" [(ngModel)]="equipo.estados">
-          <option
-            *ngFor="let estado of verestado"
-            [value]="equipo.estados"
-          >
-            {{ estado.nombre_estado }}
-          </option>
-        </select>
-      </fieldset>
+<main class="flex items-center justify-center w-full h-[100vh]">
+  <form class="bg-[#FBFCF1] p-8 rounded-[20px]">
+    <h1 class="text-4xl font-bold mb-3 text-[#014F41]">Modificar equipo</h1>
 
-      <fieldset class="fieldInput">
-        <label for="nombre_equipo">Nombre</label>
-        <input
-          type="text"
-          id="nombre_equipo"
-          name="nombre_equipo"
-          [(ngModel)]="equipo.nombre_equipo"
-        />
+    <div class="flex justify-center items-center gap-4 mt-3"></div>
+    <fieldset class="flex flex-column gap-1 mt-2">
+      <label for="id_equipo" class="text-base text-black">Id Equipo</label>
+      <input
+        class="w-[271px] h-[35px] p-2 rounded-lg border"
+        type="text"
+        id="id_equipo"
+        name="id_equipo"
+        [(ngModel)]="equipo.id_equipo"
+      />
 
-      </fieldset>
+      <label for="nombre_equipo" class="text-base text-black">Nombre</label>
+      <input
+        class="w-[271px] h-[35px] p-2 rounded-lg border"
+        type="text"
+        id="nombre_equipo"
+        name="nombre_equipo"
+        [(ngModel)]="equipo.nombre_equipo"
+      />
 
-      <div class="flex justify-evenly mt-3">
-        <button
-          class="text-xl text-white bg-[#00214D] w-[160px] h-[26] rounded-lg p-2"
-          (click)="closeMT()"
-        >
-          Cancelar
-        </button>
+      <label for="NumIntegrantes" class="text-base text-black">Numero Integrantes</label>
+      <input
+        class="w-[271px] h-[35px] p-2 rounded-lg border"
+        type="text"
+        id="NumIntegrantes"
+        name="NumIntegrantes"
+        [(ngModel)]="equipo.NumIntegrantes"
+      />
 
-        <button
-          class="text-xl text-white bg-[#014F41] w-[160px] h-[26] rounded-lg p-2"
-          (click)="mod()"
-        >
-          Modificar
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
+      <label for="estado" class="text-base text-black">Estado</label>
+      <select
+        name="id_estado"
+        [(ngModel)]="equipo.estados"
+        class="rounded-lg border w-[271px] h-[32px] p-1 cursor-pointer"
+      >
+        <option *ngFor="let estado of verestado" [value]="equipo.estados">
+          {{ estado.nombre_estado }}
+        </option>
+      </select>
+    </fieldset>
+
+    <div class="flex justify-evenly mt-3 gap-2">
+      <button
+        class="text-xl text-white bg-[#00214D] w-[160px] h-[26] rounded-lg p-2"
+        (click)="closeMT()"
+      >
+        Cancelar
+      </button>
+
+      <button
+        class="text-xl text-white bg-[#014F41] w-[160px] h-[26] rounded-lg p-2"
+        (click)="mod()"
+      >
+        Modificar
+      </button>
+    </div>
+  </form>
+</main>

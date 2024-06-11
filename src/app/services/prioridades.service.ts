@@ -17,6 +17,7 @@ export class PrioridadesService {
   ) {
     this.token = this.serviceLocalStorage.getItem('jwt');
   }
+
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

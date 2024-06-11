@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { PersonaService } from '../../../../services/persona.service';
 import { persona } from '../../../../interface/persona';
 
@@ -18,12 +17,12 @@ export class InformationComponent {
     console.log(this.visibility)
   }
 
-  constructor(private router: Router, private personaService: PersonaService) {
-    this.personaService.setPersonaLog().subscribe((Response :persona)=>{
-      this.personalog=Response;
+  constructor(private personaService: PersonaService) {}
+
+  ngOnInit(){
+    this.personaService.setPersonaLog().subscribe((Response: any)=>{
+      this.personalog=Response.users;
+      console.log('UsarioLoggeado:', this.personalog)
     });
-  }
-  CambContra(): void {
-    this.router.navigate(['user/cambcontraseña']);
   }
 }

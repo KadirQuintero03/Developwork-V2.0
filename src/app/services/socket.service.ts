@@ -17,7 +17,7 @@ export class SocketService {
   ) {
     this.token = this.serviceLocalStorage.getItem('jwt');
   }
-  private URL: string = '/socket.io/socket.io.js';
+  private URL: string = 'https://zc4fjp74-3000.brs.devtunnels.ms/';
   private token: string = '';
 
   conectarConIdUsuario(persona: persona) {
