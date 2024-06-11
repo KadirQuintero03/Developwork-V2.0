@@ -17,7 +17,7 @@ export class SocketService {
   ) {
     this.token = this.serviceLocalStorage.getItem('jwt');
   }
-  private URL: string = 'http://191.88.249.172:3002/Ordenes';
+  private URL: string = '/socket.io/socket.io.js';
   private token: string = '';
 
   conectarConIdUsuario(persona: persona) {
@@ -39,7 +39,6 @@ export class SocketService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    console.log(__notificacion);
     return this.http.delete(`${this.URL}`, { headers, body: __notificacion });
   }
 }
