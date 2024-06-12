@@ -1,0 +1,153 @@
+Date : 2024-06-11 19:44:46
+Directory : c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork
+Total : 90 files,  15941 codes, 137 comments, 377 blanks, all 16455 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          5 |     13,666 |          2 |          5 |     13,673 |
+| TypeScript         |         38 |      1,211 |        118 |        236 |      1,565 |
+| HTML               |         18 |        812 |         16 |         80 |        908 |
+| CSS                |          9 |        152 |          0 |         31 |        183 |
+| XML                |         17 |         44 |          0 |          9 |         53 |
+| JSON with Comments |          1 |         35 |          0 |          1 |         36 |
+| Markdown           |          1 |         14 |          0 |         14 |         28 |
+| JavaScript         |          1 |          7 |          1 |          1 |          9 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                    |         90 |     15,941 |        137 |        377 |     16,455 |
+| . (Files)                                                                                                                            |          8 |     13,722 |          3 |         21 |     13,746 |
+| src                                                                                                                                  |         82 |      2,219 |        134 |        356 |      2,709 |
+| src (Files)                                                                                                                          |          3 |         27 |          0 |          6 |         33 |
+| src\app                                                                                                                              |         62 |      2,148 |        134 |        341 |      2,623 |
+| src\app (Files)                                                                                                                      |          5 |        147 |          2 |         13 |        162 |
+| src\app\home                                                                                                                         |         35 |      1,434 |         83 |        228 |      1,745 |
+| src\app\home (Files)                                                                                                                 |          2 |         13 |          0 |          4 |         17 |
+| src\app\home\pages                                                                                                                   |         33 |      1,421 |         83 |        224 |      1,728 |
+| src\app\home\pages\changePass                                                                                                        |          2 |        106 |          0 |         14 |        120 |
+| src\app\home\pages\login                                                                                                             |          3 |        142 |          0 |         23 |        165 |
+| src\app\home\pages\notifications                                                                                                     |          3 |         58 |          0 |         10 |         68 |
+| src\app\home\pages\ordenes                                                                                                           |          8 |        256 |         57 |         43 |        356 |
+| src\app\home\pages\ordenes\forden                                                                                                    |          2 |        103 |         49 |         17 |        169 |
+| src\app\home\pages\ordenes\orden                                                                                                     |          3 |         42 |          0 |          8 |         50 |
+| src\app\home\pages\ordenes\ordenes-m                                                                                                 |          3 |        111 |          8 |         18 |        137 |
+| src\app\home\pages\teams                                                                                                             |          7 |        294 |         11 |         53 |        358 |
+| src\app\home\pages\teams\modequipo                                                                                                   |          2 |         97 |          0 |         16 |        113 |
+| src\app\home\pages\teams\registerTeam                                                                                                |          2 |         80 |         11 |         19 |        110 |
+| src\app\home\pages\teams\teams                                                                                                       |          3 |        117 |          0 |         18 |        135 |
+| src\app\home\pages\users                                                                                                             |         10 |        565 |         15 |         81 |        661 |
+| src\app\home\pages\users\infoUser                                                                                                    |          3 |         78 |          0 |         11 |         89 |
+| src\app\home\pages\users\listUser                                                                                                    |          3 |        125 |          6 |         19 |        150 |
+| src\app\home\pages\users\modUser                                                                                                     |          2 |        160 |          0 |         17 |        177 |
+| src\app\home\pages\users\registerUser                                                                                                |          2 |        202 |          9 |         34 |        245 |
+| src\app\interface                                                                                                                    |          8 |         64 |         11 |         15 |         90 |
+| src\app\services                                                                                                                     |          9 |        386 |         14 |         64 |        464 |
+| src\app\shared                                                                                                                       |          5 |        117 |         24 |         21 |        162 |
+| src\app\shared\header                                                                                                                |          2 |         31 |          0 |          4 |         35 |
+| src\app\shared\nav                                                                                                                   |          3 |         86 |         24 |         17 |        127 |
+| src\assets                                                                                                                           |         17 |         44 |          0 |          9 |         53 |
+| src\assets\icon                                                                                                                      |         16 |         30 |          0 |          8 |         38 |
+| src\assets\img                                                                                                                       |          1 |         14 |          0 |          1 |         15 |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                                             | language           | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\README.md                                                         | Markdown           |         14 |          0 |         14 |         28 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\angular.json                                                      | JSON               |        104 |          0 |          1 |        105 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\package-lock.json                                                 | JSON               |     13,489 |          0 |          1 |     13,490 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\package.json                                                      | JSON               |         47 |          0 |          1 |         48 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\app-routing.module.ts                                     | TypeScript         |         46 |          2 |          3 |         51 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\app.component.html                                        | HTML               |          1 |          0 |          1 |          2 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\app.component.spec.ts                                     | TypeScript         |         25 |          0 |          5 |         30 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\app.component.ts                                          | TypeScript         |          8 |          0 |          2 |         10 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\app.module.ts                                             | TypeScript         |         67 |          0 |          2 |         69 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\changePass\camb-contra.component.html          | HTML               |         62 |          0 |          7 |         69 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\changePass\camb-contra.component.ts            | TypeScript         |         44 |          0 |          7 |         51 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\login\login.component.css                      | CSS                |         31 |          0 |          7 |         38 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\login\login.component.html                     | HTML               |         56 |          0 |          6 |         62 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\login\login.component.ts                       | TypeScript         |         55 |          0 |         10 |         65 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\notifications\notification.component.css       | CSS                |          8 |          0 |          1 |          9 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\notifications\notification.component.html      | HTML               |         12 |          0 |          1 |         13 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\notifications\notification.component.ts        | TypeScript         |         38 |          0 |          8 |         46 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\forden\forden.component.html           | HTML               |         37 |          8 |          7 |         52 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\forden\forden.component.ts             | TypeScript         |         66 |         41 |         10 |        117 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\orden\orden.component.css              | CSS                |         23 |          0 |          4 |         27 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\orden\orden.component.html             | HTML               |          5 |          0 |          1 |          6 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\orden\orden.component.ts               | TypeScript         |         14 |          0 |          3 |         17 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\ordenes-m\ordenes-m.component.css      | CSS                |         24 |          0 |          4 |         28 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\ordenes-m\ordenes-m.component.html     | HTML               |         53 |          0 |          6 |         59 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\ordenes\ordenes-m\ordenes-m.component.ts       | TypeScript         |         34 |          8 |          8 |         50 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\teams\modequipo\modequipo.component.html       | HTML               |         56 |          0 |          7 |         63 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\teams\modequipo\modequipo.component.ts         | TypeScript         |         41 |          0 |          9 |         50 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\teams\registerTeam\registerTeam.component.html | HTML               |         38 |          0 |          4 |         42 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\teams\registerTeam\registerTeam.component.ts   | TypeScript         |         42 |         11 |         15 |         68 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\teams\teams\teams.component.css                | CSS                |         19 |          0 |          5 |         24 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\teams\teams\teams.component.html               | HTML               |         68 |          0 |          7 |         75 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\teams\teams\teams.component.ts                 | TypeScript         |         30 |          0 |          6 |         36 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\infoUser\information.component.css       | CSS                |          4 |          0 |          1 |          5 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\infoUser\information.component.html      | HTML               |         51 |          0 |          4 |         55 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\infoUser\information.component.ts        | TypeScript         |         23 |          0 |          6 |         29 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\listUser\listar.component.css            | CSS                |         20 |          0 |          5 |         25 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\listUser\listar.component.html           | HTML               |         75 |          0 |          6 |         81 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\listUser\listar.component.ts             | TypeScript         |         30 |          6 |          8 |         44 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\modUser\modpersona.component.html        | HTML               |        113 |          0 |          7 |        120 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\modUser\modpersona.component.ts          | TypeScript         |         47 |          0 |         10 |         57 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\registerUser\register.component.html     | HTML               |        114 |          0 |         10 |        124 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\pages\users\registerUser\register.component.ts       | TypeScript         |         88 |          9 |         24 |        121 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\users.component.html                                 | HTML               |          7 |          0 |          1 |          8 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\home\users.component.ts                                   | TypeScript         |          6 |          0 |          3 |          9 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\enviroment.ts                                   | TypeScript         |         15 |         11 |          7 |         33 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\equipo.ts                                       | TypeScript         |          7 |          0 |          2 |          9 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\estado.ts                                       | TypeScript         |          4 |          0 |          1 |          5 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\notificacion.ts                                 | TypeScript         |          5 |          0 |          0 |          5 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\ordenes_mantenimiento.ts                        | TypeScript         |         10 |          0 |          1 |         11 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\persona.ts                                      | TypeScript         |         15 |          0 |          2 |         17 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\prioridad.ts                                    | TypeScript         |          4 |          0 |          1 |          5 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\interface\rol.ts                                          | TypeScript         |          4 |          0 |          1 |          5 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\auth.guard.ts                                    | TypeScript         |         49 |          4 |          3 |         56 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\estadoservice.service.ts                         | TypeScript         |         25 |          0 |          5 |         30 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\local-storage.service.ts                         | TypeScript         |         31 |          0 |          7 |         38 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\persona.service.ts                               | TypeScript         |         93 |          7 |         15 |        115 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\prioridades.service.ts                           | TypeScript         |         25 |          0 |          5 |         30 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\rolservice.service.ts                            | TypeScript         |         25 |          0 |          5 |         30 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\socket.service.ts                                | TypeScript         |         39 |          0 |          6 |         45 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\sordenes.service.ts                              | TypeScript         |         45 |          0 |         10 |         55 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\services\teamserv.service.ts                              | TypeScript         |         54 |          3 |          8 |         65 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\shared\header\header.component.html                       | HTML               |         19 |          0 |          1 |         20 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\shared\header\header.component.ts                         | TypeScript         |         12 |          0 |          3 |         15 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\shared\nav\nav.component.css                              | CSS                |         20 |          0 |          3 |         23 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\shared\nav\nav.component.html                             | HTML               |         26 |          8 |          2 |         36 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\app\shared\nav\nav.component.ts                               | TypeScript         |         40 |         16 |         12 |         68 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Email.svg                                         | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Exit.svg                                          | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Home.svg                                          | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Info.svg                                          | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\LogOut.svg                                        | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Notificacion.svg                                  | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\PassShow.svg                                      | XML                |          1 |          0 |          1 |          2 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Passicon2.svg                                     | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Plus.svg                                          | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Register.svg                                      | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Search.svg                                        | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Team.svg                                          | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\Trash.svg                                         | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\User.svg                                          | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\lock-solid.svg                                    | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\icon\modificar.svg                                     | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\assets\img\Header.svg                                         | XML                |         14 |          0 |          1 |         15 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\index.html                                                    | HTML               |         19 |          0 |          2 |         21 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\main.ts                                                       | TypeScript         |          5 |          0 |          3 |          8 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\src\styles.css                                                    | CSS                |          3 |          0 |          1 |          4 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\tailwind.config.js                                                | JavaScript         |          7 |          1 |          1 |          9 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\tsconfig.app.json                                                 | JSON               |         13 |          1 |          1 |         15 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\tsconfig.json                                                     | JSON with Comments |         35 |          0 |          1 |         36 |
+| c:\Users\Kadir\OneDrive\Escritorio\Front-Project\Front-Developwork\tsconfig.spec.json                                                | JSON               |         13 |          1 |          1 |         15 |
+| Total                                                                                                                                |                    |     15,941 |        137 |        377 |     16,455 |
++--------------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

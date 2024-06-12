@@ -44,7 +44,10 @@
         >
           <td>{{ usuario.nombre1 }} {{ usuario.apellido1 }}</td>
           <td>{{ usuario.correo }}</td>
-          <td>{{ usuario.idEstado.nombre_estado }}</td>
+          <td [ngClass]="{
+            activo: usuario.idEstado.nombre_estado == style,
+            inactivo: usuario.idEstado.nombre_estado != style
+          }" >{{ usuario.idEstado.nombre_estado }}</td>
           <td>{{ usuario.idRol.nombre_rol }}</td>
           <td>{{ usuario.idEquipo.nombre_equipo }}</td>
           <td>

@@ -14,6 +14,7 @@ export class ListarComponent implements OnInit {
   verusuario: persona[] = [];
   visibilityRU: boolean = false;
   visibilityMU: boolean = false;
+  style: string = 'activo';
 
   constructor(private servicepersona: PersonaService) {
     // this.user = this.servicepersona.getUser();

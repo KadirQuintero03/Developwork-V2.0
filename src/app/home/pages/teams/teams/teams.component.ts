@@ -12,7 +12,7 @@ export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   visibilityRT: boolean = false;
   visibilityMT: boolean = false;
-  test: string = 'Activo';
+  style: string = 'Activo';
 
   constructor(private serviceteam: TeamservService) {}
 

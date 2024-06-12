@@ -11,3 +11,13 @@ td {
   padding-bottom: 16px;
   padding-top: 16px;
 }
+
+.activo{
+  color: #CCD32A;
+  font-weight: 500;
+}
+
+.inactivo{
+  color: #DC2E3B;
+  font-weight: 500;
+}
