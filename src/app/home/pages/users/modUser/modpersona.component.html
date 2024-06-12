@@ -77,6 +77,7 @@
         Equipo
         <select
           class="rounded-lg border w-[514px] h-[32px] p-1 cursor-pointer"
+          id="id_equipo"
           name="id_equipo"
           [(ngModel)]="persona.idEquipo.id_equipo"
         >
@@ -94,8 +95,8 @@
           name="id_estado"
           [(ngModel)]="persona.idEstado.id_estado"
         >
-          <option *ngFor="let equipo of verestado" [value]="persona.idEstado.id_estado">
-            {{ equipo.nombre_estado }}
+          <option *ngFor="let estado of verestado" [value]="estado.id_estado">
+            {{ estado.nombre_estado }}
           </option>
         </select>
       </label>

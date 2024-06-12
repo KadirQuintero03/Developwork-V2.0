@@ -47,6 +47,7 @@ export class ModpersonaComponent {
   }
 
   mod() {
+    console.log(this.persona)
     this.servicePersona.modPersona(this.persona).subscribe((Response) => {
       console.log('Usuario modificado con éxito:', Response);
       alert(`El usuario fue modificado con éxito, recargue la ventana.`);
