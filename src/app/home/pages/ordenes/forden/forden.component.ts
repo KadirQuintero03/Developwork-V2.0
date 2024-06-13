@@ -39,6 +39,7 @@ export class FordenComponent {
   ];
 
   nuevo: boolean = false;
+
   administrativo: persona = new persona();
   cerrar() {
     this.mensajeCambiado.emit(new ordenes_matenimiento());
@@ -56,16 +57,13 @@ export class FordenComponent {
     // this.sequipos.getData().subscribe((Response: any) => {
     //   this.equipos = Response.data;
     // });
-
     // this.getPrioridades.getData().subscribe((Response: any) => {
     //   this.prioridades = Response.data;
     // });
-
     //Carga en el select de los estados, los estados disponibles
     // this.sestados.getData().subscribe((Response) => {
     //   this.estados = Response;
     // });
-
     // this.spersonas.setPersonaLog().subscribe((Response) => {
     //   this.administrativo = Response;
     //   if (this.modorden.idUser == '') {
@@ -75,8 +73,11 @@ export class FordenComponent {
     // });
   }
 
+  validateLenght(value: string): boolean {
+    return value.length <= 200;
+  }
+
   agregar(): void {
-    this.nuevo = !this.nuevo;
     // this.modorden.idEquipo =
     //   this.equipos.find((x) => x.id_equipo == this.modorden.equipo.id_equipo) ||
     //   new equipo();
@@ -87,6 +88,17 @@ export class FordenComponent {
     //   this.prioridades.find(
     //     (x) => x.id_prioridad == this.modorden.prioridad.id_prioridad
     //   ) || new prioridad();
+
+    const { descripcion } = this.modorden;
+
+    if (!this.validateLenght(descripcion)) {
+      alert(
+        'La descripcion de la ordenn o puede sobrepasar los 200 caracteres.'
+      );
+      return;
+    }
+
+    this.nuevo = !this.nuevo;
     this.sordenes.createOrden(this.modorden).subscribe(
       (response) => {
         console.log(response);

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { persona } from '../../../../interface/persona';
 import { PersonaService } from '../../../../services/persona.service';
 import { equipo } from '../../../../interface/equipo';
@@ -10,7 +10,6 @@ import { RolserviceService } from '../../../../services/rolservice.service';
   selector: 'app-register',
   templateUrl: './register.component.html',
 })
-
 export class registerComponent {
   persona: persona = new persona();
   verequipo: equipo[] = [];
@@ -19,14 +18,14 @@ export class registerComponent {
 
   @Output() changeStateRU = new EventEmitter<boolean>();
 
-  closeRU(){
+  closeRU() {
     this.changeStateRU.emit(false);
   }
 
   constructor(
     private serviceteam: TeamservService,
     private rolService: RolserviceService,
-    private personaSerive: PersonaService,
+    private personaSerive: PersonaService
   ) {}
 
   ngOnInit(): void {
@@ -43,13 +42,27 @@ export class registerComponent {
     return value.trim() !== '';
   }
 
+  validateLenghtId(value: string): boolean {
+    return value.length >= 7 && value.length <= 11;
+  }
+
   validateLenght(value: string): boolean {
-    return value.length <= 15;
+    return value.length >= 3 && value.length <= 15;
   }
 
   validateEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+  }
+
+  validateOnlyLetters(value: string): boolean {
+    const lettersPermitted = /^[A-Za-z]+$/;
+    return lettersPermitted.test(value);
+  }
+
+  validateOnlyNumbers(value: string): boolean {
+    const lettersPermitted = /^[0-9]+$/;
+    return lettersPermitted.test(value);
   }
 
   randomPassword(length: number): string {
@@ -79,10 +92,25 @@ export class registerComponent {
   }
 
   async addUser() {
-    const { nombre1, nombre2, apellido1, apellido2, correo } = this.persona;
+    const { id_usuario, nombre1, nombre2, apellido1, apellido2, correo } =
+      this.persona;
 
     if (!(this.validateCamp(nombre1) && this.validateCamp(apellido1))) {
       alert('Ingrese minimo un nombre y un apellido');
+      return;
+    }
+
+    if (!this.validateLenghtId(id_usuario)) {
+      alert(
+        'La cedula debe contener digitos mayores igual 7 o menores igual 11'
+      );
+      return;
+    }
+
+    if (!this.validateOnlyNumbers(id_usuario)) {
+      alert(
+        'La cedula no puede contener caracteres no numericos'
+      );
       return;
     }
 
@@ -94,7 +122,21 @@ export class registerComponent {
         this.validateLenght(apellido2)
       )
     ) {
-      alert('Los nombres y apellidos no pueden ser mayores a 10 caracteres');
+      alert('Los nombres y apellidos deben ser mayor igual 3 o menor igual 15');
+      return;
+    }
+
+    if (
+      !(
+        this.validateOnlyLetters(nombre1) &&
+        this.validateOnlyLetters(nombre2) &&
+        this.validateOnlyLetters(apellido1) &&
+        this.validateOnlyLetters(apellido2)
+      )
+    ) {
+      alert(
+        'No se permiten caracteres numericos en los campos de Nombre y Apellido'
+      );
       return;
     }
 
@@ -109,7 +151,8 @@ export class registerComponent {
     this.persona.idEstado.id_estado = '1';
 
     this.personaSerive.postData(this.persona).subscribe(
-      (response) => { console.log('Usuario agregado con éxito:', response);
+      (response) => {
+        console.log('Usuario agregado con éxito:', response);
         alert(`El usuario ${nombre1} ${apellido1} fue registrado con éxito.`);
       },
       (error) => {

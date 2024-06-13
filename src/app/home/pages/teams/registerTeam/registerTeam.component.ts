@@ -23,8 +23,17 @@ export class RegisterTeamComponent {
     return value.trim() !== '';
   }
 
+  validateNumIntegrantes(value: number): boolean {
+    return value > 1 && value <= 10
+  }
+
   validateLenght(value: string): boolean {
-    return value.length <= 15;
+    return value.length >= 7 && value.length <= 15;
+  }
+
+  validateOnlyLetters(value: string): boolean {
+    const letters = /^[a-zA-Z]+$/
+    return letters.test(value);
   }
 
   randomIdTeam(length: number): string {
@@ -36,17 +45,27 @@ export class RegisterTeamComponent {
   }
 
   async addTeam() {
-    // const { nombre_equipo } = this.nuevoEquipo;
+    const { nombre_equipo, NumIntegrantes } = this.nuevoEquipo;
 
-    // if (!(this.validateCamp(nombre_equipo))) {
-    //   alert('Ingrese un nombre para el equipo');
-    //   return;
-    // }
+    if (!this.validateCamp(nombre_equipo)) {
+      alert('Por favor, ingrese un nombre para el equipo.');
+      return;
+    }
 
-    // if (!(this.validateLenght(nombre_equipo))) {
-    //   alert('El nombre del equipo no puede superar los 10 caracteres');
-    //   return;
-    // }
+    if (!this.validateLenght(nombre_equipo)) {
+      alert('El nombre del equipo debe ser mayor igual a 7 o menos igual 15');
+      return;
+    }
+
+    if (!this.validateOnlyLetters(nombre_equipo)) {
+      alert('El campo de nombre solo puede contener valores NO numericos');
+      return;
+    }
+
+    if(!this.validateNumIntegrantes(Number(NumIntegrantes))){
+      alert('Minimo de integrantes 2 y maximo de integrantes 10, solo valores numericos');
+      return;
+    }
 
     //Asigna un ID aleatorio al equipo que se registre
     this.nuevoEquipo.id_equipo = this.randomIdTeam(10000000);
