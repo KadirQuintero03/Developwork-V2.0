@@ -1,5 +1,5 @@
 # 📋 DevelopWork - Sistema de Gestión de Mantenimiento y Notificaciones
-https://img.shields.io/badge/Angular-16-%2523DD0031?style=flat&logo=angular
+<div align="center"> <img src="https://img.shields.io/badge/Angular-16-%2523DD0031?style=flat&logo=angular" alt="Angular"/> </div>
 
 DevelopWork es una aplicación web desarrollada en Angular 16 diseñada para optimizar la gestión de órdenes de mantenimiento, notificaciones entre usuarios y administración de empleados en entornos industriales y de maquinaria pesada.
 
